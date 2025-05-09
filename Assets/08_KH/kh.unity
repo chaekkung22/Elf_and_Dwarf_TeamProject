@@ -234,7 +234,7 @@ Transform:
   m_GameObject: {fileID: 134962153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.269, y: -2.56, z: 0}
+  m_LocalPosition: {x: -0.269, y: -3.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -593,6 +593,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 0}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 0
 --- !u!61 &331084246
 BoxCollider2D:
@@ -695,6 +701,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 0}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 0
 --- !u!1 &488996114
 GameObject:
@@ -1047,6 +1059,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 0}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 0
 --- !u!114 &594135018
 MonoBehaviour:
@@ -1061,6 +1079,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 0}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 0
 --- !u!1 &627875764
 GameObject:
@@ -2116,7 +2140,7 @@ Transform:
   m_GameObject: {fileID: 1558373594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.269, y: -1.31, z: 0}
+  m_LocalPosition: {x: -0.269, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2244,6 +2268,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 0}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 1
 --- !u!114 &1570952280
 MonoBehaviour:
@@ -2258,6 +2288,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 0}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 1
 --- !u!1 &1686219429
 GameObject:

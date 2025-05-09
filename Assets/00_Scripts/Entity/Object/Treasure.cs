@@ -21,9 +21,9 @@ public class Treasure : MonoBehaviour, ICollisionEnter
                 gold++;
                 this.gameObject.SetActive(false);
             }
-            else if (player.playerType == gEMTYPE)
+            else if (player.PlayerType == gEMTYPE)
             {
-                //플레이어데스
+                
                 gem++;
                 this.gameObject.SetActive(false);
                 

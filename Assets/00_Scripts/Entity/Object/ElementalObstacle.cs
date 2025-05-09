@@ -11,12 +11,12 @@ public class ElementalObstacle : MonoBehaviour , ICollisionEnter
         PlayerController player;
         if (collider.TryGetComponent<PlayerController>(out player))
         {
-            if (player.playerType == oBSTACLETYPE)
+            if (player.PlayerType == oBSTACLETYPE)
             {
-                //ÇÃ·¹ÀÌ¾îµ¥½º
+                //í”Œë ˆì´ì–´ë°ìŠ¤
                 //player.OnDeath();
                 player.gameObject.SetActive(false);
-                Debug.Log("ÇÃ·¹ÀÌ¾îµ¥½º");
+                Debug.Log("í”Œë ˆì´ì–´ë°ìŠ¤");
             }
         }
 

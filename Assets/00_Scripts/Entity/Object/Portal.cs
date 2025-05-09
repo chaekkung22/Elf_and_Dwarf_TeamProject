@@ -14,7 +14,7 @@ public class Portal : MonoBehaviour, ICollisionEnter
         PlayerController player;
         if (collider.TryGetComponent<PlayerController>(out player))
         {
-            if (player.playerType == this.pORTALTYPE)
+            if (player.PlayerType == this.pORTALTYPE)
             {
                 //쿨타임체크
                 if (!lastTeleportTimes.ContainsKey(collider))
