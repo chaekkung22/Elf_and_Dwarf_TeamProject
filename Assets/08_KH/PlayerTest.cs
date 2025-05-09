@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class Player : BaseController
+public class PlayerTest : BaseController
 {
     public PlayerType playerType;
 

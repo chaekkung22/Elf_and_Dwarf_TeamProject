@@ -7,14 +7,14 @@ public class Portal : MonoBehaviour, ICollisionEnter
     [SerializeField] private GameObject targetPortal;
     private static float teleportCooldown = 0.1f;
     private static Dictionary<GameObject, float> lastTeleportTimes = new Dictionary<GameObject, float>();
-    public PlayerType PortalType;
+    [SerializeField] private PlayerType pORTALTYPE;
 
     public void EnterEvent(GameObject collider)
     {
         PlayerController player;
         if (collider.TryGetComponent<PlayerController>(out player))
         {
-            if (player.playerType == this.PortalType)
+            if (player.playerType == this.pORTALTYPE)
             {
                 //쿨타임체크
                 if (!lastTeleportTimes.ContainsKey(collider))
