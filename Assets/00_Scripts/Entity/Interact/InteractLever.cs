@@ -14,7 +14,7 @@ public class InteractLever : InteractObj, ICollisionEnter
         _renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    protected void ChangeLeverSprite()
+    private void ChangeLeverSprite()
     {
         if(isOn)
             _renderer.sprite = leverOnImg;
