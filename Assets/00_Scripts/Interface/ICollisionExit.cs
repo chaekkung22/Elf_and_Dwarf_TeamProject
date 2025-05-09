@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public interface ICollisionExit
 {
     /// <summary>
-    /// Ãæµ¹ Á¾·á½Ã È£ÃâµÉ ÀÌº¥Æ® ±â´É
+    /// ì¶©ëŒ ì¢…ë£Œì‹œ í˜¸ì¶œë  ì´ë²¤íŠ¸ ê¸°ëŠ¥
     /// </summary>
-    /// <param name="collider">Ãæµ¹Ã¼</param>
+    /// <param name="collider">ì¶©ëŒì²´</param>
     void ExitEvent(GameObject collider);
 }
