@@ -7,7 +7,7 @@ public class UIManager : Singleton<UIManager>
     private Stack<UIState> uiStack;
     private Dictionary<UIState, BaseUI> uiDictionary;
 
-    public GameObject PauseButton { private get; set; }
+    [HideInInspector] public GameObject PauseButton { private get; set; }
 
     protected override void Initialize()
     {

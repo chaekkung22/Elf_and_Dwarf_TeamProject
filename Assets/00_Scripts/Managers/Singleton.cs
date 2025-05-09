@@ -18,6 +18,12 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     GameObject obj = new GameObject();
 
                     instance = obj.AddComponent<T>();
+
+                    // get으로 생성 됐을 때 호출
+                    if (instance is Singleton<T> singleton)
+                    {
+                        singleton.Initialize();
+                    }
                 }
             }
             return instance;

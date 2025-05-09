@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -37,22 +38,23 @@ public class ClearUI : BaseUI
 
         StageManager stageManager = StageManager.Instance;
 
-        // clearTitle.text = stageManager.isClear?"게임 클리어": "게임 실패";
+        clearTitle.text = stageManager.IsClear ? "게임 클리어" : "게임 실패";
 
         for (int i = 0; i < 3; i++)
         {
             starImages[i].sprite = emptyStarImage;
         }
 
-        //int starCount = stageManager.starCount;
+        int starCount = stageManager.StarCount;
 
-        // for (int i = 2; i > 2 - starCount; i--)
-        // {
-        //     starImages[i].sprite = starImage;
-        // }
+        for (int i = 2; i > 2 - starCount; i--)
+        {
+            starImages[i].sprite = starImage;
+        }
 
-        // clearTime.text = $"시간 : {stageManager.playTime}";
-        // gold.text = $"획득 골드: {stageManager.earnGold}";
+        TimeSpan time = TimeSpan.FromSeconds(stageManager.PlayTime);
+        clearTime.text = $"시간 : {time.Minutes:00}:{time.Seconds:00}";
+        gold.text = $"획득 골드: {stageManager.EarnGold}";
 
         this.gameObject.SetActive(isActive);
     }
