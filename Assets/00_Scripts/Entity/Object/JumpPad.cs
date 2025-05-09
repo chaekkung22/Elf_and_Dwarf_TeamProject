@@ -13,7 +13,7 @@ public class JumpPad : MonoBehaviour, ICollisionEnter
         //Enter시에 한 번만 실행되기 때문에, 속도(velocity)에 적용해주기 위해 rigidbody를 들고 옴 
         Rigidbody2D rigidbody = collider.GetComponent<Rigidbody2D>();
 
-        if (rigidbody != null)
+        if(rigidbody != null && collider.GetComponent<BaseController>().IsGround)
             rigidbody.velocity = new Vector2(rigidbody.velocity.x + direction.x * force,
                 rigidbody.velocity.y + direction.y * force);  // 충돌한 오브젝트가 가지고 있던 기존 속도에 힘을 더해줌.
                                                               // 만약 x값이 0(똑바로 위를 보는 상태)이면 x에는 힘이 더해지지 않음(기존 x축 속도 유지)

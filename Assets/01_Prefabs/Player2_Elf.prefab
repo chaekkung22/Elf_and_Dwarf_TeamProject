@@ -123,12 +123,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 5125063814521985352}
   maxMoveSpeed: 5
-  movePower: 5
+  movePower: 15
   jumpPower: 5
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  playerType: 0
+  playerType: 1
 --- !u!114 &4751824024176366178
 MonoBehaviour:
   m_ObjectHideFlags: 0

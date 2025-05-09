@@ -20,6 +20,8 @@ public class BaseController : MonoBehaviour
     private bool isGround;
     private bool wasGround = true;
 
+    public bool IsGround { get { return isGround; } }
+
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

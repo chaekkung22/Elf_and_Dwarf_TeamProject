@@ -20,12 +20,13 @@ public class Treasure : MonoBehaviour, ICollisionEnter
             //골드획득
             if (isGold)
             {
+                Debug.Log("GetGold");
                 gold++;
                 this.gameObject.SetActive(false);
             }
             else if (player.PlayerType == gEMTYPE) // 보석획득
             {
-                
+                Debug.Log("Gem");
                 gem++;
                 this.gameObject.SetActive(false);
                 

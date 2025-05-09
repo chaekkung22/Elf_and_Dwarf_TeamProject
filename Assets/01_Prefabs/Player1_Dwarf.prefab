@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 4639141282740499126}
   maxMoveSpeed: 5
-  movePower: 5
+  movePower: 15
   jumpPower: 5
   groundLayer:
     serializedVersion: 2

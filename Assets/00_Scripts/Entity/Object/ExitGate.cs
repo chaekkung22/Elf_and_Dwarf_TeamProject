@@ -24,11 +24,13 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
     bool IsCorrectType()
     {
         //문의 타입과 플레이어의 타입이 맞는지 확인하는 과정 작성
+        Debug.Log("Exit");
         return true;
     }
 
     public void ExitEvent(GameObject collider)
     {
+        Debug.Log("초기화");
         spendTime = 1;
     }
 }
