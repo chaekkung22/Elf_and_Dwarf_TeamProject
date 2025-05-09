@@ -6,7 +6,15 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
 {
 
     [SerializeField] private float spendTime = 1f;
+    [SerializeField] private Sprite openSprite;
+    [SerializeField] private Sprite closedSprite;
+    private SpriteRenderer spriteRenderer;
     public bool IsExitSucess {  get; private set; }
+
+    public void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void StayEvent(GameObject collider)
     {
@@ -17,7 +25,10 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
             spendTime = 0f;
 
             if (IsCorrectType())
+            {
+                spriteRenderer.sprite = openSprite;
                 IsExitSucess = true;  //UI에서 bool값을 받아 탈출시 나오는 화면 보여줘야할듯..?
+            }
         }
     }
 
@@ -31,6 +42,7 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
     public void ExitEvent(GameObject collider)
     {
         Debug.Log("초기화");
+        spriteRenderer.sprite = closedSprite;
         spendTime = 1;
     }
 }
