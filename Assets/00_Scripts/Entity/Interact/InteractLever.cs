@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InteractLever : InteractObj, ICollisionEnter
 {
-    [SerializeField] protected Sprite leverOnImg;
-    [SerializeField] protected Sprite leverOffImg;
+    [SerializeField] private Sprite leverOnImg;
+    [SerializeField] private Sprite leverOffImg;
 
     private SpriteRenderer _renderer;
 
