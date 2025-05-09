@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//================
+//플레이어데스
 public class ElementalObstacle : MonoBehaviour , ICollisionEnter
 {
     [SerializeField] private PlayerType oBSTACLETYPE;

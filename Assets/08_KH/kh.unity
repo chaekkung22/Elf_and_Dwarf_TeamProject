@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPortal: {fileID: 1343606636}
-  pORTALTYPE: 0
+  pORTALTYPE: 1
 --- !u!61 &154252464
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//==============
+//골드보석 
 public class Treasure : MonoBehaviour, ICollisionEnter
 {
     private int gold = 0;
@@ -16,12 +17,13 @@ public class Treasure : MonoBehaviour, ICollisionEnter
         PlayerController player;
         if (collider.TryGetComponent<PlayerController>(out player))
         {
+            //골드획득
             if (isGold)
             {
                 gold++;
                 this.gameObject.SetActive(false);
             }
-            else if (player.PlayerType == gEMTYPE)
+            else if (player.PlayerType == gEMTYPE) // 보석획득
             {
                 
                 gem++;
