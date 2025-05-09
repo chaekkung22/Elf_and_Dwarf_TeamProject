@@ -199,6 +199,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 518472010}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerType: 0
 --- !u!61 &257869065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -808,6 +815,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 1479685739}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  playerType: 0
 --- !u!114 &1915486578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +863,7 @@ GameObject:
   - component: {fileID: 2107303375}
   - component: {fileID: 2107303374}
   - component: {fileID: 2107303376}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +912,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.048891068, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

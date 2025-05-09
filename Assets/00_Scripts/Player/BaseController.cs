@@ -11,9 +11,13 @@ public class BaseController : MonoBehaviour
 
     protected Vector2 movementDirection = Vector2.zero;
 
-    private float maxMoveSpeed = 5f;
-    private float movePower = 5f;
-    private float jumpPower = 5f;
+    [SerializeField] private float maxMoveSpeed = 5f;
+    [SerializeField] private float movePower = 5f;
+    [SerializeField] private float jumpPower = 5f;
+
+    [SerializeField] private LayerMask groundLayer;
+
+    private bool isGround;
 
     protected virtual void Awake()
     {
@@ -29,6 +33,9 @@ public class BaseController : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         Move(movementDirection);
+
+        Debug.DrawRay(_rigidbody.position, Vector3.down * 0.6f, new Color(0, 1, 0));
+        isGround = Physics2D.Raycast(_rigidbody.position, Vector3.down, 0.6f, groundLayer);
     }
 
     protected void Move(Vector2 direction)
@@ -50,7 +57,8 @@ public class BaseController : MonoBehaviour
     protected void Jump()
     {
         // 캐릭터 점프
-        _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        if (isGround)
+            _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
     }
 
     protected void Death()
