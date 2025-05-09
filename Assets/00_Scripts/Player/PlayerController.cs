@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +6,11 @@ public class PlayerController : BaseController
 {
     void OnMove()
     {
-        // ÀÔ·ÂÀ» ÅëÇÑ ÇÃ·¹ÀÌ¾îÀÇ ÀÌµ¿ ±¸Çö
+        // ì…ë ¥ì„ í†µí•œ í”Œë ˆì´ì–´ì˜ ì´ë™ êµ¬í˜„
     }
 
     void OnJump()
     {
-        // ÀÔ·ÂÀ» ÅëÇÑ ÇÃ·¹ÀÌ¾îÀÇ Á¡ÇÁ ±¸Çö
+        // ì…ë ¥ì„ í†µí•œ í”Œë ˆì´ì–´ì˜ ì í”„ êµ¬í˜„
     }
 }

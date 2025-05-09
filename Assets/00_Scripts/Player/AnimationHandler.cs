@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,11 +11,11 @@ public class AnimationHandler : MonoBehaviour
 
     public void Moving()
     {
-        // ¿òÁ÷ÀÌ´Â ¾Ö´Ï¸ŞÀÌ¼Ç
+        // ì›€ì§ì´ëŠ” ì• ë‹ˆë©”ì´ì…˜
     }
 
     public void Jumping()
     {
-        // Á¡ÇÁÇÏ´Â ¾Ö´Ï¸ŞÀÌ¼Ç
+        // ì í”„í•˜ëŠ” ì• ë‹ˆë©”ì´ì…˜
     }
 }

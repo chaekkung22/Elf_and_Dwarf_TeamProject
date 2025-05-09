@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,21 +13,21 @@ public class BaseController : MonoBehaviour
 
     protected void Move()
     {
-        // Ä³¸¯ÅÍ ÀÌµ¿
+        // ìºë¦­í„° ì´ë™
     }
 
     protected void Rotate()
     {
-        // Ä³¸¯ÅÍ ¹Ù¶óº¸´Â ¹æÇâ ÀüÈ¯
+        // ìºë¦­í„° ë°”ë¼ë³´ëŠ” ë°©í–¥ ì „í™˜
     }
 
     protected void Jump()
     {
-        // Ä³¸¯ÅÍ Á¡ÇÁ
+        // ìºë¦­í„° ì í”„
     }
 
     protected void Death()
     {
-        // Ä³¸¯ÅÍ »ç¸Á
+        // ìºë¦­í„° ì‚¬ë§
     }
 }
