@@ -2,8 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+
+
+public class Player : BaseController
 {
+    public PlayerType playerType;
+
+
+    public void OnDeath()
+    {
+        Death();
+    }
+
     bool isICollision<T>(GameObject gameObject)
     {
         return gameObject.GetComponent<T>() != null;
