@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseUI : MonoBehaviour
+public abstract class BaseUI : MonoBehaviour
 {
-    protected UIState uiState;
+    protected abstract UIState UIState { get; }
 
-    private void Awake()
+    private void Start()
     {
         Initialize();
         SetUIActive(false);
@@ -14,7 +14,7 @@ public class BaseUI : MonoBehaviour
 
     protected virtual void Initialize()
     {
-        UIManager.Instance.SetUI(uiState, this);
+        UIManager.Instance.SetUI(UIState, this);
     }
 
     public virtual void SetUIActive(bool isActive)

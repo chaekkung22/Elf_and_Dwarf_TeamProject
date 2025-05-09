@@ -6,27 +6,30 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
 
-    public static T Instance { get { return instance; } }
+    public static T Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<T>();
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject();
+
+                    instance = obj.AddComponent<T>();
+                }
+            }
+            return instance;
+        }
+    }
 
     protected void Awake()
     {
         if (instance == null)
         {
-            instance = FindObjectOfType<T>();
-            if (instance == null)
-            {
-                GameObject obj = new GameObject();
-                instance = obj.AddComponent<T>();
-
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
-        else
-        {
-            Destroy(gameObject);
+            instance = this as T;
+            Initialize();
         }
     }
 
