@@ -14,7 +14,6 @@ public class PlayerController : BaseController
 
     void OnJump(InputValue inputValue)
     {
-        // 입력을 통한 플레이어의 점프 구현
         Jump();
     }
 }

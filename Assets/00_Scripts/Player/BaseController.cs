@@ -11,6 +11,10 @@ public class BaseController : MonoBehaviour
 
     protected Vector2 movementDirection = Vector2.zero;
 
+    private float maxMoveSpeed = 5f;
+    private float movePower = 5f;
+    private float jumpPower = 5f;
+
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -30,9 +34,10 @@ public class BaseController : MonoBehaviour
     protected void Move(Vector2 direction)
     {
         // 캐릭터 이동
-        float moveSpeed = 5f;
-        direction = direction * moveSpeed;
-        _rigidbody.velocity = direction;
+        if (Mathf.Abs(_rigidbody.velocity.x) < maxMoveSpeed)
+        {
+            _rigidbody.AddForce(new Vector2(direction.x * movePower, 0f));
+        }
     }
 
     protected void Rotate()
@@ -45,8 +50,7 @@ public class BaseController : MonoBehaviour
     protected void Jump()
     {
         // 캐릭터 점프
-        float jumpPower = 5f;
-        _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jumpPower);
+        _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
     }
 
     protected void Death()
