@@ -11,7 +11,13 @@ public enum PlayerType
 
 public class PlayerController : BaseController
 {
-    public PlayerType playerType;
+    [SerializeField] private PlayerType playerType;
+    public PlayerType PlayerType { get { return playerType; } }
+
+    private void Start()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
+    }
 
     void OnMove(InputValue inputValue)
     {
@@ -24,6 +30,14 @@ public class PlayerController : BaseController
     {
         // 입력을 통한 플레이어의 점프 구현
         Jump();
+    }
+
+    private void ChangeType()
+    {
+        if(PlayerType == PlayerType.Fire)
+            playerType = PlayerType.Water;
+        else
+            playerType = PlayerType.Fire;
     }
 
     private bool isICollision<T>(GameObject gameObject)
