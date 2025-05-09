@@ -60,4 +60,12 @@ public class PlayerController : BaseController
             collision.gameObject.GetComponent<ICollisionExit>().ExitEvent(gameObject);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(isICollision<ICollisionStay>(collision.gameObject))
+        {
+            collision.gameObject.GetComponent<ICollisionStay>().StayEvent(gameObject);
+        }
+    }
 }

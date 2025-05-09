@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExitGate : MonoBehaviour, ICollisionStay
+public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
 {
 
-    float spendTime = 1f;
-    public bool isExitSucess = false;
-
+    [SerializeField] private float spendTime = 1f;
+    public bool IsExitSucess {  get; private set; }
 
     public void StayEvent(GameObject collider)
     {
@@ -18,7 +17,7 @@ public class ExitGate : MonoBehaviour, ICollisionStay
             spendTime = 0f;
 
             if (IsCorrectType())
-                isExitSucess = true;  //UI에서 bool값을 받아 탈출시 나오는 화면 보여줘야할듯..?
+                IsExitSucess = true;  //UI에서 bool값을 받아 탈출시 나오는 화면 보여줘야할듯..?
         }
     }
 
@@ -28,4 +27,8 @@ public class ExitGate : MonoBehaviour, ICollisionStay
         return true;
     }
 
+    public void ExitEvent(GameObject collider)
+    {
+        spendTime = 1;
+    }
 }
