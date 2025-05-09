@@ -6,7 +6,7 @@ public class ElementalObstacle : MonoBehaviour
 {
     public void EnterEvent(GameObject collider)
     {
+        //gameObject.GetComponent<T>() != null;
 
-      
     }
 }

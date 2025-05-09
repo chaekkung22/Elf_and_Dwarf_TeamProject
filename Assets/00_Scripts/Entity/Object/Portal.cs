@@ -27,26 +27,4 @@ public class Portal : MonoBehaviour, ICollisionEnter
     }
 
 
-    //gameObject.GetComponent<T>() != null;
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    int player1Layer = LayerMask.NameToLayer("Player1");
-    //    int player2Layer = LayerMask.NameToLayer("Player2");
-
-
-    //    if ((player1Layer == collision.gameObject.layer))
-    //    {
-    //        Debug.Log("11111");
-    //        Vector3 playerPos = collision.gameObject.transform.position;
-    //        Debug.Log($"플레이어포지션{playerPos}");
-    //        Vector3 Portal2Pos = targetPortal.transform.position;
-    //        Debug.Log($"포탈포지션:{Portal2Pos}");
-
-    //        collision.gameObject.transform.position = Portal2Pos;
-    //    }
-    //    else if ((player2Layer == collision.gameObject.layer))
-    //    {
-    //        Debug.Log($"222222");
-    //    }
-    //}
 }
