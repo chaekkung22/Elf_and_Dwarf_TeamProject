@@ -11,7 +11,7 @@ public class JumpPad : MonoBehaviour, ICollisionEnter
         //이 오브젝트 기준으로 위쪽. z가 회전이 되더라도 오브젝트의 기준으로 힘을 주기 위해 방향을 따옴
         Vector2 direction = transform.up.normalized;
         //Enter시에 한 번만 실행되기 때문에, 속도(velocity)에 적용해주기 위해 rigidbody를 들고 옴 
-        Rigidbody rigidbody = collider.GetComponent<Rigidbody>();
+        Rigidbody2D rigidbody = collider.GetComponent<Rigidbody2D>();
 
         if (rigidbody != null)
             rigidbody.velocity = new Vector2(rigidbody.velocity.x + direction.x * force,
