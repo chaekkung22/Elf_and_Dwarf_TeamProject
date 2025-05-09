@@ -7,9 +7,18 @@ public class Gold : MonoBehaviour
     [SerializeField] private LayerMask levelCollisionLayer;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((levelCollisionLayer.value & 1 << collision.gameObject.layer) != 0)
-        {
+        int player1Layer = LayerMask.NameToLayer("Player1");
+        int player2Layer = LayerMask.NameToLayer("Player2");
 
+
+        if ((player1Layer == collision.gameObject.layer))
+        {
+            Debug.Log("11111");
+        }
+        else if ((player2Layer == collision.gameObject.layer))
+        {
+            Debug.Log($"222222");
         }
     }
 }
+
