@@ -25,4 +25,25 @@ public class PlayerController : BaseController
         // 입력을 통한 플레이어의 점프 구현
         Jump();
     }
+
+    private bool isICollision<T>(GameObject gameObject)
+    {
+        return gameObject.GetComponent<T>() != null;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(isICollision<ICollisionEnter>(collision.gameObject))
+        {
+            collision.gameObject.GetComponent<ICollisionEnter>().EnterEvent(gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(isICollision<ICollisionExit>(collision.gameObject))
+        {
+            collision.gameObject.GetComponent<ICollisionExit>().ExitEvent(gameObject);
+        }
+    }
 }
