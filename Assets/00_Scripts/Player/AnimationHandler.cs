@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,11 @@ public class AnimationHandler : MonoBehaviour
     private readonly int isJumping = Animator.StringToHash("");
 
     private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
 
     public void Moving()
     {
@@ -19,3 +24,4 @@ public class AnimationHandler : MonoBehaviour
         // 점프하는 애니메이션
     }
 }
+
