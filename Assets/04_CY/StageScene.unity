@@ -1293,6 +1293,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2477036895980974398, guid: 96fdf33aacd5a3d40abe0dddeb7df3af, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0015639
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477036895980974398, guid: 96fdf33aacd5a3d40abe0dddeb7df3af, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.001343593
+      objectReference: {fileID: 0}
     - target: {fileID: 6032450241756426155, guid: 96fdf33aacd5a3d40abe0dddeb7df3af, type: 3}
       propertyPath: m_Name
       value: JumpPad
