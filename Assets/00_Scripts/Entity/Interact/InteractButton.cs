@@ -15,7 +15,7 @@ public class InteractButton : InteractObj, ICollisionEnter
         _renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    public void EnterEvent(GameObject collider)
+    public virtual void EnterEvent(GameObject collider)
     {
         ChangeOnMode(true);
         _renderer.sprite = buttonOnImg;
