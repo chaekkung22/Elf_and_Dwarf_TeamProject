@@ -1,29 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class Portal : MonoBehaviour, ICollisionEnter
 {
     [SerializeField] private GameObject targetPortal;
     private static float teleportCooldown = 0.1f;
-    private static float lastTeleportTime = -Mathf.Infinity;
-
+    private static Dictionary<GameObject, float> lastTeleportTimes = new Dictionary<GameObject, float>();
+    public PlayerType portalType;
 
     public void EnterEvent(GameObject collider)
     {
+        PlayerController tmp;
+        if (collider.TryGetComponent<PlayerController>(out tmp))
+        {
+            if (tmp.playerType == this.portalType)
+            {
+                //쿨타임체크
+                if (!lastTeleportTimes.ContainsKey(collider))
+                {
+                    lastTeleportTimes[collider] = -Mathf.Infinity;
+                }
 
-        if (Time.time - lastTeleportTime < teleportCooldown)
-            return;
-        lastTeleportTime = Time.time;
+                if (Time.time - lastTeleportTimes[collider] < teleportCooldown)
+                    return;
 
-        Debug.Log("11111");
-        Vector3 playerPos = collider.gameObject.transform.position;
-        Debug.Log($"플레이어포지션{playerPos}");
-        Vector3 potalPos = targetPortal.transform.position;
-        Debug.Log($"포탈포지션:{potalPos}");
+                lastTeleportTimes[collider] = Time.time;
 
-        collider.gameObject.transform.position = potalPos;
+                //포탈작동
+                Vector3 playerPos = collider.gameObject.transform.position;
+                Vector3 potalPos = targetPortal.transform.position;
+
+                collider.gameObject.transform.position = potalPos;
+            }
+
+        }
+
     }
 
 
