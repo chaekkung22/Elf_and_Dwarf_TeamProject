@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3791029081623685429}
   - component: {fileID: 4751824024176366178}
   - component: {fileID: 4899514665804355754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player2_Elf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5705344114101859833}
   - component: {fileID: 5125063814521985352}
   - component: {fileID: 1721087038884593523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

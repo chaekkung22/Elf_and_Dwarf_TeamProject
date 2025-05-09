@@ -524,14 +524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2_Elf
       objectReference: {fileID: 0}
-    - target: {fileID: 7537140490552021645, guid: ac289a2c50014834088a3cb76a6df66a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384918421102500363, guid: ac289a2c50014834088a3cb76a6df66a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -545,10 +537,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5484029944399609285, guid: 8443ebe3a23ae054c895a0f1f80707da, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5720433728305115277, guid: 8443ebe3a23ae054c895a0f1f80707da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -592,10 +580,6 @@ PrefabInstance:
     - target: {fileID: 5778263857571855375, guid: 8443ebe3a23ae054c895a0f1f80707da, type: 3}
       propertyPath: m_Name
       value: Player1_Dwarf
-      objectReference: {fileID: 0}
-    - target: {fileID: 5778263857571855375, guid: 8443ebe3a23ae054c895a0f1f80707da, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
