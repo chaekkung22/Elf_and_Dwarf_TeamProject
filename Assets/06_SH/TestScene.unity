@@ -520,6 +520,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3791029081623685429, guid: ac289a2c50014834088a3cb76a6df66a, type: 3}
+      propertyPath: movePower
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7537140490552021645, guid: ac289a2c50014834088a3cb76a6df66a, type: 3}
       propertyPath: m_Name
       value: Player2_Elf
