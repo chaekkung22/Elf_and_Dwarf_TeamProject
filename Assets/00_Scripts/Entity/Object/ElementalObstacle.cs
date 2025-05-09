@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class ElementalObstacle : MonoBehaviour
 {
-    [SerializeField] private LayerMask levelCollisionLayer;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void EnterEvent(GameObject collider)
     {
-        if ((levelCollisionLayer.value & 1 << collision.gameObject.layer) != 0)
-        {
 
-        }
+      
     }
 }
