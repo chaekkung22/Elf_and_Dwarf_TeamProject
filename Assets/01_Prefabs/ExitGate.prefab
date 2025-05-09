@@ -176,3 +176,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spendTime: 1
+  openSprite: {fileID: 1631610595, guid: 8dae2dd374c2a0f47a26a3d3aa99f7f6, type: 3}
+  closedSprite: {fileID: 1074402237, guid: 8dae2dd374c2a0f47a26a3d3aa99f7f6, type: 3}

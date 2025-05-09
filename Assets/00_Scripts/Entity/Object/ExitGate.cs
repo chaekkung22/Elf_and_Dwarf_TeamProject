@@ -13,7 +13,7 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
 
     public void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void StayEvent(GameObject collider)
