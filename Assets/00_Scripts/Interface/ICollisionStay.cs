@@ -3,8 +3,8 @@ using UnityEngine;
 public interface ICollisionStay
 {
     /// <summary>
-    /// Ãæµ¹ Á¾·á½Ã È£ÃâµÉ ÀÌº¥Æ® ±â´É
+    /// ì¶©ëŒì‹œ í˜¸ì¶œë  ì´ë²¤íŠ¸ ì´ë¦„
     /// </summary>
-    /// <param name="collider">Ãæµ¹Ã¼</param>
+    /// <param name="collider">ì¶©ëŒì²´</param>
     void StayEvent(GameObject collider);
 }
