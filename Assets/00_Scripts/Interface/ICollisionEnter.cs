@@ -3,8 +3,8 @@ using UnityEngine;
 public interface ICollisionEnter
 {
     /// <summary>
-    /// Ãæµ¹½Ã È£ÃâµÉ ÀÌº¥Æ® ±â´É
+    /// ì¶©ëŒì‹œ í˜¸ì¶œë  ì´ë²¤íŠ¸ ì´ë¦„
     /// </summary>
-    /// <param name="collider">Ãæµ¹Ã¼</param>
+    /// <param name="collider">ì¶©ëŒì²´</param>
     void EnterEvent(GameObject collider);
 }
