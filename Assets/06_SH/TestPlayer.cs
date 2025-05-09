@@ -13,7 +13,15 @@ public class TestPlayer : MonoBehaviour
     {
         if(isICollision<ICollisionEnter>(collision.gameObject))
         {
-            collision.gameObject.GetComponent<ICollisionEnter>().EnterEvent(collision.gameObject);
+            collision.gameObject.GetComponent<ICollisionEnter>().EnterEvent(gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(isICollision<ICollisionExit>(collision.gameObject))
+        {
+            collision.gameObject.GetComponent<ICollisionExit>().ExitEvent(gameObject);
         }
     }
 }
