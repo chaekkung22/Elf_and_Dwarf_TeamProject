@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1618332137997353634}
   - component: {fileID: 4639141282740499126}
   - component: {fileID: 7031289810409524502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 6827281823602533401}
   - component: {fileID: 2598006010907377126}
   - component: {fileID: 1867120851050596365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player1_Dwarf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
