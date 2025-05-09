@@ -18,6 +18,7 @@ public class BaseController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     private bool isGround;
+    private bool wasGround = true;
 
     protected virtual void Awake()
     {
@@ -36,6 +37,13 @@ public class BaseController : MonoBehaviour
 
         Debug.DrawRay(_rigidbody.position, Vector3.down * 0.6f, new Color(0, 1, 0));
         isGround = Physics2D.Raycast(_rigidbody.position, Vector3.down, 0.6f, groundLayer);
+
+        if (wasGround == false && isGround == true)
+        {
+            animationHandler.Idle();
+        }
+
+        this.wasGround = isGround;
     }
 
     protected void Move(Vector2 direction)
@@ -45,6 +53,7 @@ public class BaseController : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector2(direction.x * movePower, 0f));
         }
+        animationHandler.Moving(direction);
     }
 
     protected void Rotate()
@@ -58,7 +67,11 @@ public class BaseController : MonoBehaviour
     {
         // 캐릭터 점프
         if (isGround)
+        {
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            animationHandler.Jumping();
+            isGround = false;
+        }
     }
 
     protected void Death()
