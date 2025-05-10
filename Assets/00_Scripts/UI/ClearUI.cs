@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ClearUI : BaseUI
@@ -62,7 +63,7 @@ public class ClearUI : BaseUI
     private void OnClickRetryButton()
     {
         // TODO: 스테이지씬 다시 호출
-        //SceneManager.LoadScene("StageScene")
+        SceneManager.LoadScene("StageScene");
     }
 
     private void OnClickMainButton()

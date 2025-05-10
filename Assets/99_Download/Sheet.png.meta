@@ -178,132 +178,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireGround_Right
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 32
-        width: 5
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cd592ee317f38f499396fd357f755e7
-      internalID: -1322524766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireGround_Left
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 5
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e358498c389ded14fa2fd3b1c3212bf6
-      internalID: -386430006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FireFloor_Middle_0
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 32
-        width: 19
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 177132c104dca29459dd2b650bd97a28
-      internalID: 548073324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterFloor_Middle_0
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 16
-        width: 19
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dab77bde369ca51469212842d0747afc
-      internalID: -1419244759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterFloor_Right
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 16
-        width: 5
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e4db0763cb2d00498b15eba8c2f2531
-      internalID: 1794089734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterFloor_Left
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 5
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11e213dcb112c0c4182341a5963cefa6
-      internalID: -1172613846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: EmptyFloor_Middle_0
       rect:
         serializedVersion: 2
@@ -362,6 +236,27 @@ TextureImporter:
       bones: []
       spriteID: 3e1efff36b0085441bde1077abbc15fd
       internalID: -575401498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Floor_Left
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 64
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac129b73995772843833f1da3004be19
+      internalID: -934670225
       vertices: []
       indices: 
       edges: []
@@ -472,48 +367,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireFloor_Middle_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 32
-        width: 19
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80b21212d8f532549b21b7bb00c4d7ef
-      internalID: 219693240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterFloor_Middle_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 16
-        width: 19
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dbb78fe218ff3614684e07411abd83b0
-      internalID: -740987513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: EmptyFloor_Middle_1
       rect:
         serializedVersion: 2
@@ -598,22 +451,43 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheet_0
+      name: lava
       rect:
         serializedVersion: 2
-        x: 5
-        y: 81
-        width: 16
-        height: 15
+        x: 0
+        y: 32
+        width: 48
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73bac51fb0657274ab3b3c6673f79f46
-      internalID: 1401312901
+      spriteID: 178732c79e0e89b4aad8f5b0a070f391
+      internalID: -1005738084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe0ba644751e1840aba17a90f9a678a
+      internalID: -12928460
       vertices: []
       indices: 
       edges: []
@@ -648,11 +522,12 @@ TextureImporter:
       Platform_3: 627665754
       Platform_4: 1710324049
       Platform_5: 1303990960
-      Sheet_0: 1952411534
       WaterFloor_Left: -740987513
       WaterFloor_Middle_0: -740987513
       WaterFloor_Middle_1: 1825968161
       WaterFloor_Right: -1419244759
+      lava: -1005738084
+      water: -12928460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
