@@ -36,9 +36,7 @@ public class PauseUI : BaseUI
 
     private void OnClickRetryButton()
     {
-        // TODO: 스테이지씬 다시 호출
-        //SceneManager.LoadScene("StageScene")
-        Debug.Log("Retry");
+        SceneManager.LoadScene("StageScene");
     }
 
     private void OnClickMainButton()
@@ -57,8 +55,6 @@ public class PauseUI : BaseUI
 
     private void OnClickResumeButton()
     {
-        // TODO: 게임 일시정지 해제
         StageManager.Instance.ResumeGame();
-        Debug.Log("Resume");
     }
 }
