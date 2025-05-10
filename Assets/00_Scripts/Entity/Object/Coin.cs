@@ -19,6 +19,7 @@ public class Coin : MonoBehaviour, ICollisionEnter
         {
             //골드획득
             //Debug.Log("GetGold");
+            coinCollider.enabled = false;
             coinAnimationHandler.Pop();
             //this.gameObject.SetActive(false);
         }
