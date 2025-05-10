@@ -12,7 +12,7 @@ public class ElementalObstacle : MonoBehaviour , ICollisionEnter
         PlayerController player;
         if (collider.TryGetComponent<PlayerController>(out player))
         {
-            if (player.PlayerType == oBSTACLETYPE)
+            if (player.PlayerType != oBSTACLETYPE)
             {
                 //플레이어데스
                 //player.OnDeath();
