@@ -59,8 +59,7 @@ public class PauseUI : BaseUI
     private void OnClickResumeButton()
     {
         // TODO: 게임 일시정지 해제
-        // StageManager.Instance.PauseGame();
-        SetUIActive(false);
+        StageManager.Instance.ResumeGame();
         Debug.Log("Resume");
     }
 }

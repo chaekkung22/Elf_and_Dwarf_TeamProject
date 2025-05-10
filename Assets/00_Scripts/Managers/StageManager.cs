@@ -14,8 +14,8 @@ public class StageManager : Singleton<StageManager>
     public int StarCount { get { return starCount; } }
     public int EarnGold { get { return earnGold; } }
 
-    public bool isType1AtDoor = false;
-    public bool isType2AtDoor = false;
+    public bool isFireAtDoor = false;
+    public bool isWaterAtDoor = false;
 
     protected override void Initialize()
     {
@@ -37,15 +37,39 @@ public class StageManager : Singleton<StageManager>
 
     }
 
-    public void ChangeType()
+    public bool SetPlayerDoorState(PlayerType playerType, bool isPlayerAtDoor)
     {
+        if (playerType == PlayerType.Fire)
+        {
+            isFireAtDoor = isPlayerAtDoor;
+        }
 
+        if (playerType == PlayerType.Water)
+        {
+            isWaterAtDoor = isPlayerAtDoor;
+        }
+
+        if (isWaterAtDoor && isFireAtDoor)
+        {
+            ClearStage();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void PauseGame()
     {
-
+        UIManager.Instance.OpenUI(UIState.Pause);
+        Time.timeScale = 0f;
     }
 
+    public void ResumeGame()
+    {
+        UIManager.Instance.CloseUI();
+        Time.timeScale = 1f;
+    }
 
 }
