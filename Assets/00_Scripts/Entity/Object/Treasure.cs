@@ -5,8 +5,6 @@ using UnityEngine;
 //골드보석 
 public class Treasure : MonoBehaviour, ICollisionEnter
 {
-    private int gold = 0;
-    private int gem = 0;
 
     [SerializeField] private PlayerType gEMTYPE;
     [SerializeField] private bool isGold = false;
@@ -17,17 +15,10 @@ public class Treasure : MonoBehaviour, ICollisionEnter
         PlayerController player;
         if (collider.TryGetComponent<PlayerController>(out player))
         {
-            //골드획득
-            if (isGold)
+            
+            if (player.PlayerType == gEMTYPE) // 보석획득
             {
-                Debug.Log("GetGold");
-                gold++;
-                this.gameObject.SetActive(false);
-            }
-            else if (player.PlayerType == gEMTYPE) // 보석획득
-            {
-                Debug.Log("Gem");
-                gem++;
+                //Debug.Log("Gem");
                 this.gameObject.SetActive(false);
                 
             }
