@@ -6,7 +6,7 @@ using UnityEngine;
 public class Treasure : MonoBehaviour, ICollisionEnter
 {
 
-    [SerializeField] private PlayerType gEMTYPE;
+    [SerializeField] private PlayerType gemType;
     [SerializeField] private bool isGold = false;
 
     public void EnterEvent(GameObject collider)
@@ -16,9 +16,9 @@ public class Treasure : MonoBehaviour, ICollisionEnter
         if (collider.TryGetComponent<PlayerController>(out player))
         {
             
-            if (player.PlayerType == gEMTYPE) // 보석획득
+            if (player.PlayerType == gemType) // 보석획득
             {
-                //Debug.Log("Gem");
+                StageManager.Instance.AddGemCountByType(gemType);
                 this.gameObject.SetActive(false);
                 
             }

@@ -29,7 +29,6 @@ public class PauseUI : BaseUI
 
     public override void SetUIActive(bool isActive)
     {
-        UIManager.Instance.SetActivePauseButton(!isActive);
         base.SetUIActive(isActive);
 
         this.gameObject.SetActive(isActive);
