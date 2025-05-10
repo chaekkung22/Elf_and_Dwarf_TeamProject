@@ -17,7 +17,7 @@ public class ElementalObstacle : MonoBehaviour , ICollisionEnter
                 //플레이어데스
                 //player.OnDeath();
                 player.gameObject.SetActive(false);
-                Debug.Log("플레이어데스");
+                //Debug.Log("플레이어데스");
             }
         }
 
