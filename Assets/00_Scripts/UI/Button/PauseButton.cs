@@ -14,6 +14,6 @@ public class PauseButton : MonoBehaviour
 
     private void OnClickPauseButton()
     {
-        UIManager.Instance.OpenUI(UIState.Pause);
+        StageManager.Instance.PauseGame();
     }
 }

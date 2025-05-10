@@ -9,7 +9,8 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
     [SerializeField] private Sprite openSprite;
     [SerializeField] private Sprite closedSprite;
     private SpriteRenderer spriteRenderer;
-    public bool IsExitSucess {  get; private set; }
+    [SerializeField] private PlayerType doorType;
+    public bool IsExitSucess { get; private set; }
 
     public void Start()
     {
@@ -18,31 +19,54 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
 
     public void StayEvent(GameObject collider)
     {
+        PlayerType playerType;
+
+        if (!CheckPlayerValid(collider, out playerType))
+        {
+            return;
+        }
+
         spendTime -= Time.deltaTime;
 
         if (spendTime <= 0f)
         {
             spendTime = 0f;
 
-            if (IsCorrectType())
+            //IsExitSucess = true;  //UI에서 bool값을 받아 탈출시 나오는 화면 보여줘야할듯..?
+            if (StageManager.Instance.SetPlayerDoorState(playerType, true))
             {
                 spriteRenderer.sprite = openSprite;
-                IsExitSucess = true;  //UI에서 bool값을 받아 탈출시 나오는 화면 보여줘야할듯..?
             }
         }
     }
 
-    bool IsCorrectType()
-    {
-        //문의 타입과 플레이어의 타입이 맞는지 확인하는 과정 작성
-        Debug.Log("Exit");
-        return true;
-    }
-
     public void ExitEvent(GameObject collider)
     {
-        Debug.Log("초기화");
+        PlayerType playerType;
+
+        if (!CheckPlayerValid(collider, out playerType))
+        {
+            return;
+        }
+
+        StageManager.Instance.SetPlayerDoorState(playerType, false);
+
         spriteRenderer.sprite = closedSprite;
         spendTime = 1;
+    }
+
+    private bool CheckPlayerValid(GameObject collider, out PlayerType playerType)
+    {
+        PlayerController player;
+
+        playerType = PlayerType.Fire;
+        if (collider.TryGetComponent<PlayerController>(out player))
+        {
+            playerType = player.PlayerType;
+            if (playerType != doorType) return false;
+            return true;
+        }
+
+        return false;
     }
 }
