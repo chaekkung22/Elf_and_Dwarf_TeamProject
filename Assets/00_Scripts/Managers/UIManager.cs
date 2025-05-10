@@ -7,7 +7,7 @@ public class UIManager : Singleton<UIManager>
     private Stack<UIState> uiStack;
     private Dictionary<UIState, BaseUI> uiDictionary;
 
-    [HideInInspector] public GameObject PauseButton { private get; set; }
+    public Stack<UIState> UIStack { get { return uiStack; } }
 
     protected override void Initialize()
     {
@@ -33,13 +33,5 @@ public class UIManager : Singleton<UIManager>
     {
         uiDictionary[uiStack.Peek()].SetUIActive(false);
         uiStack.Pop();
-    }
-
-    public void SetActivePauseButton(bool isPause)
-    {
-        if (PauseButton != null)
-        {
-            PauseButton.SetActive(isPause);
-        }
     }
 }
