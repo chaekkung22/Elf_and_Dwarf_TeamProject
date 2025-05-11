@@ -12,7 +12,7 @@ public class CoinAnimationHandler : MonoBehaviour
 
     private void Awake()
     {
-        // 애니메이터 컴포넌트를 자식에서 가져옴
+        // 애니메이터 컴포넌트를 가져옴
         animator = GetComponent<Animator>();
         coin = GetComponentInParent<Coin>();
     }

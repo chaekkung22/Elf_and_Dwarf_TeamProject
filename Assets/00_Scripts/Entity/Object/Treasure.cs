@@ -7,7 +7,6 @@ public class Treasure : MonoBehaviour, ICollisionEnter
 {
 
     [SerializeField] private PlayerType gemType;
-    [SerializeField] private bool isGold = false;
 
     public void EnterEvent(GameObject collider)
     {
