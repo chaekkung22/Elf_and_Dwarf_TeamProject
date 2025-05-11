@@ -62,7 +62,6 @@ public class ClearUI : BaseUI
 
     private void OnClickRetryButton()
     {
-        // TODO: 스테이지씬 다시 호출
         SceneManager.LoadScene("StageScene");
     }
 

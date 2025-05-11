@@ -7,8 +7,6 @@ public class UIManager : Singleton<UIManager>
     private Stack<UIState> uiStack;
     private Dictionary<UIState, BaseUI> uiDictionary;
 
-    public Stack<UIState> UIStack { get { return uiStack; } }
-
     protected override void Initialize()
     {
         uiStack = new Stack<UIState>();
