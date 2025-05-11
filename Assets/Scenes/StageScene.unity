@@ -9710,7 +9710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5e905f875101542afe7b21ac68070b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oBSTACLETYPE: 1
+  obstacleType: 0
+  ignoreElementalType: 0
 --- !u!61 &913863270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11294,7 +11295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5e905f875101542afe7b21ac68070b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oBSTACLETYPE: 0
+  obstacleType: 0
+  ignoreElementalType: 0
 --- !u!4 &4235616986854393940
 Transform:
   m_ObjectHideFlags: 0

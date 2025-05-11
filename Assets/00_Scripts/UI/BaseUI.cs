@@ -5,11 +5,13 @@ using UnityEngine;
 public abstract class BaseUI : MonoBehaviour
 {
     protected abstract UIState UIState { get; }
+    [SerializeField] protected bool isStartUI = false;
+    public bool IsStartUI { get { return isStartUI; } }
 
     private void Start()
     {
         Initialize();
-        SetUIActive(false);
+        SetUIActive(isStartUI);
     }
 
     protected virtual void Initialize()

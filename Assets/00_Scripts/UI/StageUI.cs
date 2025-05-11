@@ -23,11 +23,6 @@ public class StageUI :BaseUI
         StageManager.Instance.AddGetGemEvent(UpdateGemCountText);
     }
 
-    public override void SetUIActive(bool isActive)
-    {
-        this.gameObject.SetActive(true);
-    }
-
     public void UpdateTimeText(float time)
     {
         TimeSpan _time = TimeSpan.FromSeconds(time);
