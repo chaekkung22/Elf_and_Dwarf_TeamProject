@@ -10,24 +10,24 @@ public class SoundManager : Singleton<SoundManager>
 
 
     //GameManager
-    [SerializeField] private DataBaseManager dataBaseManager;
+    [SerializeField] private SoundDataBaseManager soundDataBaseManager;
 
     private void Start()
     {
-        dataBaseManager.Init();
+        soundDataBaseManager.Init();
         PlayBgm(BgmType.Main);
     }
 
     public void PlayBgm(BgmType bgmType)
     {
-        DataBaseManager.BgmData bgmData = dataBaseManager.GetBgmData(bgmType);
+        SoundDataBaseManager.BgmData bgmData = soundDataBaseManager.GetBgmData(bgmType);
         bgmAudioSource.clip = bgmData.clip;
             bgmAudioSource.Play();
     }
 
     public void PlaySfx(SfxType sfxType)
     {
-        DataBaseManager.SfxData sfxData = dataBaseManager.GetSfxData(sfxType);
+        SoundDataBaseManager.SfxData sfxData = soundDataBaseManager.GetSfxData(sfxType);
             sfxAudioSource.PlayOneShot(sfxData.clip);
     }
 

@@ -1,14 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build;
 using UnityEngine;
-using static SoundManager;
-
 [CreateAssetMenu]
-public class DataBaseManager : ScriptableObject
+public class SoundDataBaseManager : ScriptableObject
 {
-
-
     [SerializeField] private SfxData[] sfxDataArr = null;
     [SerializeField] private BgmData[] bgmDataArr = null;
     private Dictionary<BgmType, BgmData> bgmDataDic;
@@ -71,4 +66,3 @@ public enum SfxType
     jump2 = 20,
     getCoin = 30,
 }
-

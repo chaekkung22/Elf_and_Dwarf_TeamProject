@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aaa33bb12134c945a2fecee97d9b921, type: 3}
-  m_Name: DataBaseManager
+  m_Script: {fileID: 11500000, guid: 49c4e2dcd4dc32e4ea857fa81a8434b1, type: 3}
+  m_Name: SoundDataBaseManager
   m_EditorClassIdentifier: 
   sfxDataArr:
   - sfxType: 30
-    clip: {fileID: 8300000, guid: 6c823dddc339cc741ab5fdb1378821b3, type: 3}
+    clip: {fileID: 8300000, guid: 2cbf66aa0201b4c4d9f35d29a910a540, type: 3}
+  - sfxType: 0
+    clip: {fileID: 0}
   bgmDataArr:
   - bgmType: 10
-    clip: {fileID: 8300000, guid: d09fee5472aaaa7479cb6857791797b2, type: 3}
+    clip: {fileID: 8300000, guid: 4bb64a2f10c66ec41beb64406a06920f, type: 3}
+  - bgmType: 0
+    clip: {fileID: 0}
