@@ -57,12 +57,13 @@ public enum BgmType
 {
     None = 0,
     Main = 10,
+    Play = 20,
 }
 
 public enum SfxType
 {
     None = 0,
-    jump1 = 10,
-    jump2 = 20,
-    getCoin = 30,
+    Jump1 = 10,
+    Jump2 = 20,
+    GetCoin = 30,
 }

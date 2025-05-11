@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour, ICollisionEnter
             coinCollider.enabled = false;
             coinAnimationHandler.Pop();
             //효과음
-            SoundManager.Instance.PlaySfx(SfxType.getCoin);
+            SoundManager.Instance.PlaySfx(SfxType.GetCoin);
         }
     }
 
