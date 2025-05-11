@@ -11,7 +11,26 @@ public class TutorialUI : MonoBehaviour, ICollisionStay, ICollisionExit
         { PlayerType.Water, false }
     };
 
-    public GameObject tutorialUI;
+    private TutorialUIType tutorialUIType;
+    private TutorialUIController uiController;
+
+    [SerializeField] private GameObject tutorialControllerObject;
+    [SerializeField] private GameObject tutorialUI;
+
+    private void Start()
+    {
+        TutorialUITypeSetter setter = tutorialUI.GetComponent<TutorialUITypeSetter>();
+
+        if (setter != null )
+        {
+            tutorialUIType = setter.TutorialUIType;
+        }
+
+        if (tutorialControllerObject != null)
+        {
+            uiController = tutorialControllerObject.GetComponent<TutorialUIController>();
+        }
+    }
 
     public void StayEvent(GameObject collider)
     {
@@ -29,7 +48,10 @@ public class TutorialUI : MonoBehaviour, ICollisionStay, ICollisionExit
         bool waterIn = playerIn[PlayerType.Water];
 
         if (fireIn || waterIn)
-            tutorialUI.SetActive(true);
+        {
+            uiController.FadeIn(tutorialUIType);
+        }
+            
     }
 
     public void ExitEvent(GameObject collider)
@@ -48,7 +70,10 @@ public class TutorialUI : MonoBehaviour, ICollisionStay, ICollisionExit
         bool waterIn = playerIn[PlayerType.Water];
 
         if (!fireIn && !waterIn)
-            tutorialUI.SetActive(false);
+        {
+            uiController.FadeOut(tutorialUIType);
+        }
+            
     }
 
 }
