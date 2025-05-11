@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aaa33bb12134c945a2fecee97d9b921, type: 3}
+  m_Name: DataBaseManager
+  m_EditorClassIdentifier: 
+  sfxDataArr:
+  - sfxType: 30
+    clip: {fileID: 8300000, guid: 6c823dddc339cc741ab5fdb1378821b3, type: 3}
+  bgmDataArr:
+  - bgmType: 10
+    clip: {fileID: 8300000, guid: d09fee5472aaaa7479cb6857791797b2, type: 3}
