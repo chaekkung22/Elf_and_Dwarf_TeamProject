@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemSlot : MonoBehaviour
+public class ShopItemSlot : MonoBehaviour
 {
     [SerializeField] private Image itemImage;
     [SerializeField] private TextMeshProUGUI itemNameText;
