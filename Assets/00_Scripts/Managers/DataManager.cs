@@ -38,6 +38,8 @@ public class DataManager : Singleton<DataManager>
         itemDatabaseSO.Init();
         allItems = itemDatabaseSO.GetItemDatabase();
         allItemsDictionary = itemDatabaseSO.GetItemDatabaseDictionary();
+        ownedItems = new Dictionary<string, ItemSO>();
+        LoadDatas();
     }
 
     public void LoadDatas()
