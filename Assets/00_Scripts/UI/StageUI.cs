@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class StageUI :BaseUI
@@ -50,5 +51,11 @@ public class StageUI :BaseUI
         {
             score_waterTxt.text = count.ToString();
         }
+    }
+
+    public void OnPause(InputValue value)
+    {
+        if(value.isPressed)
+            OnClickPauseButton();
     }
 }
