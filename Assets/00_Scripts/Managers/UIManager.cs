@@ -29,9 +29,22 @@ public class UIManager : Singleton<UIManager>
         uiDictionary[uiState].SetUIActive(true);
     }
 
+    /// <summary>
+    /// 현재 UI 비활성화
+    /// </summary>
     public void CloseUI()
     {
         uiDictionary[uiStack.Peek()].SetUIActive(false);
         uiStack.Pop();
+    }
+
+    /// <summary>
+    /// 현재 UI 비활성화 후 다음 UI 활성화
+    /// </summary>
+    /// <param name="uiState">다음 UI</param>
+    public void ChangeUI(UIState uiState)
+    {
+        CloseUI();
+        OpenUI(uiState);
     }
 }
