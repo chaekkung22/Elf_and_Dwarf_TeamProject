@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class StageUI :BaseUI
+public class StageUI : BaseUI
 {
     protected override UIState UIState { get; } = UIState.Stage;
 
@@ -43,7 +43,7 @@ public class StageUI :BaseUI
 
     private void UpdateGemCountText(PlayerType playerType, int count)
     {
-        if(playerType == PlayerType.Fire)
+        if (playerType == PlayerType.Fire)
         {
             score_fireTxt.text = count.ToString();
         }
