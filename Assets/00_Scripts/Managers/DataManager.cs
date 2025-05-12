@@ -179,6 +179,17 @@ public class DataManager : Singleton<DataManager>
         return ownedItems;
     }
 
+    public List<ItemSO> GetOwnedItemList()
+    {
+        List<ItemSO> ownedItemList = new List<ItemSO>();
+        foreach (var pair in ownedItems)
+        {
+            ownedItemList.Add(pair.Value);
+        }
+
+        return ownedItemList;
+    }
+
     public StageInfo GetStageInfo()
     {
         return stageInfo;
