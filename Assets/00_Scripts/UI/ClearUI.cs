@@ -27,48 +27,34 @@ public class ClearUI : BaseUI
         base.Initialize();
 
         retryButton.onClick.RemoveAllListeners();
-        retryButton.onClick.AddListener(OnClickRetryButton);
+        retryButton.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
 
         mainButton.onClick.RemoveAllListeners();
-        mainButton.onClick.AddListener(OnClickMainButton);
+        mainButton.onClick.AddListener(() => SceneManager.LoadScene("MainScene"));
     }
 
     public override void SetUIActive(bool isActive)
     {
         base.SetUIActive(isActive);
 
-        StageManager stageManager = StageManager.Instance;
-
-        clearTitle.text = stageManager.IsClear ? "게임 클리어" : "게임 실패";
+        clearTitle.text = StageManager.Instance.IsClear ? "게임 클리어" : "게임 실패";
 
         for (int i = 0; i < 3; i++)
         {
             starImages[i].sprite = emptyStarImage;
         }
 
-        int starCount = stageManager.StarCount;
+        int starCount = StageManager.Instance.StarCount;
 
         for (int i = 2; i > 2 - starCount; i--)
         {
             starImages[i].sprite = starImage;
         }
 
-        TimeSpan time = TimeSpan.FromSeconds(stageManager.PlayTime);
+        TimeSpan time = TimeSpan.FromSeconds(StageManager.Instance.PlayTime);
         clearTime.text = $"시간 : {time.Minutes:00}:{time.Seconds:00}";
-        gold.text = $"획득 골드: {stageManager.EarnGold}";
+        gold.text = $"획득 골드: {StageManager.Instance.EarnGold}";
 
         this.gameObject.SetActive(isActive);
     }
-
-    private void OnClickRetryButton()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    private void OnClickMainButton()
-    {
-        // TODO: 메인씬 호출
-        // SceneManager.LoadScene("MainScene")
-    }
-
 }

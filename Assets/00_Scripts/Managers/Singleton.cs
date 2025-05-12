@@ -32,11 +32,13 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected void Awake()
     {
-        if (instance == null)
+        if(instance == null)
         {
             instance = this as T;
             Initialize();
         }
+        else
+            Destroy(gameObject);
     }
 
     protected abstract void Initialize();

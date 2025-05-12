@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class StageUI : BaseUI
@@ -21,11 +22,6 @@ public class StageUI : BaseUI
         StageManager.Instance.AddTimeChangeEvent(UpdateTimeText);
         StageManager.Instance.AddOnPauseEvent(SetPauseButtonActive);
         StageManager.Instance.AddGetGemEvent(UpdateGemCountText);
-    }
-
-    public override void SetUIActive(bool isActive)
-    {
-        this.gameObject.SetActive(true);
     }
 
     public void UpdateTimeText(float time)
@@ -55,5 +51,11 @@ public class StageUI : BaseUI
         {
             score_waterTxt.text = count.ToString();
         }
+    }
+
+    public void OnPause(InputValue value)
+    {
+        if(value.isPressed)
+            OnClickPauseButton();
     }
 }
