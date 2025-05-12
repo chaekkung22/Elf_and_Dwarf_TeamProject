@@ -17,22 +17,50 @@ public class SoundManager : Singleton<SoundManager>
         soundDataBaseManager.Init();
         PlayBgm(BgmType.Main);
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            VolumeUp();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+            VolumeDown();
+    }
     public void PlayBgm(BgmType bgmType)
     {
-        SoundDataBaseManager.BgmData bgmData = soundDataBaseManager.GetBgmData(bgmType);
-        bgmAudioSource.clip = bgmData.clip;
-            bgmAudioSource.Play();
+        bgmAudioSource.clip = soundDataBaseManager.GetBgmData(bgmType).clip;
+        bgmAudioSource.Play();
     }
 
     public void PlaySfx(SfxType sfxType)
     {
-        SoundDataBaseManager.SfxData sfxData = soundDataBaseManager.GetSfxData(sfxType);
-            sfxAudioSource.PlayOneShot(sfxData.clip);
+        sfxAudioSource.PlayOneShot(soundDataBaseManager.GetSfxData(sfxType).clip);
+    }
+
+    public void MuteAudio()
+    {
+        bgmAudioSource.mute = true;
+        sfxAudioSource.mute = true;
+    }
+    public void PlayAudio()
+    {
+        bgmAudioSource.mute = false;
+        sfxAudioSource.mute = false;
+    }
+
+    public void VolumeUp()
+    {
+        bgmAudioSource.volume += 0.2f;
+        sfxAudioSource.volume += 0.2f;
+    }
+    public void VolumeDown()
+    {
+        bgmAudioSource.volume -= 0.2f;
+        sfxAudioSource.volume -= 0.2f;
     }
 
     protected override void Initialize()
     {
-        
+
     }
 }
