@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MainUI : BaseUI
 {
     [SerializeField] private Button selectStageBtn;
+    [SerializeField] private Button storeBtn;
     [SerializeField] private Button exitBtn;
 
     protected override UIState UIState { get; } = UIState.Main;
@@ -14,6 +15,7 @@ public class MainUI : BaseUI
     {
         base.Start();
         selectStageBtn.onClick.AddListener(() => UIManager.Instance.OpenUI(UIState.SelectStage));
+        storeBtn.onClick.AddListener(() => UIManager.Instance.OpenUI(UIState.Shop));
         exitBtn.onClick.AddListener(GameManager.Instance.ExitGame);
     }
 }

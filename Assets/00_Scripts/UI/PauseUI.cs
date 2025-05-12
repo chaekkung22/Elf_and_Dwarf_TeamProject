@@ -10,21 +10,24 @@ public class PauseUI : BaseUI
     [SerializeField] private Button mainButton;
     [SerializeField] private Button optionButton;
     [SerializeField] private Button resumeButton;
+    [SerializeField] private Button pausePanel;
 
     protected override void Initialize()
     {
         base.Initialize();
         retryButton.onClick.RemoveAllListeners();
-        retryButton.onClick.AddListener(OnClickRetryButton);
+        retryButton.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
 
         mainButton.onClick.RemoveAllListeners();
-        mainButton.onClick.AddListener(OnClickMainButton);
+        mainButton.onClick.AddListener(() => SceneManager.LoadScene("MainScene"));
 
         optionButton.onClick.RemoveAllListeners();
         optionButton.onClick.AddListener(OnClickOptionButton);
 
         resumeButton.onClick.RemoveAllListeners();
-        resumeButton.onClick.AddListener(OnClickResumeButton);
+        resumeButton.onClick.AddListener(StageManager.Instance.ResumeGame);
+
+        pausePanel.onClick.AddListener(StageManager.Instance.ResumeGame);
     }
 
     public override void SetUIActive(bool isActive)
@@ -32,11 +35,6 @@ public class PauseUI : BaseUI
         base.SetUIActive(isActive);
 
         this.gameObject.SetActive(isActive);
-    }
-
-    private void OnClickRetryButton()
-    {
-        SceneManager.LoadScene("StageScene");
     }
 
     private void OnClickMainButton()
@@ -51,10 +49,5 @@ public class PauseUI : BaseUI
         // TODO: Option UI 만들면 호출
         // UIManager.Instance.OpenUI(UIState.Option);
         Debug.Log("옵션UI Open");
-    }
-
-    private void OnClickResumeButton()
-    {
-        StageManager.Instance.ResumeGame();
     }
 }

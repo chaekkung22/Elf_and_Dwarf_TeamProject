@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0779e1b8b9603a6479be54b1be7e12f3, type: 2}
+  m_sharedMaterial: {fileID: -8926562710979340092, guid: 0779e1b8b9603a6479be54b1be7e12f3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -278,6 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5408124048468011610}
   - component: {fileID: 8724315802615332657}
+  - component: {fileID: 130545628684690467}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
@@ -319,10 +320,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f28754d0ad3bae4ca5eefe39c50700f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStartUI: 1
   timeTxt: {fileID: 1898960059911760662}
   score_fireTxt: {fileID: 176336288261746421}
   score_waterTxt: {fileID: 5662828464782294997}
   pauseButton: {fileID: 7084165810488378196}
+--- !u!114 &130545628684690467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143246590749909164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f47ae4e7021c9d54fb85f7155e1d8320, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 08791979-2206-49ea-8a76-2163ecb250c4
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &3912827453080985659
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +614,7 @@ GameObject:
   - component: {fileID: 3395811681208606381}
   - component: {fileID: 2214745107072581533}
   - component: {fileID: 7084165810488378196}
+  - component: {fileID: 6867656412992736177}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -689,19 +722,22 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2214745107072581533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3143246590749909164}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &6867656412992736177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259054520064023895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7583445507124207169
 GameObject:
   m_ObjectHideFlags: 0
