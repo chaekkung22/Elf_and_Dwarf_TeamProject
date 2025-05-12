@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class SelectStageUI : BaseUI
 {
+    private const string curStageLevelKey = "CurStage";
     private const string bestTimeDefaultTxt = "클리어 시간 - ";
     private const string gemCountDefaultTxt = "획득한 보석 - ";
 
@@ -36,7 +37,7 @@ public class SelectStageUI : BaseUI
     {
         base.Start();
         selectStagePanel.onClick.AddListener(UIManager.Instance.CloseUI);
-        stageSelectBtn.onClick.AddListener(() => GameManager.Instance.ChangeScene("StageScene"));
+        stageSelectBtn.onClick.AddListener(() => OnClickStageSelectBtn());
         nextBtn.onClick.AddListener(() => OnClickStageInfoChangeBtn(1));
         prevBtn.onClick.AddListener(() => OnClickStageInfoChangeBtn(-1));
     }
@@ -50,6 +51,12 @@ public class SelectStageUI : BaseUI
         {
             SetStageInfoUIValue(curLevel);
         }
+    }
+
+    private void OnClickStageSelectBtn()
+    {
+        PlayerPrefs.SetInt(curStageLevelKey, curLevel);
+        GameManager.Instance.ChangeScene("StageScene");
     }
 
     /// <summary>
