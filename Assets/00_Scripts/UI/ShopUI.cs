@@ -4,18 +4,19 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ShopUI : BaseUI
 {
     [SerializeField] private Button prevButton;
     [SerializeField] private Button nextButton;
     [SerializeField] private TextMeshProUGUI currentGoldText;
-    [SerializeField] private GameObject[] ItemSlots;
-    private ItemSO item0, item1, item2, selectedItem;
-    private int currentPage = 0;
+    [SerializeField] private ItemSlot[] itemSetting;
+    private ItemSO selectedItem;
+    private int currentPage = 1;
     private int itemsPerPage = 3;
     private int totalPage;
-    Dictionary<string,ItemSO> ownedItems;
+    Dictionary<string, ItemSO> ownedItems;
     List<ItemSO> allItems;
 
 
@@ -27,6 +28,8 @@ public class ShopUI : BaseUI
         base.Initialize();
 
         allItems = DataManager.Instance.GetAllItems();
+        ownedItems = DataManager.Instance.GetOwnedItems();
+        //currentGoldText = D
         totalPage = allItems.Count / 3 + 1;
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
@@ -35,56 +38,61 @@ public class ShopUI : BaseUI
     public override void SetUIActive(bool isActive)
     {
         base.SetUIActive(isActive);
-        UpdateOwnedItems();
+        UpdateOwnedItems(1);
     }
 
-    void UpdateOwnedItems()
+    void UpdateOwnedItems(int currentPage)
     {
-        ownedItems = DataManager.Instance.GetOwnedItems();
-        foreach(ItemSO item in allItems)
+        int start = (currentPage * itemsPerPage) - itemsPerPage;
+        int end = currentPage * itemsPerPage;
+        int idx = 0;
+
+
+        for (int i = start; i < end; i++)
         {
-            //if(ownedItems.ContainsKey(item.id))
-                
+            if (i < allItems.Count)
+            {
 
+                if (ownedItems.ContainsKey(allItems[i].id))
+                    itemSetting[idx].ItemSet(allItems[i], false);
+                else
+                    itemSetting[idx].ItemSet(allItems[i], true);
+
+                itemSetting[idx++].gameObject.SetActive(true);
+            }
+            else
+            {
+                itemSetting[idx++].gameObject.SetActive(false);
+            }
         }
-    }
 
-    void ShowPage(int currentPage)
-    {
-
-    }
-
-    void PurchaseItemButton()
-    {
-        //if (DataManager.Instance.playerGold < item.Price) return;
-        //if (
-        
-        //DataManager.Instance.SpendGold(item.Price);
-        //DataManager.Instance.AddItem(itemID);
-        //
-        
+        if (currentPage == 1)
+            prevButton.gameObject.SetActive(false);
+        else if (currentPage == totalPage)
+            nextButton.gameObject.SetActive(false);
+        else
+        {
+            prevButton.gameObject.SetActive(true);
+            nextButton.gameObject.SetActive(true);
+        }
     }
 
 
     void PrevButton()
     {
         if (!(currentPage == 1))
-        currentPage--;
-
-        if(currentPage == 1)
-            prevButton.gameObject.SetActive(false);
-        else
-            prevButton.gameObject.SetActive(true);
+        {
+            currentPage--;
+            UpdateOwnedItems(currentPage);
+        }
     }
 
     void NextButton()
     {
-        if(!(currentPage == totalPage))
-        currentPage++;
-
-        if(currentPage == totalPage)
-            nextButton.gameObject.SetActive(false);
-        else
-            nextButton.gameObject.SetActive(true);
+        if (!(currentPage == totalPage))
+        {
+            currentPage++;
+            UpdateOwnedItems(currentPage);
+        }
     }
 }
