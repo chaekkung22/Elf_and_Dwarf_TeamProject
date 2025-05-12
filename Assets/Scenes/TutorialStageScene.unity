@@ -14053,7 +14053,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2024242172274549834, guid: 38e4816a3dac2304b87a8e69635d3588, type: 3}
       propertyPath: gemType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3588936137245488926, guid: 38e4816a3dac2304b87a8e69635d3588, type: 3}
       propertyPath: m_LocalPosition.x
