@@ -3,5 +3,7 @@ public enum UIState
     StageClear,
     Pause,
     Stage,
-    Title
+    Title,
+    Main,
+    SelectStage
 }

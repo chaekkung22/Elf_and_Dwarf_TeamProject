@@ -8,7 +8,7 @@ public abstract class BaseUI : MonoBehaviour
     [SerializeField] protected bool isStartUI = false;
     public bool IsStartUI { get { return isStartUI; } }
 
-    private void Start()
+    protected virtual void Start()
     {
         Initialize();
         SetUIActive(isStartUI);
