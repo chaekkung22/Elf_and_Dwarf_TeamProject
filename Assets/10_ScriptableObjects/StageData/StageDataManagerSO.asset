@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6303e44f739f8e24a9949468b5ef2492, type: 3}
-  m_Name: TutorialStageSO
+  m_Script: {fileID: 11500000, guid: b6a8adccaff05dc449c9386fd556a362, type: 3}
+  m_Name: StageDataManagerSO
   m_EditorClassIdentifier: 
-  stageLevel: 0
-  limitedTime: 100
-  totalGemCount: 4
-  mapPrefab: {fileID: 8259422711327122517, guid: 1f2c489874d3ded458f7e372776d039c, type: 3}
+  stageDatabase:
+  - {fileID: 11400000, guid: 3d1180ae4ffa74b4d8bcadfb7f3489c6, type: 2}
