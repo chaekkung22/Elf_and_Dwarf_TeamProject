@@ -12,8 +12,7 @@ public class ShopUI : BaseUI
     [SerializeField] private Button nextButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private TextMeshProUGUI currentGoldText;
-    [SerializeField] private ItemSlot[] itemSetting;
-    private ItemSO selectedItem;
+    [SerializeField] private ShopItemSlot[] itemSetting;
     private int currentPage = 1;
     private int itemsPerPage = 3;
     private int totalPage;
