@@ -4130,8 +4130,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000100016594, y: -0.6004001, z: 0}
-    m_Extent: {x: 2.5993, y: 3.1005, z: 0}
+    m_Center: {x: -0.000100016594, y: -0.60045004, z: 0}
+    m_Extent: {x: 2.5995998, y: 3.10045, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5933,12 +5933,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartUI: 0
-  prevButton: {fileID: 0}
-  nextButton: {fileID: 0}
-  purchaseButton: {fileID: 0}
-  currentGoldText: {fileID: 0}
-  itemNameText: {fileID: 0}
-  itemPriceText: {fileID: 0}
+  prevButton: {fileID: 1939798782}
+  nextButton: {fileID: 933943452}
+  exitButton: {fileID: 1144416569}
+  currentGoldText: {fileID: 439190271}
+  itemSetting: []
 --- !u!1 &1144416566
 GameObject:
   m_ObjectHideFlags: 0
