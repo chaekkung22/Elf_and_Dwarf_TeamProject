@@ -11,7 +11,11 @@ public abstract class BaseUI : MonoBehaviour
     protected virtual void Start()
     {
         Initialize();
-        SetUIActive(isStartUI);
+        
+        if(isStartUI)
+            UIManager.Instance.OpenUI(UIState);
+        else
+            SetUIActive(false);
     }
 
     protected virtual void Initialize()
@@ -21,11 +25,7 @@ public abstract class BaseUI : MonoBehaviour
 
     public virtual void SetUIActive(bool isActive)
     {
-        if (isActive == false)
-        {
-            this.gameObject.SetActive(false);
-            return;
-        }
+        gameObject.SetActive(isActive);
     }
 
 }
