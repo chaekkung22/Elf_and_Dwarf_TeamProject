@@ -36,7 +36,7 @@ public class PauseUI : BaseUI
 
     private void OnClickRetryButton()
     {
-        SceneManager.LoadScene("StageScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnClickMainButton()
