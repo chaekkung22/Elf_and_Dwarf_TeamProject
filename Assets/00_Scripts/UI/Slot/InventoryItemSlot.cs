@@ -11,7 +11,7 @@ public class InventoryItemSlot : MonoBehaviour
     [SerializeField] Button equipButton;
 
 
-    public void ItemSet(ItemSO item)
+    public void ItemSet(ItemSO item, bool isEquiped)
     {
         if (item == null)
         {
@@ -19,6 +19,7 @@ public class InventoryItemSlot : MonoBehaviour
             return;
         }
 
+        //TODO : 장착한 아이템의 장착하기 버튼을 비활성화 및 문구 바꾸기
         
         itemImage.sprite = item.image;
         itemNameText.text = item.itemName;

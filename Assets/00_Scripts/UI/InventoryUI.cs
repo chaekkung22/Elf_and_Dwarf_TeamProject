@@ -10,6 +10,8 @@ public class InventoryUI : BaseUI
     [SerializeField] private Button nextButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private InventoryItemSlot[] itemSetting;
+    [SerializeField] private TextMeshProUGUI currentGoldText;
+
     private int currentPage = 1;
     private int itemsPerPage = 3;
     private int totalPage;
@@ -25,7 +27,6 @@ public class InventoryUI : BaseUI
         base.Initialize();
         equipedItem = DataManager.Instance.GetEquipedItem();
         ownedItems = DataManager.Instance.GetOwnedItemList();
-        totalPage = ownedItems.Count / 3 + 1;
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
         exitButton.onClick.AddListener(UIManager.Instance.CloseUI);
@@ -36,7 +37,7 @@ public class InventoryUI : BaseUI
     {
         base.SetUIActive(isActive);
         currentPage = 1;
-
+        totalPage = Mathf.Max(1, Mathf.CeilToInt((float)ownedItems.Count / itemsPerPage));
         UpdatePageButton();
         UpdateEquipedItems();
     }
@@ -51,7 +52,6 @@ public class InventoryUI : BaseUI
         {
             if (i < ownedItems.Count)
             {
-
                 itemSetting[idx].ItemSet(ownedItems[i]);
                 itemSetting[idx++].gameObject.SetActive(true);
             }
