@@ -19,7 +19,7 @@ public class TutorialUIController : MonoBehaviour
     {
         int index = (int)type;
 
-        if (CheckVisible(index, true)) // 상태가 바뀐 경우에만 실행
+        if (CheckVisible(index, true))
         {
             StartCoroutine(FadeCanvasGroup(tutorialUIGroups[index], 0, 1));
         }
@@ -29,7 +29,7 @@ public class TutorialUIController : MonoBehaviour
     {
         int index = (int)type;
 
-        if (CheckVisible(index, false)) // 상태가 바뀐 경우에만 실행
+        if (CheckVisible(index, false))
         {
             StartCoroutine(FadeCanvasGroup(tutorialUIGroups[index], 1, 0));
         }

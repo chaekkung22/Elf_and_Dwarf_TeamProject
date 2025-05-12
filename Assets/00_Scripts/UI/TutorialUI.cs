@@ -34,46 +34,33 @@ public class TutorialUI : MonoBehaviour, ICollisionStay, ICollisionExit
 
     public void StayEvent(GameObject collider)
     {
-        var player = collider.GetComponent<PlayerController>();
-
-        if (player != null)
-        {
-            if (player.PlayerType == PlayerType.Fire)
-                playerIn[PlayerType.Fire] = true;
-            else if (player.PlayerType == PlayerType.Water)
-                playerIn[PlayerType.Water] = true;
-        }
-
-        bool fireIn = playerIn[PlayerType.Fire];
-        bool waterIn = playerIn[PlayerType.Water];
-
-        if (fireIn || waterIn)
-        {
-            uiController.FadeIn(tutorialUIType);
-        }
-            
+        CheckFadeInOut(collider, true);
     }
 
     public void ExitEvent(GameObject collider)
+    {
+        CheckFadeInOut(collider, false);
+    }
+
+    public void CheckFadeInOut(GameObject collider ,bool check)
     {
         var player = collider.GetComponent<PlayerController>();
 
         if (player != null)
         {
             if (player.PlayerType == PlayerType.Fire)
-                playerIn[PlayerType.Fire] = false;
+                playerIn[PlayerType.Fire] = check;
             else if (player.PlayerType == PlayerType.Water)
-                playerIn[PlayerType.Water] = false;
+                playerIn[PlayerType.Water] = check;
         }
 
         bool fireIn = playerIn[PlayerType.Fire];
         bool waterIn = playerIn[PlayerType.Water];
 
-        if (!fireIn && !waterIn)
-        {
+        if ((fireIn || waterIn))
+            uiController.FadeIn(tutorialUIType);
+        else if (!fireIn && !waterIn)
             uiController.FadeOut(tutorialUIType);
-        }
-            
     }
 
 }
