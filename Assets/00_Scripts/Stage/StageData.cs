@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Stage Data", menuName = "Scriptable Object/Stage Data", order = int.MinValue)]
+[CreateAssetMenu(fileName = "StageDataSO_", menuName = "Scriptable Object/Stage Data")]
 public class StageData : ScriptableObject
 {
     [SerializeField] private int stageLevel;

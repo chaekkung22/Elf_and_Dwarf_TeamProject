@@ -113,7 +113,10 @@ public class DataManager : Singleton<DataManager>
         }
         playerInfo.ownedItemIds = ownedItemIdList;
     }
-
+    public int GetGold()
+    {
+        return playerInfo.gold;
+    }
     public void EarnGold(int _gold)
     {
         if (playerInfo.gold > int.MaxValue - _gold)
@@ -142,12 +145,12 @@ public class DataManager : Singleton<DataManager>
 
     public bool AddItem(ItemSO item)
     {
-        if (ownedItems.ContainsKey(item.name))
+        if (ownedItems.ContainsKey(item.id))
         {
             return false;
         }
 
-        ownedItems.Add(item.name, item);
+        ownedItems.Add(item.id, item);
         OnChangeOwnedItems?.Invoke();
         return true;
     }

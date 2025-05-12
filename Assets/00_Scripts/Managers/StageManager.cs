@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class StageManager : Singleton<StageManager>
 {
+    private const string curStageLevelKey = "CurStage";
+
     public Action<float> OnChangeTime;
     public Action<bool> OnPauseGame;
     public Action<PlayerType, int> OnGetGem;
@@ -28,6 +30,8 @@ public class StageManager : Singleton<StageManager>
     private PlayerController firePlayer;
     private PlayerController waterPlayer;
 
+    [SerializeField] private StageDataManager stageDataManager;
+
     protected override void Initialize()
     {
         Time.timeScale = 1f;
@@ -36,6 +40,10 @@ public class StageManager : Singleton<StageManager>
 
         isClear = false;
         isGameDone = false;
+
+        stageDataManager.CreateMap(PlayerPrefs.GetInt(curStageLevelKey));
+        Debug.Log(stageDataManager.GetLimitedTime(PlayerPrefs.GetInt(curStageLevelKey)));
+        Debug.Log(stageDataManager.GetTotalGemCount(PlayerPrefs.GetInt(curStageLevelKey)));
     }
 
     private void Update()
