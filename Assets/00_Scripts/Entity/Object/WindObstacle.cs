@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class WindObstacle : MonoBehaviour, ICollisionStay
 {
+    private readonly int isSpining = Animator.StringToHash("IsSpining");
+
+    private Animator windAnimator;
+
     [SerializeField] float force = 3f;
+
+    private void Start()
+    {
+        windAnimator = GetComponentInChildren<Animator>();
+    }
 
     public void StayEvent(GameObject collider)
     {
@@ -12,8 +21,20 @@ public class WindObstacle : MonoBehaviour, ICollisionStay
 
         Rigidbody2D rigidbody = collider.GetComponent<Rigidbody2D>();
         
-        rigidbody.AddForce(direction *  force, ForceMode2D.Force); // Ãæµ¹Ã¼ÀÇ ¼Óµµ¿¡ °è¼Ó ¿µÇâÀ» ÁÖ±â ¶§¹®¿¡ ¹«ÇÑ °¡¼ÓÀ» ÇÒ ¼öµµ ÀÖÀ½.
-                                                                   // µû¶ó¼­ ÇÃ·¹ÀÌ¾îÀÇ ¼Óµµ »óÇÑÀ» Á¤ÇØµÖ¾ßÇÔ.
-                                                                   // ¸¸¾à º¯È­°ªÀÌ ³Ê¹« Àû´Ù¸é Time.deltaTimeÀ» °öÇØÁÙ ¿¹Á¤
+        rigidbody.AddForce(direction *  force, ForceMode2D.Force); // ì¶©ëŒì²´ì˜ ì†ë„ì— ê³„ì† ì˜í–¥ì„ ì£¼ê¸° ë•Œë¬¸ì— ë¬´í•œ ê°€ì†ì„ í•  ìˆ˜ë„ ìˆìŒ.
+                                                                   // ë”°ë¼ì„œ í”Œë ˆì´ì–´ì˜ ì†ë„ ìƒí•œì„ ì •í•´ë‘¬ì•¼í•¨.
+                                                                   // ë§Œì•½ ë³€í™”ê°’ì´ ë„ˆë¬´ ì ë‹¤ë©´ Time.deltaTimeì„ ê³±í•´ì¤„ ì˜ˆì •
+    }
+
+    public void OnWind()
+    {
+        windAnimator.SetBool(isSpining, true);
+        this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void OffWind()
+    {
+        windAnimator.SetBool(isSpining, false);
+        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

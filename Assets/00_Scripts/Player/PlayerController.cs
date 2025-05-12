@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public enum PlayerType
 {
     Fire,
-    Water
+    Water,
+    None
 }
 
 public class PlayerController : BaseController
