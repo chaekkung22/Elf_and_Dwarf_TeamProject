@@ -2,5 +2,9 @@ public enum UIState
 {
     StageClear,
     Pause,
-    Stage
+    Stage,
+    Shop,
+    Title,
+    Main,
+    SelectStage
 }

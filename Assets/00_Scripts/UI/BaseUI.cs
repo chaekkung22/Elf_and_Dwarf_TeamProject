@@ -5,11 +5,17 @@ using UnityEngine;
 public abstract class BaseUI : MonoBehaviour
 {
     protected abstract UIState UIState { get; }
+    [SerializeField] protected bool isStartUI = false;
+    public bool IsStartUI { get { return isStartUI; } }
 
-    private void Start()
+    protected virtual void Start()
     {
         Initialize();
-        SetUIActive(false);
+        
+        if(isStartUI)
+            UIManager.Instance.OpenUI(UIState);
+        else
+            SetUIActive(false);
     }
 
     protected virtual void Initialize()
@@ -19,11 +25,7 @@ public abstract class BaseUI : MonoBehaviour
 
     public virtual void SetUIActive(bool isActive)
     {
-        if (isActive == false)
-        {
-            this.gameObject.SetActive(false);
-            return;
-        }
+        gameObject.SetActive(isActive);
     }
 
 }
