@@ -19,7 +19,7 @@ public class DataManager : Singleton<DataManager>
     private bool isDataChanged = false;
 
     [SerializeField] private ItemDatabaseSO itemDatabaseSO;
-    [SerializeField] private List<ItemSO> allItems;
+    private List<ItemSO> allItems;
     private Dictionary<string, ItemSO> allItemsDictionary;
 
     private ItemSO equipedItem;
@@ -169,7 +169,7 @@ public class DataManager : Singleton<DataManager>
 
     public Dictionary<string, ItemSO> GetOwnedItems()
     {
-        return allItemsDictionary;
+        return ownedItems;
     }
 
     public StageInfo GetStageInfo()
