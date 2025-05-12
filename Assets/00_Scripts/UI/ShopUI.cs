@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,15 +9,14 @@ public class ShopUI : BaseUI
 {
     [SerializeField] private Button prevButton;
     [SerializeField] private Button nextButton;
-    [SerializeField] private Button purchaseButton;
     [SerializeField] private TextMeshProUGUI currentGoldText;
     [SerializeField] private GameObject[] ItemSlots;
-    //private ItemSO item0, item1, item2, selectedItem;
+    private ItemSO item0, item1, item2, selectedItem;
     private int currentPage = 0;
     private int itemsPerPage = 3;
     private int totalPage;
-    //Dictionary<string,ItemSO> ownedItems;
-    //List<ItemSO> allItems;
+    Dictionary<string,ItemSO> ownedItems;
+    List<ItemSO> allItems;
 
 
 
@@ -26,22 +26,27 @@ public class ShopUI : BaseUI
     {
         base.Initialize();
 
-        //allItems = DataManager.Instance.GetAllItems();
-        //totalPage = allItems.Count / 3 + 1;
+        allItems = DataManager.Instance.GetAllItems();
+        totalPage = allItems.Count / 3 + 1;
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
-        purchaseButton.onClick.AddListener(PurchaseItemButton);
     }
 
     public override void SetUIActive(bool isActive)
     {
         base.SetUIActive(isActive);
+        UpdateOwnedItems();
     }
 
     void UpdateOwnedItems()
     {
-        //ownedItems = DataManager.Instance.GetOwnedItems();
-        //foreach(ItemSO item in all
+        ownedItems = DataManager.Instance.GetOwnedItems();
+        foreach(ItemSO item in allItems)
+        {
+            //if(ownedItems.ContainsKey(item.id))
+                
+
+        }
     }
 
     void ShowPage(int currentPage)
