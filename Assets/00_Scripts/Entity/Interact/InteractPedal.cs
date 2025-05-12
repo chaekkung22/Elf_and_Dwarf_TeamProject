@@ -11,7 +11,7 @@ public class InteractPedal:InteractObj, ICollisionEnter, ICollisionExit
     protected Vector3 pivotPos; // 발판 초기 위치
     protected Vector3 targetPos;
 
-    private void Start()
+    protected virtual void Start()
     {
         spriteTr = GetComponentInChildren<SpriteRenderer>().transform;
         pivotPos = spriteTr.localPosition;
@@ -23,12 +23,12 @@ public class InteractPedal:InteractObj, ICollisionEnter, ICollisionExit
         MovePedal();
     }
 
-    public void EnterEvent(GameObject collider)
+    public virtual void EnterEvent(GameObject collider)
     {
         ChangeOnMode(true);
     }
 
-    public void ExitEvent(GameObject collider)
+    public virtual void ExitEvent(GameObject collider)
     {
         ChangeOnMode(false);
     }

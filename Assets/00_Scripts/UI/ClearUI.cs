@@ -46,7 +46,7 @@ public class ClearUI : BaseUI
 
         int starCount = StageManager.Instance.StarCount;
 
-        for (int i = 2; i > 2 - starCount; i--)
+        for (int i = 0; i < starCount; i++)
         {
             starImages[i].sprite = starImage;
         }

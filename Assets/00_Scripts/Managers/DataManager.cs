@@ -67,6 +67,8 @@ public class DataManager : Singleton<DataManager>
         {
             // 저장된 값 없으면
             playerInfo = new PlayerInfo();
+            equipedItem = allItemsDictionary[playerInfo.equipedItemId];
+            ownedItems.Add(equipedItem.id, equipedItem);
         }
     }
 
@@ -175,6 +177,17 @@ public class DataManager : Singleton<DataManager>
     public Dictionary<string, ItemSO> GetOwnedItems()
     {
         return ownedItems;
+    }
+
+    public List<ItemSO> GetOwnedItemList()
+    {
+        List<ItemSO> ownedItemList = new List<ItemSO>();
+        foreach (var pair in ownedItems)
+        {
+            ownedItemList.Add(pair.Value);
+        }
+
+        return ownedItemList;
     }
 
     public StageInfo GetStageInfo()
