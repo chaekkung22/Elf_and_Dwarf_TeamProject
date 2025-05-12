@@ -13,7 +13,7 @@ public class InventoryUI : BaseUI
     private int currentPage = 1;
     private int itemsPerPage = 3;
     private int totalPage;
-    Dictionary<string, ItemSO> ownedItems;
+    List<ItemSO> ownedItems;
     private ItemSO equipedItem;
 
 
@@ -24,7 +24,7 @@ public class InventoryUI : BaseUI
     {
         base.Initialize();
         equipedItem = DataManager.Instance.GetEquipedItem();
-        ownedItems = DataManager.Instance.GetOwnedItems();
+        ownedItems = DataManager.Instance.GetOwnedItemList();
         totalPage = ownedItems.Count / 3 + 1;
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
