@@ -2436,6 +2436,15 @@ MonoBehaviour:
   isStartUI: 0
   selectStagePanel: {fileID: 786753010}
   stageSelectBtn: {fileID: 2138893057}
+  nextBtn: {fileID: 87200911}
+  prevBtn: {fileID: 2104452778}
+  stageLevelTxt: {fileID: 1289848334}
+  starImgs:
+  - {fileID: 1205213553}
+  - {fileID: 718835935}
+  - {fileID: 1017641739}
+  bestTimeTxt: {fileID: 604864738}
+  gemCountTxt: {fileID: 1028364550}
 --- !u!1 &237138304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4121,8 +4130,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0000500679, y: -0.6, z: 0}
-    m_Extent: {x: 2.59905, y: 3.1005, z: 0}
+    m_Center: {x: -0.000100016594, y: -0.6004001, z: 0}
+    m_Extent: {x: 2.5993, y: 3.1005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5889,7 +5898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1113175994
 RectTransform:
   m_ObjectHideFlags: 0
