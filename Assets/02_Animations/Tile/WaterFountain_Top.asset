@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: WaterFountain_Top
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 21300000, guid: a48cf369126e2c24b8863c7b4654af43, type: 3}
-  - {fileID: 21300000, guid: 65addb1c2dbe37c458179e4a2cc0852a, type: 3}
-  - {fileID: 21300000, guid: 46617713a873c1c4aba9b33d97e756ce, type: 3}
+  - {fileID: 21300000, guid: 05d5decc996b2b64f98e0cfa25edcfad, type: 3}
+  - {fileID: 21300000, guid: 5088e88c494006545b2e016438499209, type: 3}
+  - {fileID: 21300000, guid: ef060c052ebc64749805f65ca1d957be, type: 3}
   m_MinSpeed: 4
   m_MaxSpeed: 4
   m_AnimationStartTime: 0
