@@ -41,6 +41,7 @@ public class ShopUI : BaseUI
     {
         base.SetUIActive(isActive);
         currentPage = 1;
+        nextButton.gameObject.SetActive(true);
         UpdateOwnedItems();
     }
 
