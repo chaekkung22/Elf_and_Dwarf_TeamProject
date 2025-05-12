@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum TutorialUIType
+{
+    Move,
+    ElementalObstacle,
+    Treasure,
+    Button,
+    JumpPad,
+    Finish
+}
+
 public class TutorialUI : MonoBehaviour, ICollisionStay, ICollisionExit
 {
     private Dictionary<PlayerType, bool> playerIn = new Dictionary<PlayerType, bool>
@@ -11,21 +21,14 @@ public class TutorialUI : MonoBehaviour, ICollisionStay, ICollisionExit
         { PlayerType.Water, false }
     };
 
-    private TutorialUIType tutorialUIType;
+   
     private TutorialUIController uiController;
-
+    [SerializeField] private TutorialUIType tutorialUIType;
     [SerializeField] private GameObject tutorialControllerObject;
     [SerializeField] private GameObject tutorialUI;
 
     private void Start()
     {
-        TutorialUITypeSetter setter = tutorialUI.GetComponent<TutorialUITypeSetter>();
-
-        if (setter != null )
-        {
-            tutorialUIType = setter.TutorialUIType;
-        }
-
         if (tutorialControllerObject != null)
         {
             uiController = tutorialControllerObject.GetComponent<TutorialUIController>();
