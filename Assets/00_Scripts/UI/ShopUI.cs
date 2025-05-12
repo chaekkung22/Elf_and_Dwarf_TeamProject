@@ -10,11 +10,14 @@ public class ShopUI : BaseUI
     [SerializeField] private Button nextButton;
     [SerializeField] private Button purchaseButton;
     [SerializeField] private TextMeshProUGUI currentGoldText;
-    [SerializeField] private TextMeshProUGUI itemNameText;
-    [SerializeField] private TextMeshProUGUI itemPriceText;
-    //private ItemSO item;
-    private int currentPage = 1;
+    [SerializeField] private GameObject[] ItemSlots;
+    //private ItemSO item0, item1, item2, selectedItem;
+    private int currentPage = 0;
+    private int itemsPerPage = 3;
     private int totalPage;
+    //Dictionary<string,ItemSO> ownedItems;
+    //List<ItemSO> allItems;
+
 
 
     protected override UIState UIState { get; } = UIState.Shop;
@@ -22,9 +25,12 @@ public class ShopUI : BaseUI
     protected override void Initialize()
     {
         base.Initialize();
-        //List<ItemSO> = DataManager.Instance.GetOwnedItems();
-        //ItemSO[] allItems = DataManager.Instance.GetAllItems();
-        //totalPage = allItems.Length / 3 + 1;
+
+        //allItems = DataManager.Instance.GetAllItems();
+        //totalPage = allItems.Count / 3 + 1;
+        prevButton.onClick.AddListener(PrevButton);
+        nextButton.onClick.AddListener(NextButton);
+        purchaseButton.onClick.AddListener(PurchaseItemButton);
     }
 
     public override void SetUIActive(bool isActive)
@@ -32,30 +38,48 @@ public class ShopUI : BaseUI
         base.SetUIActive(isActive);
     }
 
-    void ShowCurrentPage()
+    void UpdateOwnedItems()
     {
-        //currentGoldText.text = DataManager.Instance.playerGold.ToString();
-        //itemNameText.text = item.itemID;
-        //itemPriceText.text = $"{item.Price.ToString()} 골드";
+        //ownedItems = DataManager.Instance.GetOwnedItems();
+        //foreach(ItemSO item in all
     }
 
-    void PurchaseItem()
+    void ShowPage(int currentPage)
     {
-        //if (DataManager.Instance.playerGold >= item.Price)
-        {
+
+    }
+
+    void PurchaseItemButton()
+    {
+        //if (DataManager.Instance.playerGold < item.Price) return;
+        //if (
+        
         //DataManager.Instance.SpendGold(item.Price);
         //DataManager.Instance.AddItem(itemID);
-        }
+        //
+        
     }
 
 
     void PrevButton()
     {
+        if (!(currentPage == 1))
+        currentPage--;
 
+        if(currentPage == 1)
+            prevButton.gameObject.SetActive(false);
+        else
+            prevButton.gameObject.SetActive(true);
     }
 
     void NextButton()
     {
+        if(!(currentPage == totalPage))
+        currentPage++;
 
+        if(currentPage == totalPage)
+            nextButton.gameObject.SetActive(false);
+        else
+            nextButton.gameObject.SetActive(true);
     }
 }
