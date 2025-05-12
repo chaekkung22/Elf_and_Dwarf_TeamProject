@@ -111,7 +111,10 @@ public class DataManager : Singleton<DataManager>
         }
         playerInfo.ownedItemIds = ownedItemIdList;
     }
-
+    public int GetGold()
+    {
+        return playerInfo.gold;
+    }
     public void EarnGold(int _gold)
     {
         if (playerInfo.gold > int.MaxValue - _gold)
