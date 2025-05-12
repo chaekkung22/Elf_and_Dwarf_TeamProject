@@ -18,7 +18,7 @@ public class InventoryUI : BaseUI
 
 
 
-    protected override UIState UIState { get; } = UIState.Shop;
+    protected override UIState UIState { get; } = UIState.Inventory;
 
     protected override void Initialize()
     {
@@ -47,11 +47,12 @@ public class InventoryUI : BaseUI
         int end = currentPage * itemsPerPage;
         int idx = 0;
 
-
         for (int i = start; i < end; i++)
         {
             if (i < ownedItems.Count)
             {
+
+                itemSetting[idx].ItemSet(ownedItems[i]);
                 itemSetting[idx++].gameObject.SetActive(true);
             }
             else

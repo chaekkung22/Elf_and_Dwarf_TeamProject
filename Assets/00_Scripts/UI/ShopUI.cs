@@ -40,14 +40,14 @@ public class ShopUI : BaseUI
     {
         base.SetUIActive(isActive);
         currentPage = 1;
-        nextButton.gameObject.SetActive(true);
+        UpdatePageButton();
         UpdateOwnedItems();
     }
 
     void UpdateOwnedItems()
     {
         currentGoldText.text = $"골드 : {DataManager.Instance.GetGold()}";
-        int start = (currentPage * itemsPerPage) - itemsPerPage;
+        int start = (currentPage - 1) * itemsPerPage;
         int end = currentPage * itemsPerPage;
         int idx = 0;
 
@@ -69,22 +69,27 @@ public class ShopUI : BaseUI
                 itemSetting[idx++].gameObject.SetActive(false);
             }
         }
+        UpdatePageButton();
+    }
 
-        if (currentPage == 1)
+    void UpdatePageButton()
+    {
+        if (totalPage <= 1)
+        {
             prevButton.gameObject.SetActive(false);
-        else if (currentPage == totalPage)
             nextButton.gameObject.SetActive(false);
+        }
         else
         {
-            prevButton.gameObject.SetActive(true);
-            nextButton.gameObject.SetActive(true);
+            prevButton.gameObject.SetActive(currentPage > 1);
+            nextButton.gameObject.SetActive(currentPage < totalPage);
         }
     }
 
 
     void PrevButton()
     {
-        if (!(currentPage == 1))
+        if (currentPage > 1)
         {
             currentPage--;
             UpdateOwnedItems();
@@ -93,7 +98,7 @@ public class ShopUI : BaseUI
 
     void NextButton()
     {
-        if (!(currentPage == totalPage))
+        if (currentPage < totalPage)
         {
             currentPage++;
             UpdateOwnedItems();
