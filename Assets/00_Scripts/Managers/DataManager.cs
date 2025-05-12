@@ -67,6 +67,8 @@ public class DataManager : Singleton<DataManager>
         {
             // 저장된 값 없으면
             playerInfo = new PlayerInfo();
+            equipedItem = allItemsDictionary[playerInfo.equipedItemId];
+            ownedItems.Add(equipedItem.id, equipedItem);
         }
     }
 
