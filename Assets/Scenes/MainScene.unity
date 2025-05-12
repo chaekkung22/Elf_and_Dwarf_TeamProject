@@ -741,8 +741,8 @@ Tilemap:
   - first: {x: -5, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -831,8 +831,8 @@ Tilemap:
   - first: {x: 4, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -861,8 +861,8 @@ Tilemap:
   - first: {x: -5, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -951,8 +951,8 @@ Tilemap:
   - first: {x: 4, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 4
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1450,23 +1450,35 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 88
+  - m_RefCount: 85
     m_Data: {fileID: 11400000, guid: 63868989a1a872945bd15d654fbc5353, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 594b12dca7233cd4f80355a1457248ae, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: a39b076692f33094d8e4d15d6d92afa7, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 35f57f7139be1564f83d40b63759343f, type: 2}
+    m_Data: {fileID: 11400000, guid: 9bddd65d279b7e045a3af61165091313, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: fc323ad9d7e75f148bd1a493cfb44fd3, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 86f82aaae4d10924b919df217dec61ac, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 25f34b9379758cb4ebb6dfc546587075, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 88
+  - m_RefCount: 85
     m_Data: {fileID: 21300000, guid: 6c7fb0d0f97d7134d9f347271c9ed4ed, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300000, guid: af7947ded25dd9b478d3c14da24a9819, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 9d7aa66f0b3e6d34291358d6772cc8aa, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: e338d9dc921a8604ea0fb3865637371f, type: 3}
+    m_Data: {fileID: 21300000, guid: 05d5decc996b2b64f98e0cfa25edcfad, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: a48cf369126e2c24b8863c7b4654af43, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 84d5bb4bb4da530439fd26d32457c44d, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 75bed01324cd43d4eb625de153970b4d, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 96
     m_Data:
@@ -3117,7 +3129,7 @@ Transform:
   m_GameObject: {fileID: 303588255}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3161,8 +3173,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 4
+  m_PointLightInnerRadius: 0.6
+  m_PointLightOuterRadius: 5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -4198,8 +4210,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00045001507, y: -0.60025, z: 0}
-    m_Extent: {x: 2.5992498, y: 3.10035, z: 0}
+    m_Center: {x: 0.00045001507, y: -0.5999, z: 0}
+    m_Extent: {x: 2.60015, y: 3.1007, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5896,7 +5908,7 @@ Transform:
   m_GameObject: {fileID: 1157457877}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5940,8 +5952,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 4
+  m_PointLightInnerRadius: 0.6
+  m_PointLightOuterRadius: 5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -6797,7 +6809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1300692487
 MonoBehaviour:
   m_ObjectHideFlags: 0
