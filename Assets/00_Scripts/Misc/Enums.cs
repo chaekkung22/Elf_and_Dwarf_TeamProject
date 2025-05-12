@@ -4,6 +4,7 @@ public enum UIState
     Pause,
     Stage,
     Shop,
+    Inventory,
     Title,
     Main,
     SelectStage
