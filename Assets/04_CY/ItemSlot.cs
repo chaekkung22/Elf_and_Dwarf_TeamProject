@@ -23,11 +23,20 @@ public class ItemSlot : MonoBehaviour
         itemNameText.text = item.itemName;
         itemPriceText.text = $"{item.price.ToString()} 골드";
         purchaseButton.gameObject.SetActive(isPurchaseable);
+        purchaseButton.onClick.RemoveAllListeners();
+        purchaseButton.onClick.AddListener(()=>PurchaseItemButton(item));
     }
 
     void PurchaseItemButton(ItemSO item)
     {
-        DataManager.Instance.SpendGold(item.price);
-        DataManager.Instance.AddItem(item);
+        if(DataManager.Instance.SpendGold(item.price))
+        {
+            DataManager.Instance.AddItem(item);
+        }
+        else
+        {
+            //TODO : 구매실패 메시지 띄우기
+        }
+
     }
 }

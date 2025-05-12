@@ -3603,8 +3603,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00039994717, y: -0.6000999, z: 0}
-    m_Extent: {x: 2.6002002, y: 3.1007, z: 0}
+    m_Center: {x: 0.00019991398, y: -0.6006999, z: 0}
+    m_Extent: {x: 2.6, y: 3.0999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4766,6 +4766,7 @@ MonoBehaviour:
   isStartUI: 0
   prevButton: {fileID: 1939798782}
   nextButton: {fileID: 933943452}
+  exitButton: {fileID: 1144416569}
   currentGoldText: {fileID: 439190271}
   itemSetting:
   - {fileID: 959682397}

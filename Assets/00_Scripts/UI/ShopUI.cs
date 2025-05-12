@@ -10,6 +10,7 @@ public class ShopUI : BaseUI
 {
     [SerializeField] private Button prevButton;
     [SerializeField] private Button nextButton;
+    [SerializeField] private Button exitButton;
     [SerializeField] private TextMeshProUGUI currentGoldText;
     [SerializeField] private ItemSlot[] itemSetting;
     private ItemSO selectedItem;
@@ -29,20 +30,23 @@ public class ShopUI : BaseUI
 
         allItems = DataManager.Instance.GetAllItems();
         ownedItems = DataManager.Instance.GetOwnedItems();
-        //currentGoldText = D
         totalPage = allItems.Count / 3 + 1;
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
+        exitButton.onClick.AddListener(UIManager.Instance.CloseUI);
+        DataManager.Instance.AddChangeOwnedItemsEvent(UpdateOwnedItems);
     }
 
     public override void SetUIActive(bool isActive)
     {
         base.SetUIActive(isActive);
-        UpdateOwnedItems(1);
+        currentPage = 1;
+        UpdateOwnedItems();
     }
 
-    void UpdateOwnedItems(int currentPage)
+    void UpdateOwnedItems()
     {
+        currentGoldText.text = $"골드 : {DataManager.Instance.GetGold()}";
         int start = (currentPage * itemsPerPage) - itemsPerPage;
         int end = currentPage * itemsPerPage;
         int idx = 0;
@@ -83,7 +87,7 @@ public class ShopUI : BaseUI
         if (!(currentPage == 1))
         {
             currentPage--;
-            UpdateOwnedItems(currentPage);
+            UpdateOwnedItems();
         }
     }
 
@@ -92,7 +96,7 @@ public class ShopUI : BaseUI
         if (!(currentPage == totalPage))
         {
             currentPage++;
-            UpdateOwnedItems(currentPage);
+            UpdateOwnedItems();
         }
     }
 }
