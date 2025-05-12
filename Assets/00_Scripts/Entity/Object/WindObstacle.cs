@@ -7,12 +7,14 @@ public class WindObstacle : MonoBehaviour, ICollisionStay
     private readonly int isSpining = Animator.StringToHash("IsSpining");
 
     private Animator windAnimator;
+    private ParticleSystem particle;
 
     [SerializeField] float force = 3f;
 
     private void Start()
     {
         windAnimator = GetComponentInChildren<Animator>();
+        particle = GetComponentInChildren<ParticleSystem>();
     }
 
     public void StayEvent(GameObject collider)
@@ -29,12 +31,14 @@ public class WindObstacle : MonoBehaviour, ICollisionStay
     public void OnWind()
     {
         windAnimator.SetBool(isSpining, true);
+        particle.Play();
         this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public void OffWind()
     {
         windAnimator.SetBool(isSpining, false);
+        particle.Stop();
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
