@@ -2063,6 +2063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStartUI: 0
   selectStagePanel: {fileID: 786753010}
+  stageSelectBtn: {fileID: 2138893057}
 --- !u!1 &237138304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,8 +3027,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.000049948692, y: -0.5999, z: 0}
-    m_Extent: {x: 2.5998502, y: 3.1006, z: 0}
+    m_Center: {x: 0.00020003319, y: -0.59959996, z: 0}
+    m_Extent: {x: 2.6001, y: 3.1002998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4202,6 +4203,7 @@ GameObject:
   - component: {fileID: 1341760430}
   - component: {fileID: 1341760432}
   - component: {fileID: 1341760431}
+  - component: {fileID: 1341760433}
   m_Layer: 5
   m_Name: SelectUI
   m_TagString: Untagged
@@ -4271,6 +4273,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341760429}
   m_CullTransparentMesh: 1
+--- !u!114 &1341760433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341760429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0.28235295}
+  m_EffectDistance: {x: 10, y: 10}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1391376513
 GameObject:
   m_ObjectHideFlags: 0
