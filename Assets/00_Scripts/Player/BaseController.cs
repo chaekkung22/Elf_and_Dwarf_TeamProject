@@ -30,22 +30,28 @@ public class BaseController : MonoBehaviour
 
     protected virtual void Update()
     {
-        Rotate();
+        if(GameManager.Instance.GameStart)
+        {
+            Rotate();
+        }
     }
 
     protected virtual void FixedUpdate()
     {
-        Move(movementDirection);
-
-        Debug.DrawRay(_rigidbody.position, Vector3.down * 0.6f, new Color(0, 1, 0));
-        isGround = Physics2D.Raycast(_rigidbody.position, Vector3.down, 0.6f, groundLayer);
-
-        if (wasGround == false && isGround == true)
+        if(GameManager.Instance.GameStart)
         {
-            animationHandler.Idle();
-        }
+            Move(movementDirection);
 
-        this.wasGround = isGround;
+            Debug.DrawRay(_rigidbody.position, Vector3.down * 0.6f, new Color(0, 1, 0));
+            isGround = Physics2D.Raycast(_rigidbody.position, Vector3.down, 0.6f, groundLayer);
+
+            if(wasGround == false && isGround == true)
+            {
+                animationHandler.Idle();
+            }
+
+            this.wasGround = isGround;
+        }
     }
 
     protected void Move(Vector2 direction)

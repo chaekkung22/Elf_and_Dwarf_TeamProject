@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.ParticleSystem;
 
 public enum PlayerType
 {
@@ -12,6 +13,7 @@ public enum PlayerType
 public class PlayerController : BaseController
 {
     [SerializeField] private PlayerType playerType;
+    ParticleSystem particle;
     public PlayerType PlayerType { get { return playerType; } }
 
     private bool isMovable = true;
@@ -19,6 +21,8 @@ public class PlayerController : BaseController
 
     private void Start()
     {
+        particle = GetComponentInChildren<ParticleSystem>();
+        particle.textureSheetAnimation.SetSprite(0, DataManager.Instance.GetEquipedItem().image);
         PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
         StageManager.Instance.SetPlayer(playerType, this);
         isMovable = true;

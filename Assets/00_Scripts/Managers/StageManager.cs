@@ -42,19 +42,23 @@ public class StageManager : Singleton<StageManager>
         isGameDone = false;
 
         stageDataManager.CreateMap(PlayerPrefs.GetInt(curStageLevelKey));
+        Camera.main.orthographicSize = stageDataManager.GetCameraSize(PlayerPrefs.GetInt(curStageLevelKey));
         Debug.Log(stageDataManager.GetLimitedTime(PlayerPrefs.GetInt(curStageLevelKey)));
         Debug.Log(stageDataManager.GetTotalGemCount(PlayerPrefs.GetInt(curStageLevelKey)));
     }
 
     private void Update()
     {
-        if (isGameDone)
-            return;
-
-        if (Time.timeScale != 0)
+        if(GameManager.Instance.GameStart)
         {
-            playTime += Time.deltaTime;
-            OnChangeTime?.Invoke(playTime);
+            if(isGameDone)
+                return;
+
+            if(Time.timeScale != 0)
+            {
+                playTime += Time.deltaTime;
+                OnChangeTime?.Invoke(playTime);
+            }
         }
     }
 

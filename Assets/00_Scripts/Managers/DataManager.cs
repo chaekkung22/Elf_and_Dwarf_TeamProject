@@ -24,6 +24,7 @@ public class DataManager : Singleton<DataManager>
 
     private ItemSO equipedItem;
     private Dictionary<string, ItemSO> ownedItems;
+    private List<ItemSO> ownedItemList;
     #endregion In Game Data
 
     #region Actions
@@ -39,6 +40,8 @@ public class DataManager : Singleton<DataManager>
         allItems = itemDatabaseSO.GetItemDatabase();
         allItemsDictionary = itemDatabaseSO.GetItemDatabaseDictionary();
         ownedItems = new Dictionary<string, ItemSO>();
+        ownedItemList = new List<ItemSO>();
+
         LoadDatas();
     }
 
@@ -67,6 +70,14 @@ public class DataManager : Singleton<DataManager>
         {
             // 저장된 값 없으면
             playerInfo = new PlayerInfo();
+            equipedItem = allItemsDictionary[playerInfo.equipedItemId];
+            ownedItems.Add(equipedItem.id, equipedItem);
+        }
+
+        // 보유 아이템 리스트 생성
+        foreach (var pair in ownedItems)
+        {
+            ownedItemList.Add(pair.Value);
         }
     }
 
@@ -151,7 +162,9 @@ public class DataManager : Singleton<DataManager>
         }
 
         ownedItems.Add(item.id, item);
+        ownedItemList.Add(item);
         OnChangeOwnedItems?.Invoke();
+        isDataChanged = true;
         return true;
     }
 
@@ -160,6 +173,7 @@ public class DataManager : Singleton<DataManager>
         equipedItem = item;
         playerInfo.equipedItemId = item.id;
         OnChangeEquipedItem?.Invoke();
+        isDataChanged = true;
     }
 
     public List<ItemSO> GetAllItems()
@@ -175,6 +189,11 @@ public class DataManager : Singleton<DataManager>
     public Dictionary<string, ItemSO> GetOwnedItems()
     {
         return ownedItems;
+    }
+
+    public List<ItemSO> GetOwnedItemList()
+    {
+        return ownedItemList;
     }
 
     public StageInfo GetStageInfo()

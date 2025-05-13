@@ -1,66 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
-public class ShopUI : BaseUI
+public class InventoryUI : BaseUI
 {
     [SerializeField] private Button prevButton;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private TextMeshProUGUI currentGoldText;
-    [SerializeField] private ShopItemSlot[] itemSetting;
+    [SerializeField] private InventoryItemSlot[] itemSetting;
+
     private int currentPage = 1;
     private int itemsPerPage = 3;
     private int totalPage;
-    Dictionary<string, ItemSO> ownedItems;
-    List<ItemSO> allItems;
+    List<ItemSO> ownedItems;
+    private ItemSO equipedItem;
 
 
 
-    protected override UIState UIState { get; } = UIState.Shop;
+    protected override UIState UIState { get; } = UIState.Inventory;
 
     protected override void Initialize()
     {
         base.Initialize();
-
-        allItems = DataManager.Instance.GetAllItems();
-        ownedItems = DataManager.Instance.GetOwnedItems();
-        totalPage = allItems.Count / 3 + 1;
+        ownedItems = DataManager.Instance.GetOwnedItemList();
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
         exitButton.onClick.AddListener(UIManager.Instance.CloseUI);
-        DataManager.Instance.AddChangeOwnedItemsEvent(UpdateOwnedItems);
+        DataManager.Instance.AddChangeEquipedItemEvent(UpdateEquipedItems);
     }
 
     public override void SetUIActive(bool isActive)
     {
         base.SetUIActive(isActive);
         currentPage = 1;
+        totalPage = Mathf.Max(1, Mathf.CeilToInt((float)ownedItems.Count / itemsPerPage));
         UpdatePageButton();
-        UpdateOwnedItems();
+        UpdateEquipedItems();
     }
 
-    void UpdateOwnedItems()
+    void UpdateEquipedItems()
     {
+        equipedItem = DataManager.Instance.GetEquipedItem();
         currentGoldText.text = $"골드 : {DataManager.Instance.GetGold()}";
+
         int start = (currentPage - 1) * itemsPerPage;
         int end = currentPage * itemsPerPage;
         int idx = 0;
 
-
         for (int i = start; i < end; i++)
         {
-            if (i < allItems.Count)
+            if (i < ownedItems.Count)
             {
-
-                if (ownedItems.ContainsKey(allItems[i].id))
-                    itemSetting[idx].ItemSet(allItems[i], false);
+                if (equipedItem == ownedItems[i])
+                    itemSetting[idx].ItemSet(ownedItems[i], true);
                 else
-                    itemSetting[idx].ItemSet(allItems[i], true);
+                    itemSetting[idx].ItemSet(ownedItems[i], false);
 
                 itemSetting[idx++].gameObject.SetActive(true);
             }
@@ -92,7 +89,7 @@ public class ShopUI : BaseUI
         if (currentPage > 1)
         {
             currentPage--;
-            UpdateOwnedItems();
+            UpdateEquipedItems();
         }
     }
 
@@ -101,7 +98,7 @@ public class ShopUI : BaseUI
         if (currentPage < totalPage)
         {
             currentPage++;
-            UpdateOwnedItems();
+            UpdateEquipedItems();
         }
     }
 }
