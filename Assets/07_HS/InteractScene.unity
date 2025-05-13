@@ -199,6 +199,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 801145044}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 1
 --- !u!61 &72228849
 BoxCollider2D:
@@ -1588,6 +1594,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 130048655}
+  maxMoveSpeed: 5
+  movePower: 5
+  jumpPower: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   playerType: 0
 --- !u!61 &934100105
 BoxCollider2D:

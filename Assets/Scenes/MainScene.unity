@@ -3036,8 +3036,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00054991245, y: -0.6005, z: 0}
-    m_Extent: {x: 2.59965, y: 3.1002002, z: 0}
+    m_Center: {x: 0.0008999109, y: -0.5999501, z: 0}
+    m_Extent: {x: 2.5998, y: 3.10025, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5923,6 +5923,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 879194822}
+  - {fileID: 2031757778}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1894485074
@@ -6364,12 +6365,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031757776}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1894485073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037974203
 GameObject:
@@ -7129,4 +7130,3 @@ SceneRoots:
   - {fileID: 1300692490}
   - {fileID: 1076770092}
   - {fileID: 1894485073}
-  - {fileID: 2031757778}
