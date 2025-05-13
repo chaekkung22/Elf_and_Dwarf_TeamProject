@@ -6,5 +6,6 @@ public enum UIState
     Shop,
     Title,
     Main,
-    SelectStage
+    SelectStage,
+    Option,
 }

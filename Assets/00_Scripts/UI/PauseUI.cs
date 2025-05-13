@@ -47,7 +47,7 @@ public class PauseUI : BaseUI
     private void OnClickOptionButton()
     {
         // TODO: Option UI 만들면 호출
-        // UIManager.Instance.OpenUI(UIState.Option);
+        UIManager.Instance.OpenUI(UIState.Option);
         Debug.Log("옵션UI Open");
     }
 }
