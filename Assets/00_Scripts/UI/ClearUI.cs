@@ -30,7 +30,7 @@ public class ClearUI : BaseUI
         retryButton.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
 
         mainButton.onClick.RemoveAllListeners();
-        mainButton.onClick.AddListener(() => SceneManager.LoadScene("MainScene"));
+        mainButton.onClick.AddListener(ExitStage);
     }
 
     public override void SetUIActive(bool isActive)
@@ -56,5 +56,11 @@ public class ClearUI : BaseUI
         gold.text = $"획득 골드: {StageManager.Instance.EarnGold}";
 
         this.gameObject.SetActive(isActive);
+    }
+
+    private void ExitStage()
+    {
+        DataManager.Instance.SaveDatas();
+        GameManager.Instance.ChangeScene("MainScene");
     }
 }

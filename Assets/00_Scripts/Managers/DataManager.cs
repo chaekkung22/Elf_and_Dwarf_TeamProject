@@ -124,6 +124,33 @@ public class DataManager : Singleton<DataManager>
         }
         playerInfo.ownedItemIds = ownedItemIdList;
     }
+
+    public void SetStageInfo(int level, float clearTime, int gemCount, int starCount)
+    {
+        // 스테이지 레벨이 플레이 가능한 레벨보다 높은 경우
+        if(level > stageInfo.clearLevel + 1)
+        {
+            Debug.LogError("잘못된 스테이지 클리어");
+            return;
+        }
+
+        // 클리어 기록이 있는 경우
+        if(stageInfo.clearLevel >= level)
+        {
+            stageInfo.bestClearTimeList[level] = clearTime < stageInfo.bestClearTimeList[level] ? clearTime : stageInfo.bestClearTimeList[level];
+            stageInfo.gemCountList[level] = gemCount > stageInfo.gemCountList[level] ? gemCount : stageInfo.gemCountList[level];
+            stageInfo.starCountList[level] = starCount > stageInfo.starCountList[level] ? starCount : stageInfo.starCountList[level];
+        }
+        else
+        {
+            stageInfo.clearLevel = level;
+            stageInfo.bestClearTimeList.Add(clearTime);
+            stageInfo.gemCountList.Add(gemCount);
+            stageInfo.starCountList.Add(starCount);
+        }
+        isDataChanged = true;
+    }
+
     public int GetGold()
     {
         return playerInfo.gold;
@@ -164,6 +191,7 @@ public class DataManager : Singleton<DataManager>
         ownedItems.Add(item.id, item);
         ownedItemList.Add(item);
         OnChangeOwnedItems?.Invoke();
+        isDataChanged = true;
         return true;
     }
 
@@ -172,6 +200,7 @@ public class DataManager : Singleton<DataManager>
         equipedItem = item;
         playerInfo.equipedItemId = item.id;
         OnChangeEquipedItem?.Invoke();
+        isDataChanged = true;
     }
 
     public List<ItemSO> GetAllItems()
