@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -83,8 +84,13 @@ public class StageManager : Singleton<StageManager>
 
     private void CalcStarCount()
     {
-        float timePoint = 1f - Mathf.Clamp01(playTime / stageDataManager.GetLimitedTime(curLevel));
-        float gemPoint = Mathf.Clamp01(gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water] / stageDataManager.GetTotalGemCount(curLevel));
+        float timePoint = 0f;
+        float gemPoint = 0f;
+
+        if(stageDataManager.GetLimitedTime(curLevel) != 0)
+            timePoint = 1f - Mathf.Clamp01(playTime / stageDataManager.GetLimitedTime(curLevel));
+        if(stageDataManager.GetTotalGemCount(curLevel) != 0)
+            gemPoint = Mathf.Clamp01(gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water] / stageDataManager.GetTotalGemCount(curLevel));
 
         // timePoint 최대 1점
         // gemPoint 최대 2점
