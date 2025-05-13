@@ -7,8 +7,7 @@ using static UnityEngine.ParticleSystem;
 public enum PlayerType
 {
     Fire,
-    Water,
-    None
+    Water
 }
 
 public class PlayerController : BaseController

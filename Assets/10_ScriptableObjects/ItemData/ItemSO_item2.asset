@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemSO_item2
   m_EditorClassIdentifier: 
   id: item2
-  itemName: "\uB124\uBAA82"
-  image: {fileID: 21300000, guid: b72f06f5a57dc3f479a7d13eec528107, type: 3}
-  price: 2000
+  itemName: "\uC138\uBAA8 \uD30C\uD2F0\uD074"
+  image: {fileID: 21300000, guid: 14291dec87cc82d4a8eeda6506031dee, type: 3}
+  price: 1000
   particle: {fileID: 5703225219484320685, guid: 30a7e7691ec780140a4b5f54a4aab348, type: 3}

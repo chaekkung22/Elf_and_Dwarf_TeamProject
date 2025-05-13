@@ -14,6 +14,7 @@ public class SoundDataBaseManager : ScriptableObject
         this.bgmDataDic = new Dictionary<BgmType, BgmData>();
         foreach (BgmData bgmData in this.bgmDataArr)
         {
+            //중복검사
             if (!this.bgmDataDic.ContainsKey(bgmData.bgmType))
                 this.bgmDataDic.Add(bgmData.bgmType, bgmData);
             else
