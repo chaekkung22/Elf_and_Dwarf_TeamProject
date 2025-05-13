@@ -42,6 +42,7 @@ public class StageManager : Singleton<StageManager>
         isGameDone = false;
 
         stageDataManager.CreateMap(PlayerPrefs.GetInt(curStageLevelKey));
+        Camera.main.orthographicSize = stageDataManager.GetCameraSize(PlayerPrefs.GetInt(curStageLevelKey));
         Debug.Log(stageDataManager.GetLimitedTime(PlayerPrefs.GetInt(curStageLevelKey)));
         Debug.Log(stageDataManager.GetTotalGemCount(PlayerPrefs.GetInt(curStageLevelKey)));
     }

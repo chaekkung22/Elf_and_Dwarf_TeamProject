@@ -22,4 +22,9 @@ public class StageDataManager : ScriptableObject
     {
         return stageDatabase.Find((x) => x.StageLevel == level).TotalGemCount;
     }
+
+    public float GetCameraSize(int level)
+    {
+        return stageDatabase.Find((x) => x.StageLevel == level).CameraSize;
+    }
 }
