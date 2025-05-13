@@ -15,26 +15,12 @@ MonoBehaviour:
   sfxDataArr:
   - sfxType: 30
     clip: {fileID: 8300000, guid: 2cbf66aa0201b4c4d9f35d29a910a540, type: 3}
-  - sfxType: 30
-    clip: {fileID: 8300000, guid: 49b324e8e44b17247b054113e0374a9f, type: 3}
-  - sfxType: 20
-    clip: {fileID: 8300000, guid: 7d28e3d8db95f8746a19c3f9f58b17b2, type: 3}
   - sfxType: 20
     clip: {fileID: 8300000, guid: 7d28e3d8db95f8746a19c3f9f58b17b2, type: 3}
   - sfxType: 10
     clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
-  - sfxType: 0
-    clip: {fileID: 8300000, guid: 7d28e3d8db95f8746a19c3f9f58b17b2, type: 3}
-  - sfxType: 0
-    clip: {fileID: 8300000, guid: 7d28e3d8db95f8746a19c3f9f58b17b2, type: 3}
   bgmDataArr:
   - bgmType: 10
     clip: {fileID: 8300000, guid: 4bb64a2f10c66ec41beb64406a06920f, type: 3}
   - bgmType: 20
-    clip: {fileID: 8300000, guid: 6f130d7944f0e8747bb29bb561ad540e, type: 3}
-  - bgmType: 0
-    clip: {fileID: 0}
-  - bgmType: 0
-    clip: {fileID: 0}
-  - bgmType: 0
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4bb64a2f10c66ec41beb64406a06920f, type: 3}
