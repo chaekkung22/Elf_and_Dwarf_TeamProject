@@ -18,6 +18,7 @@ public class StageManager : Singleton<StageManager>
     private int starCount = 0;
     private int earnGold = 0;
     private int[] gem = new int[2];
+    int curLevel;
 
     public float PlayTime { get { return playTime; } }
     public bool IsClear { get { return isClear; } }
@@ -41,10 +42,11 @@ public class StageManager : Singleton<StageManager>
         isClear = false;
         isGameDone = false;
 
-        stageDataManager.CreateMap(PlayerPrefs.GetInt(curStageLevelKey));
-        Camera.main.orthographicSize = stageDataManager.GetCameraSize(PlayerPrefs.GetInt(curStageLevelKey));
-        Debug.Log(stageDataManager.GetLimitedTime(PlayerPrefs.GetInt(curStageLevelKey)));
-        Debug.Log(stageDataManager.GetTotalGemCount(PlayerPrefs.GetInt(curStageLevelKey)));
+        curLevel = PlayerPrefs.GetInt(curStageLevelKey);
+        stageDataManager.CreateMap(curLevel);
+        Camera.main.orthographicSize = stageDataManager.GetCameraSize(curLevel);
+        Debug.Log(stageDataManager.GetLimitedTime(curLevel));
+        Debug.Log(stageDataManager.GetTotalGemCount(curLevel));
     }
 
     private void Update()
@@ -73,11 +75,18 @@ public class StageManager : Singleton<StageManager>
                                           playTime,
                                           gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water],
                                           starCount);
-        // TODO: DataManager에 Gold 추가하기
-        // DataManager.Instance.EarnGold(gold);
+        DataManager.Instance.EarnGold(earnGold);
         OnPauseGame?.Invoke(true); // Pause 버튼 끄기
         UIManager.Instance.OpenUI(UIState.StageClear);
         SetPlayerMovable(false);
+    }
+
+    private void CalcStarCount()
+    {
+        float timePoint = 1f - Mathf.Clamp01(playTime / stageDataManager.GetLimitedTime(curLevel));
+        float gemPoint = Mathf.Clamp01(gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water] / stageDataManager.GetTotalGemCount(curLevel));
+
+        
     }
 
     public void FailStage()
