@@ -9,6 +9,8 @@ public class MainUI : BaseUI
     [SerializeField] private Button storeBtn;
     [SerializeField] private Button exitBtn;
     [SerializeField] private Button inventoryBtn;
+    [SerializeField] private Button optionBtn;
+    [SerializeField] private Button questBtn;
 
     protected override UIState UIState { get; } = UIState.Main;
 
@@ -19,5 +21,7 @@ public class MainUI : BaseUI
         storeBtn.onClick.AddListener(() => UIManager.Instance.OpenUI(UIState.Shop));
         exitBtn.onClick.AddListener(GameManager.Instance.ExitGame);
         inventoryBtn.onClick.AddListener(() => UIManager.Instance.OpenUI(UIState.Inventory));
+        optionBtn.onClick.AddListener(() => UIManager.Instance.OpenUI(UIState.Option));
+        questBtn.onClick.AddListener(() => UIManager.Instance.OpenUI(UIState.Quest));
     }
 }
