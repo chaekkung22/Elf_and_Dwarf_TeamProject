@@ -20,7 +20,8 @@ public class InventoryItemSlot : MonoBehaviour
         }
 
         //TODO : 장착한 아이템의 장착하기 버튼을 비활성화 및 문구 바꾸기
-        
+        equipButton.gameObject.SetActive(!isEquiped);
+
         itemImage.sprite = item.image;
         itemNameText.text = item.itemName;
         equipButton.onClick.RemoveAllListeners();
