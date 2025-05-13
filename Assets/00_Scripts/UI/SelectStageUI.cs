@@ -97,6 +97,9 @@ public class SelectStageUI : BaseUI
         timeStr.Clear();
         gemStr.Clear();
 
+        timeStr.Append(bestTimeDefaultTxt);
+        gemStr.Append(gemCountDefaultTxt);
+
         if(info.clearLevel >= stageId)
         {
             starCnt = info.starCountList[stageId];
