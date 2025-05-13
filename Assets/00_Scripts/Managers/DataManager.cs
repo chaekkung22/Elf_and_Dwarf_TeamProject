@@ -164,6 +164,7 @@ public class DataManager : Singleton<DataManager>
         ownedItems.Add(item.id, item);
         ownedItemList.Add(item);
         OnChangeOwnedItems?.Invoke();
+        isDataChanged = true;
         return true;
     }
 
@@ -172,6 +173,7 @@ public class DataManager : Singleton<DataManager>
         equipedItem = item;
         playerInfo.equipedItemId = item.id;
         OnChangeEquipedItem?.Invoke();
+        isDataChanged = true;
     }
 
     public List<ItemSO> GetAllItems()
