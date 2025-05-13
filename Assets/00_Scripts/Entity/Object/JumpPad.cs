@@ -6,8 +6,14 @@ public class JumpPad : MonoBehaviour, ICollisionEnter
 {
     [SerializeField] float force = 5;
     private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
     public void EnterEvent(GameObject collider)
     {
+        
         animator.SetTrigger("Stepped");
 
         //이 오브젝트 기준으로 위쪽. z가 회전이 되더라도 오브젝트의 기준으로 힘을 주기 위해 방향을 따옴
