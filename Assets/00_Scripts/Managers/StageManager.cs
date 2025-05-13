@@ -70,7 +70,7 @@ public class StageManager : Singleton<StageManager>
     {
         isClear = true;
         isGameDone = true;
-        starCount = 2; // 별 개수 계산 기능 들어가야함
+        CalcStarCount();
         DataManager.Instance.SetStageInfo(PlayerPrefs.GetInt(curStageLevelKey),
                                           playTime,
                                           gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water],
@@ -86,7 +86,12 @@ public class StageManager : Singleton<StageManager>
         float timePoint = 1f - Mathf.Clamp01(playTime / stageDataManager.GetLimitedTime(curLevel));
         float gemPoint = Mathf.Clamp01(gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water] / stageDataManager.GetTotalGemCount(curLevel));
 
-        
+        // timePoint 최대 1점
+        // gemPoint 최대 2점
+        // 만점 3점 기준
+        // 보석을 다 먹고
+        // 제한 시간의 절반 안으로 클리어 하면 3점
+        starCount = Mathf.Clamp((int)((timePoint + 0.5f)+ (gemPoint * 2)), 0, 3);
     }
 
     public void FailStage()
