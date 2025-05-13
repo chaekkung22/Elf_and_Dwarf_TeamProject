@@ -7,5 +7,6 @@ public enum UIState
     Inventory,
     Title,
     Main,
-    SelectStage
+    SelectStage,
+    Quest
 }
