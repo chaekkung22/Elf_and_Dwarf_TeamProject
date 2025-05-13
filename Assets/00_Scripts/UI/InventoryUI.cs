@@ -9,8 +9,8 @@ public class InventoryUI : BaseUI
     [SerializeField] private Button prevButton;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button exitButton;
-    [SerializeField] private InventoryItemSlot[] itemSetting;
     [SerializeField] private TextMeshProUGUI currentGoldText;
+    [SerializeField] private InventoryItemSlot[] itemSetting;
 
     private int currentPage = 1;
     private int itemsPerPage = 3;
@@ -25,7 +25,6 @@ public class InventoryUI : BaseUI
     protected override void Initialize()
     {
         base.Initialize();
-        equipedItem = DataManager.Instance.GetEquipedItem();
         ownedItems = DataManager.Instance.GetOwnedItemList();
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
@@ -44,6 +43,9 @@ public class InventoryUI : BaseUI
 
     void UpdateEquipedItems()
     {
+        equipedItem = DataManager.Instance.GetEquipedItem();
+        currentGoldText.text = $"골드 : {DataManager.Instance.GetGold()}";
+
         int start = (currentPage - 1) * itemsPerPage;
         int end = currentPage * itemsPerPage;
         int idx = 0;
@@ -52,7 +54,11 @@ public class InventoryUI : BaseUI
         {
             if (i < ownedItems.Count)
             {
-                itemSetting[idx].ItemSet(ownedItems[i]);
+                if (equipedItem == ownedItems[i])
+                    itemSetting[idx].ItemSet(ownedItems[i], true);
+                else
+                    itemSetting[idx].ItemSet(ownedItems[i], false);
+
                 itemSetting[idx++].gameObject.SetActive(true);
             }
             else
