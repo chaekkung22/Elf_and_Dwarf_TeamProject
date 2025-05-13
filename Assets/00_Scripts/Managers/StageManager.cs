@@ -49,13 +49,16 @@ public class StageManager : Singleton<StageManager>
 
     private void Update()
     {
-        if (isGameDone)
-            return;
-
-        if (Time.timeScale != 0)
+        if(GameManager.Instance.GameStart)
         {
-            playTime += Time.deltaTime;
-            OnChangeTime?.Invoke(playTime);
+            if(isGameDone)
+                return;
+
+            if(Time.timeScale != 0)
+            {
+                playTime += Time.deltaTime;
+                OnChangeTime?.Invoke(playTime);
+            }
         }
     }
 
