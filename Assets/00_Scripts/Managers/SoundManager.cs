@@ -25,9 +25,10 @@ public class SoundManager : Singleton<SoundManager>
 
     protected override void Initialize()
     {
-        DontDestroyOnLoad(gameObject);
         soundDataBaseManager.Init();
-        //PlayBgm(BgmType.Main);
+        // PlayerPrefs에 Volume 값이 저장되어 있을 경우,
+        LoadBgmVolume();
+        LoadSfxVolume();
         // 슬라이더의 값이 변경될 때 AddListener를 통해 이벤트 구독
         BgmSlider.onValueChanged.AddListener(SetBgmVolume);
         SfxSlider.onValueChanged.AddListener(SetSfxVolume);
@@ -35,16 +36,15 @@ public class SoundManager : Singleton<SoundManager>
         BgmMute.onValueChanged.AddListener(SetBgmMute);
         SfxMute.onValueChanged.AddListener(SetSfxMute);
 
-        // PlayerPrefs에 Volume 값이 저장되어 있을 경우,
-        LoadBgmVolume();
-        LoadSfxVolume();
+        PlayBgm(BgmType.Main);
         // audioMixer.SetFloat("audioMixer에 설정해놓은 Parameter", float 값)
         // audioMixer에 미리 설정해놓은 parameter 값을 변경하는 코드.
         // Mathf.Log10(BGMSlider.value) * 20 : 데시벨이 비선형적이기 때문에 해당 방식으로 값을 계산.
-        audioMixer.SetFloat("BGM", Mathf.Log10(BgmSlider.value) * 20);
-        PlayBgm(BgmType.Main);
     }
-
+    private void Start()
+    {
+        audioMixer.SetFloat("BGM", Mathf.Log10(BgmSlider.value) * 20);
+    }
     public void PlayBgm(BgmType bgmType)
     {
         bgmAudioSource.clip = soundDataBaseManager.GetBgmData(bgmType).clip;
@@ -75,12 +75,11 @@ public class SoundManager : Singleton<SoundManager>
         audioMixer.SetFloat("BGM", Mathf.Log10(BgmSlider.value) * 20);
         PlayerPrefs.SetFloat("BgmVolume", BgmSlider.value);
     }
-    private void SetBgmMute(bool mute)
+    public void SetBgmMute(bool mute)
     {
         if (isChangingManually) return;
 
         isChangingManually = true;
-        Debug.Log(mute);
         if (mute)
         {
             PlayerPrefs.SetFloat("BgmVolumeBeforeMute", BgmSlider.value);
@@ -95,7 +94,7 @@ public class SoundManager : Singleton<SoundManager>
         isChangingManually = false;
     }
 
-    private void SetSfxMute(bool mute)
+    public void SetSfxMute(bool mute)
     {
         if (isChangingManually) return;
 
@@ -140,7 +139,11 @@ public class SoundManager : Singleton<SoundManager>
         {
             // Slider의 값을 저장해 놓은 값으로 변경.
             BgmSlider.value = PlayerPrefs.GetFloat("BgmVolume");
-            Debug.Log(BgmSlider.value);
+            Debug.Log("Loaded BgmVolume: " + Mathf.Log10(BgmSlider.value) * 20);
+
+            audioMixer.SetFloat("BGM", Mathf.Log10(BgmSlider.value) * 20);
+            audioMixer.GetFloat("BGM", out float value);
+            Debug.Log(value);
         }
         else
             BgmSlider.value = 0.5f;     // PlayerPrefs에 Volume이 없을 경우
@@ -163,7 +166,7 @@ public class SoundManager : Singleton<SoundManager>
         {
             // Slider의 값을 저장해 놓은 값으로 변경.
             SfxSlider.value = PlayerPrefs.GetFloat("SfxVolume");
-            Debug.Log(SfxSlider.value);
+            audioMixer.SetFloat("SFX", Mathf.Log10(SfxSlider.value) * 20);
         }
         else
             SfxSlider.value = 0.5f;     // PlayerPrefs에 Volume이 없을 경우
