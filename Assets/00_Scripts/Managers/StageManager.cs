@@ -84,8 +84,8 @@ public class StageManager : Singleton<StageManager>
 
     private void CalcStarCount()
     {
-        float timePoint = 0f;
-        float gemPoint = 0f;
+        float timePoint = 1f;
+        float gemPoint = 1f;
 
         if(stageDataManager.GetLimitedTime(curLevel) != 0)
             timePoint = 1f - Mathf.Clamp01(playTime / stageDataManager.GetLimitedTime(curLevel));
