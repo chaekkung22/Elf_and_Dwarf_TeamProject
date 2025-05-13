@@ -134,6 +134,12 @@ public class SelectStageUI : BaseUI
     {
         stageLevelTxt.text = stageLevel;
 
+        // 별 이미지 SetActive 초기화
+        for(int i = 0; i < 3; i++)
+        {
+            starImgs[i].SetActive(true);
+        }
+
         // 별 최대 개수 3개
         // 부족한 별 개수 만큼 오브젝트 비활성화
         for(int i = 0; i < 3 - starCnt; i++)
