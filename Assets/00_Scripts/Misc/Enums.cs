@@ -8,5 +8,6 @@ public enum UIState
     Title,
     Main,
     SelectStage,
+    Quest,
     Option,
 }

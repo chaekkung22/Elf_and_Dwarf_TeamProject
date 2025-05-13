@@ -9,5 +9,4 @@ public class ItemSO : ScriptableObject
     public string itemName;
     public Sprite image;
     public int price;
-    public GameObject particle;
 }
