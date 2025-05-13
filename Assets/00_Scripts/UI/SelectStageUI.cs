@@ -30,7 +30,6 @@ public class SelectStageUI : BaseUI
     private StringBuilder gemStr = new StringBuilder();
 
     private int curLevel = 0;
-    [SerializeField] private StageDataManager stageDataManager;
 
     protected override UIState UIState { get; } = UIState.SelectStage;
 
@@ -75,9 +74,7 @@ public class SelectStageUI : BaseUI
 
         // 출력하려는 스테이지 레벨이 0보다 작거나 == 범위를 벗어남
         //(최종 클리어 레벨 + 1) 보다 크면 == 해금이 안 된 스테이지
-        if(curLevel + value < 0 || 
-            curLevel + value > DataManager.Instance.GetStageInfo().clearLevel + 1 ||
-            curLevel + value > stageDataManager.GetStageCount() - 1)
+        if(curLevel + value < 0 || curLevel + value > DataManager.Instance.GetStageInfo().clearLevel + 1)
         {
             Debug.Log("범위 벗어남 혹은 미해금 스테이지 접근");
             return;

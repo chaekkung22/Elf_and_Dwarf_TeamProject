@@ -27,9 +27,4 @@ public class StageDataManager : ScriptableObject
     {
         return stageDatabase.Find((x) => x.StageLevel == level).CameraSize;
     }
-
-    public int GetStageCount()
-    {
-        return stageDatabase.Count;
-    }
 }
