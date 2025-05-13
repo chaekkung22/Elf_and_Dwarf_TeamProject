@@ -62,4 +62,9 @@ public class GameManager : Singleton<GameManager>
         } while(fadeImg.color.a > 0);
         GameStart = true;
     }
+
+    private void OnApplicationQuit()
+    {
+        DataManager.Instance.SaveDatas();
+    }
 }
