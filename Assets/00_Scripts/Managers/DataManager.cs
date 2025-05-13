@@ -8,6 +8,7 @@ public class DataManager : Singleton<DataManager>
     #region Playerpref Key
     private const string PlayerInfoKey = "PlayerInfoKey";
     private const string StageInfoKey = "StageInfoKey";
+    private const string QuestInfoKey = "QuestInfoKey";
     #endregion Playerpref Key
 
     #region Save Datas
@@ -19,6 +20,7 @@ public class DataManager : Singleton<DataManager>
     private bool isDataChanged = false;
 
     [SerializeField] private ItemDatabaseSO itemDatabaseSO;
+    [SerializeField] private Quest quest;
     private List<ItemSO> allItems;
     private Dictionary<string, ItemSO> allItemsDictionary;
 
@@ -41,7 +43,6 @@ public class DataManager : Singleton<DataManager>
         allItemsDictionary = itemDatabaseSO.GetItemDatabaseDictionary();
         ownedItems = new Dictionary<string, ItemSO>();
         ownedItemList = new List<ItemSO>();
-
         LoadDatas();
     }
 
@@ -49,6 +50,7 @@ public class DataManager : Singleton<DataManager>
     {
         LoadPlayerInfo();
         LoadStageInfo();
+        quest.LoadQuestInfo(QuestInfoKey);
     }
 
     private void LoadPlayerInfo()
@@ -112,6 +114,8 @@ public class DataManager : Singleton<DataManager>
 
         PlayerPrefs.Save();
 
+        quest.SaveQuestInfo(QuestInfoKey);
+
         isDataChanged = false;
     }
 
@@ -128,14 +132,14 @@ public class DataManager : Singleton<DataManager>
     public void SetStageInfo(int level, float clearTime, int gemCount, int starCount)
     {
         // 스테이지 레벨이 플레이 가능한 레벨보다 높은 경우
-        if(level > stageInfo.clearLevel + 1)
+        if (level > stageInfo.clearLevel + 1)
         {
             Debug.LogError("잘못된 스테이지 클리어");
             return;
         }
 
         // 클리어 기록이 있는 경우
-        if(stageInfo.clearLevel >= level)
+        if (stageInfo.clearLevel >= level)
         {
             stageInfo.bestClearTimeList[level] = clearTime < stageInfo.bestClearTimeList[level] ? clearTime : stageInfo.bestClearTimeList[level];
             stageInfo.gemCountList[level] = gemCount > stageInfo.gemCountList[level] ? gemCount : stageInfo.gemCountList[level];
@@ -227,6 +231,50 @@ public class DataManager : Singleton<DataManager>
     {
         return stageInfo;
     }
+
+    // ======= Quest 관련 매서드 =======
+    public Quest GetQuest()
+    {
+        return quest;
+    }
+
+    public int GetStarCount()
+    {
+        int total = 0;
+        foreach (var starCnt in stageInfo.starCountList)
+        {
+            total += starCnt;
+        }
+        return total;
+    }
+
+    public int GetThreeStarStageCount()
+    {
+        int cnt = 0;
+        foreach (var starCnt in stageInfo.starCountList)
+        {
+            if (starCnt == 3)
+            {
+                cnt++;
+            }
+        }
+
+        return cnt;
+    }
+
+    public bool CheckTimeAttack(int targetStage, float targetTime)
+    {
+        if (stageInfo.bestClearTimeList[targetStage] <= targetTime)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    // ======= end: Quest 관련 매서드 =======
 
     public void AddChangeOwnedItemsEvent(Action action)
     {

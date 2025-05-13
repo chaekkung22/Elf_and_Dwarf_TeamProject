@@ -11,3 +11,12 @@ public enum UIState
     Quest,
     Option,
 }
+
+
+public enum QuestType
+{
+    CollectStar,
+    ThreeStarStage,
+    TimeAttack,
+    EarnGold,
+}
