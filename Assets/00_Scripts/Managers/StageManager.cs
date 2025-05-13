@@ -46,8 +46,6 @@ public class StageManager : Singleton<StageManager>
         curLevel = PlayerPrefs.GetInt(curStageLevelKey);
         stageDataManager.CreateMap(curLevel);
         Camera.main.orthographicSize = stageDataManager.GetCameraSize(curLevel);
-        Debug.Log(stageDataManager.GetLimitedTime(curLevel));
-        Debug.Log(stageDataManager.GetTotalGemCount(curLevel));
     }
 
     private void Update()
@@ -111,11 +109,11 @@ public class StageManager : Singleton<StageManager>
 
     private void SetPlayerMovable(bool isMovable)
     {
-        if (firePlayer.gameObject.activeSelf)
+        if (firePlayer != null && firePlayer.gameObject.activeSelf)
         {
             firePlayer.IsMovable = isMovable;
         }
-        if (waterPlayer.gameObject.activeSelf)
+        if (waterPlayer != null && waterPlayer.gameObject.activeSelf)
         {
             waterPlayer.IsMovable = isMovable;
         }
