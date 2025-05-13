@@ -68,7 +68,11 @@ public class StageManager : Singleton<StageManager>
     {
         isClear = true;
         isGameDone = true;
-        starCount = 2;
+        starCount = 2; // 별 개수 계산 기능 들어가야함
+        DataManager.Instance.SetStageInfo(PlayerPrefs.GetInt(curStageLevelKey),
+                                          playTime,
+                                          gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water],
+                                          starCount);
         // TODO: DataManager에 Gold 추가하기
         // DataManager.Instance.EarnGold(gold);
         OnPauseGame?.Invoke(true); // Pause 버튼 끄기
