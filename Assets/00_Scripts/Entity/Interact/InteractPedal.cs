@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractPedal:InteractObj, ICollisionEnter, ICollisionExit
+public class InteractPedal:InteractObj, ICollisionStay, ICollisionExit
 {
     private Transform spriteTr;
 
@@ -23,7 +23,7 @@ public class InteractPedal:InteractObj, ICollisionEnter, ICollisionExit
         MovePedal();
     }
 
-    public virtual void EnterEvent(GameObject collider)
+    public virtual void StayEvent(GameObject collider)
     {
         ChangeOnMode(true);
     }
