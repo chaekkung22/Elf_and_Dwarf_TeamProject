@@ -27,7 +27,7 @@ public class ClearUI : BaseUI
         base.Initialize();
 
         retryButton.onClick.RemoveAllListeners();
-        retryButton.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+        retryButton.onClick.AddListener(() => GameManager.Instance.ChangeScene(SceneManager.GetActiveScene().name));
 
         mainButton.onClick.RemoveAllListeners();
         mainButton.onClick.AddListener(ExitStage);

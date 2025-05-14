@@ -39,11 +39,6 @@ public class QuestUI : BaseUI
         }
     }
 
-    private void OnDestroy()
-    {
-        quest.RemoveEvent();
-    }
-
     public override void SetUIActive(bool isActive)
     {
         if (isActive == false)
