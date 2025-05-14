@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ActiveRule
+public struct ActiveRule
 {
     public InteractObj interactObj;
     [SerializeField] private bool rule;
