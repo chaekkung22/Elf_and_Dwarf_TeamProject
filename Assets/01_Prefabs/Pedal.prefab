@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3370342204340506420}
   - component: {fileID: 1685519907767513034}
-  - component: {fileID: -184207486475785363}
+  - component: {fileID: 4223206846853029339}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Pedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7270001, y: 0.78320587}
   m_EdgeRadius: 0
---- !u!114 &-184207486475785363
+--- !u!114 &4223206846853029339
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,9 +172,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6399997484844352830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b7392bf4c87aee4dafae1b80f4c56a0, type: 3}
+  m_Script: {fileID: 11500000, guid: d0d90a4c93ab29a4989a0f8233784d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonOnImg: {fileID: 21300000, guid: 295b79a3e063c3d4784dd5399e5e8011, type: 3}
-  buttonOffImg: {fileID: 21300000, guid: f597ced5c32687347875eb9b5f8d9b8b, type: 3}
-  btnActiveTerm: 0
+  speed: 5
+  pressDistance: 0.2
