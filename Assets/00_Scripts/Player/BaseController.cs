@@ -20,6 +20,7 @@ public class BaseController : MonoBehaviour
 
     private bool isGround;
     private bool wasGround = true;
+    private bool jumpAble = true;
 
     public bool IsGround { get { return isGround; } }
 
@@ -81,7 +82,7 @@ public class BaseController : MonoBehaviour
     protected void Jump()
     {
         // 캐릭터 점프
-        if (isGround)
+        if (isGround && jumpAble)
         {
             _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             animationHandler.Jumping();
@@ -98,5 +99,10 @@ public class BaseController : MonoBehaviour
     {
         moveSpeedLimitTmp += value;
         Debug.Log(moveSpeedLimitTmp);
+    }
+
+    public void ChangeJumpAbleMode(bool value)
+    {
+        jumpAble = value;
     }
 }
