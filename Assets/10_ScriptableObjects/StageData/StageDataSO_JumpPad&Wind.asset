@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6303e44f739f8e24a9949468b5ef2492, type: 3}
-  m_Name: StageDataSO_Tutorial
+  m_Name: StageDataSO_JumpPad&Wind
   m_EditorClassIdentifier: 
-  stageLevel: 0
+  stageLevel: 2
   limitedTime: 100
-  totalGemCount: 2
-  mapPrefab: {fileID: 6631337052522991662, guid: f1f6d8daf726eba458578b77e6600a12, type: 3}
-  cameraSize: 8
+  totalGemCount: 8
+  mapPrefab: {fileID: 8756899847617156709, guid: 7faa881ec10fdaa46ba8278e61faa60a, type: 3}
+  cameraSize: 10.5

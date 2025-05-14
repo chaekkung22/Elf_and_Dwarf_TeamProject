@@ -8,6 +8,8 @@ public class OnOffButton : InteractPedal
 
     private WindObstacle windObstacle;
 
+    [SerializeField] private bool IsWindOn = false;
+
     protected override void Start()
     {
         base.Start();
@@ -32,7 +34,12 @@ public class OnOffButton : InteractPedal
 
         if (windObstacle != null)
         {
-            windObstacle.OffWind();
+            if (IsWindOn)
+                windObstacle.OnWind();
+            else
+                windObstacle.OffWind();
+
+
         }
     }
 
@@ -42,7 +49,10 @@ public class OnOffButton : InteractPedal
 
         if (windObstacle != null)
         {
-            windObstacle.OnWind();
+            if (IsWindOn)
+                windObstacle.OffWind();
+            else
+                windObstacle.OnWind();
         }
     }
 }

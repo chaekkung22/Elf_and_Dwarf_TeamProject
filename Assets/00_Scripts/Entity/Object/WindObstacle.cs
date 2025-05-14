@@ -9,12 +9,17 @@ public class WindObstacle : MonoBehaviour, ICollisionStay
     private Animator windAnimator;
     private ParticleSystem particle;
 
+    [SerializeField] private bool IsWindOn = true;
+
     [SerializeField] float force = 3f;
 
     private void Start()
     {
         windAnimator = GetComponentInChildren<Animator>();
         particle = GetComponentInChildren<ParticleSystem>();
+
+        if (!IsWindOn)
+            OffWind();
     }
 
     public void StayEvent(GameObject collider)
