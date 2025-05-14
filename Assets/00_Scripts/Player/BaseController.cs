@@ -14,6 +14,7 @@ public class BaseController : MonoBehaviour
     [SerializeField] private float maxMoveSpeed = 5f;
     [SerializeField] private float movePower = 5f;
     [SerializeField] private float jumpPower = 5f;
+    private float moveSpeedLimitTmp = 0; // 외부 오브젝트로 인해 최대 속도에 생기는 변화 량을 저장
 
     [SerializeField] private LayerMask groundLayer;
 
@@ -57,9 +58,15 @@ public class BaseController : MonoBehaviour
     protected void Move(Vector2 direction)
     {
         // 캐릭터 이동
-        if (Mathf.Abs(_rigidbody.velocity.x) < maxMoveSpeed)
+        if (Mathf.Abs(_rigidbody.velocity.x) < maxMoveSpeed + moveSpeedLimitTmp)
         {
             _rigidbody.AddForce(new Vector2(direction.x * movePower, 0f));
+        }
+        else
+        {
+            Vector3 vel = _rigidbody.velocity;
+            vel.x = Mathf.Clamp(vel.x, -1 * (maxMoveSpeed + moveSpeedLimitTmp), maxMoveSpeed + moveSpeedLimitTmp);
+            _rigidbody.velocity = vel;
         }
         animationHandler.Moving(direction);
     }
@@ -85,5 +92,11 @@ public class BaseController : MonoBehaviour
     protected void Death()
     {
         // 캐릭터 사망
+    }
+
+    public void ChangeMaxMoveSpeed(float value)
+    {
+        moveSpeedLimitTmp += value;
+        Debug.Log(moveSpeedLimitTmp);
     }
 }

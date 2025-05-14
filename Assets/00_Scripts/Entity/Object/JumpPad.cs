@@ -5,9 +5,17 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour, ICollisionEnter
 {
     [SerializeField] float force = 5;
+    private Animator animator;
 
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
     public void EnterEvent(GameObject collider)
     {
+        
+        animator.SetTrigger("Stepped");
+
         //이 오브젝트 기준으로 위쪽. z가 회전이 되더라도 오브젝트의 기준으로 힘을 주기 위해 방향을 따옴
         Vector2 direction = transform.up.normalized;
         //Enter시에 한 번만 실행되기 때문에, 속도(velocity)에 적용해주기 위해 rigidbody를 들고 옴 
