@@ -10,7 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4986183334393651924, guid: c603716ad45f75b42870b7a895d17861, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: RetryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547123415468008900, guid: c603716ad45f75b42870b7a895d17861, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547123415468008900, guid: c603716ad45f75b42870b7a895d17861, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547123415468008900, guid: c603716ad45f75b42870b7a895d17861, type: 3}
+      propertyPath: m_Color.r
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 8973058404639590246, guid: c603716ad45f75b42870b7a895d17861, type: 3}
       propertyPath: m_Pivot.x
