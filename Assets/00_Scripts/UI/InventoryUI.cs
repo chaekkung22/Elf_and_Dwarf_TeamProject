@@ -29,12 +29,18 @@ public class InventoryUI : BaseUI
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
         exitButton.onClick.AddListener(UIManager.Instance.CloseUI);
-        DataManager.Instance.AddChangeEquipedItemEvent(UpdateEquipedItems);
+    }
+
+    private void OnDestroy()
+    {
+        DataManager.Instance.RemoveChangeEquipedItemEvent();
     }
 
     public override void SetUIActive(bool isActive)
     {
+        if (!isActive) DataManager.Instance.RemoveChangeEquipedItemEvent();
         base.SetUIActive(isActive);
+        DataManager.Instance.AddChangeEquipedItemEvent(UpdateEquipedItems);
         currentPage = 1;
         totalPage = Mathf.Max(1, Mathf.CeilToInt((float)ownedItems.Count / itemsPerPage));
         UpdatePageButton();

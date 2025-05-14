@@ -39,11 +39,16 @@ public class QuestUI : BaseUI
         }
     }
 
+    private void OnDestroy()
+    {
+        quest.RemoveEvent();
+    }
+
     public override void SetUIActive(bool isActive)
     {
         if (isActive == false)
         {
-            DataManager.Instance.GetQuest().RemoveEvent(UpdateQuestSlots);
+            quest.RemoveEvent();
         }
         base.SetUIActive(isActive);
 

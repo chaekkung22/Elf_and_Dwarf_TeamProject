@@ -34,8 +34,6 @@ public class DataManager : Singleton<DataManager>
     private Action OnChangeEquipedItem;
     #endregion Actions
 
-
-
     protected override void Initialize()
     {
         itemDatabaseSO.Init();
@@ -284,8 +282,18 @@ public class DataManager : Singleton<DataManager>
         OnChangeOwnedItems += action;
     }
 
+    public void RemoveChangeOwnedItemsEvent()
+    {
+        OnChangeOwnedItems = null;
+    }
+
     public void AddChangeEquipedItemEvent(Action action)
     {
         OnChangeEquipedItem += action;
+    }
+
+    public void RemoveChangeEquipedItemEvent()
+    {
+        OnChangeEquipedItem = null;
     }
 }
