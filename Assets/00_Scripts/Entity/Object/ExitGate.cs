@@ -36,7 +36,6 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
             if (StageManager.Instance.SetPlayerDoorState(playerType, true))
             {
                 spriteRenderer.sprite = openSprite;
-                SoundManager.Instance.PlaySfx(SfxType.Door);
             }
         }
     }

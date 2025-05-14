@@ -30,9 +30,9 @@ MonoBehaviour:
   - sfxType: 80
     clip: {fileID: 8300000, guid: 8be2d33bd2f39b24883cd44b31099493, type: 3}
   - sfxType: 90
-    clip: {fileID: 8300000, guid: 9f40ec0316b26bf4589c5869c3acd49d, type: 3}
+    clip: {fileID: 8300000, guid: 8239514e9131eef4fa79f5ebd33a77a8, type: 3}
   bgmDataArr:
   - bgmType: 10
     clip: {fileID: 8300000, guid: 8ccc61036fd38dd448e62c0efa0e7425, type: 3}
   - bgmType: 20
-    clip: {fileID: 8300000, guid: 8ccc61036fd38dd448e62c0efa0e7425, type: 3}
+    clip: {fileID: 8300000, guid: 1cdf8c7a1ba20ac46aa5fef0da0e11b8, type: 3}
