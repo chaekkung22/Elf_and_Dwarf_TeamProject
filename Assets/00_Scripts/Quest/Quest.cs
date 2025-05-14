@@ -157,8 +157,8 @@ public class Quest : MonoBehaviour
         onQuest += action;
     }
 
-    public void RemoveEvent(Action action)
+    public void RemoveEvent()
     {
-        onQuest -= action;
+        onQuest = null;
     }
 }

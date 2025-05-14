@@ -33,12 +33,18 @@ public class ShopUI : BaseUI
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
         exitButton.onClick.AddListener(UIManager.Instance.CloseUI);
-        DataManager.Instance.AddChangeOwnedItemsEvent(UpdateOwnedItems);
+    }
+
+    private void OnDestroy()
+    {
+        DataManager.Instance.RemoveChangeOwnedItemsEvent();
     }
 
     public override void SetUIActive(bool isActive)
     {
+        if (!isActive) DataManager.Instance.RemoveChangeOwnedItemsEvent();
         base.SetUIActive(isActive);
+        DataManager.Instance.AddChangeOwnedItemsEvent(UpdateOwnedItems);
         currentPage = 1;
         UpdatePageButton();
         UpdateOwnedItems();
