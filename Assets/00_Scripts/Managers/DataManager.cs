@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DataManager : Singleton<DataManager>
 {
@@ -42,7 +43,16 @@ public class DataManager : Singleton<DataManager>
         ownedItems = new Dictionary<string, ItemSO>();
         ownedItemList = new List<ItemSO>();
         LoadDatas();
-  
+    }
+
+    private void OnSceneUnLoaded(Scene scene)
+    {
+        if(scene.name == "MainScene")
+        {
+            RemoveChangeEquipedItemEvent();
+            RemoveChangeOwnedItemsEvent();
+            quest.RemoveEvent();
+        }
     }
 
     public void LoadDatas()

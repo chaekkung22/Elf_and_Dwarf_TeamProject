@@ -32,8 +32,9 @@ public class PlayerController : BaseController
         PlayerTypeChangeBtn.onClickTypeChangeButton -= ChangeType;
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         _light = GetComponentInChildren<Light2D>();
         particle = GetComponentInChildren<ParticleSystem>();
         particle.textureSheetAnimation.SetSprite(0, DataManager.Instance.GetEquipedItem().image);

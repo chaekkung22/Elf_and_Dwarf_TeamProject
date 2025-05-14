@@ -36,11 +36,6 @@ public class ShopUI : BaseUI
 
     }
 
-    private void OnDisable()
-    {
-        DataManager.Instance.RemoveChangeOwnedItemsEvent();
-    }
-
     public override void SetUIActive(bool isActive)
     {
         if (!isActive) DataManager.Instance.RemoveChangeOwnedItemsEvent();

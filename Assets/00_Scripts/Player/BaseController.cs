@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseController : MonoBehaviour
@@ -22,12 +23,19 @@ public class BaseController : MonoBehaviour
     private bool wasGround = true;
     private bool jumpAble = true;
 
+    private Vector3 velocityTmp;
+
     public bool IsGround { get { return isGround; } }
 
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         animationHandler = GetComponent<AnimationHandler>();
+    }
+
+    protected virtual void Start()
+    {
+        StageManager.Instance.AddOnPauseEvent(ChangeRigidBodySleepMode);
     }
 
     protected virtual void Update()
@@ -53,6 +61,21 @@ public class BaseController : MonoBehaviour
             }
 
             this.wasGround = isGround;
+        }
+    }
+
+    private void ChangeRigidBodySleepMode(bool value)
+    {
+        if(value)
+        {
+            velocityTmp = _rigidbody.velocity;
+            _rigidbody.Sleep();
+
+        }
+        else
+        {
+            _rigidbody.WakeUp();
+            _rigidbody.velocity = velocityTmp;
         }
     }
 
