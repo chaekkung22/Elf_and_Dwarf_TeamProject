@@ -1995,6 +1995,7 @@ MonoBehaviour:
   - {fileID: 1017641739}
   bestTimeTxt: {fileID: 604864738}
   gemCountTxt: {fileID: 1028364550}
+  stageDataManager: {fileID: 11400000, guid: 7a24b679de8d0604b96f70747dbc138a, type: 2}
 --- !u!1 &237138304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3068,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3738968589344883509, guid: 16ca2731e4c61444192eefbc07cedcfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3744134981157079375, guid: 16ca2731e4c61444192eefbc07cedcfe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3287,8 +3292,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0001500845, y: -0.59959996, z: 0}
-    m_Extent: {x: 2.60035, y: 3.1002002, z: 0}
+    m_Center: {x: 0.00045001507, y: -0.59959996, z: 0}
+    m_Extent: {x: 2.60015, y: 3.1002998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4474,6 +4479,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1300692490}
     m_Modifications:
+    - target: {fileID: 6439356731302463221, guid: 95297e717ed799248ba644f3b66d5519, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8214962872287330666, guid: 95297e717ed799248ba644f3b66d5519, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4536,7 +4545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8214962872287330666, guid: 95297e717ed799248ba644f3b66d5519, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8214962872287330666, guid: 95297e717ed799248ba644f3b66d5519, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4557,6 +4566,10 @@ PrefabInstance:
     - target: {fileID: 8758703110600744039, guid: 95297e717ed799248ba644f3b66d5519, type: 3}
       propertyPath: m_Name
       value: InventoryUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758703110600744039, guid: 95297e717ed799248ba644f3b66d5519, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5497,6 +5510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptionUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5812059241099332540, guid: 8c1b5bea50c6b684c83483eb50d4680a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6300410523046868597, guid: 8c1b5bea50c6b684c83483eb50d4680a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6072,6 +6089,10 @@ PrefabInstance:
     - target: {fileID: 4624659152045694180, guid: 5d6b2221d431a6049b24e287667b8453, type: 3}
       propertyPath: m_Name
       value: ShopUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624659152045694180, guid: 5d6b2221d431a6049b24e287667b8453, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6788084983841354372, guid: 5d6b2221d431a6049b24e287667b8453, type: 3}
       propertyPath: m_Pivot.x
@@ -7114,14 +7135,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104452776}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0707, y: 1.0707, z: 1.0707}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1829975435}
   m_Father: {fileID: 1341760430}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -125, y: -70}
