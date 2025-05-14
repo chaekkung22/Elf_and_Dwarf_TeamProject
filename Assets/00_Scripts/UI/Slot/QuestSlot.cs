@@ -30,9 +30,11 @@ public class QuestSlot : MonoBehaviour
                 break;
             case QuestType.TimeAttack:
                 float clearTime;
+                bool isClear = false; ;
                 if (DataManager.Instance.GetStageInfo().clearLevel >= quest.targetStage)
                 {
                     clearTime = DataManager.Instance.GetStageInfo().bestClearTimeList[quest.targetStage];
+                    isClear = true;
                 }
                 else
                 {
@@ -41,7 +43,7 @@ public class QuestSlot : MonoBehaviour
 
                 TimeSpan _cleartime = TimeSpan.FromSeconds(clearTime);
                 TimeSpan _targetTime = TimeSpan.FromSeconds(quest.targetTime);
-                countText = MakeTimeAttackText(questState, _cleartime, _targetTime);
+                countText = MakeTimeAttackText(questState, _cleartime, _targetTime, isClear);
                 break;
             case QuestType.EarnGold:
                 int gold = DataManager.Instance.GetGold();
@@ -91,9 +93,10 @@ public class QuestSlot : MonoBehaviour
         return tempText;
     }
 
-    private string MakeTimeAttackText(QuestState questState, TimeSpan _cleartime, TimeSpan _targetTime)
+    private string MakeTimeAttackText(QuestState questState, TimeSpan _cleartime, TimeSpan _targetTime, bool isClear)
     {
         string tempText;
+
         if (questState == QuestState.RewardAvailable)
         {
             tempText = $"<color=blue>{_cleartime.Minutes:00}:{_cleartime.Seconds:00} </color> / {_targetTime.Minutes:00}:{_targetTime.Seconds:00}";
@@ -104,7 +107,14 @@ public class QuestSlot : MonoBehaviour
         }
         else
         {
-            tempText = $"<color=red>{_cleartime.Minutes:00}:{_cleartime.Seconds:00} </color> / {_targetTime.Minutes:00}:{_targetTime.Seconds:00}";
+            if (isClear)
+            {
+                tempText = $"<color=red>{_cleartime.Minutes:00}:{_cleartime.Seconds:00} </color> / {_targetTime.Minutes:00}:{_targetTime.Seconds:00}";
+            }
+            else
+            {
+                tempText = $"<color=red>--:-- </color> / {_targetTime.Minutes:00}:{_targetTime.Seconds:00}";
+            }
         }
         return tempText;
     }

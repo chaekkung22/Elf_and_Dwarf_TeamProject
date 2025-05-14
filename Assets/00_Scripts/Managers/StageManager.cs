@@ -67,6 +67,8 @@ public class StageManager : Singleton<StageManager>
 
     private void ClearStage()
     {
+        if (!IsClear)
+        {
         isClear = true;
         isGameDone = true;
         CalcStarCount();
@@ -78,6 +80,8 @@ public class StageManager : Singleton<StageManager>
         OnPauseGame?.Invoke(true); // Pause 버튼 끄기
         UIManager.Instance.OpenUI(UIState.StageClear);
         SetPlayerMovable(false);
+        SoundManager.Instance.PlaySfx(SfxType.Door);
+        }
     }
 
     private void CalcStarCount()

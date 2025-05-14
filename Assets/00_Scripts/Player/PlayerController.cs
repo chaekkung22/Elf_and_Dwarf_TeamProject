@@ -22,6 +22,16 @@ public class PlayerController : BaseController
     private bool isMovable = true;
     public bool IsMovable { get { return isMovable; } set { this.isMovable = value; } }
 
+    private void OnEnable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
+    }
+
+    private void OnDisable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton -= ChangeType;
+    }
+
     private void Start()
     {
         _light = GetComponentInChildren<Light2D>();

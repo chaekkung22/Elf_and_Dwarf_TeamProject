@@ -59,6 +59,7 @@ public enum BgmType
     None = 0,
     Main = 10,
     Play = 20,
+    Play2 = 30,
 }
 
 public enum SfxType
@@ -67,4 +68,10 @@ public enum SfxType
     Jump1 = 10,
     Jump2 = 20,
     GetCoin = 30,
+    Gem = 40,
+    Water = 50,
+    Boing = 60,
+    Door = 70,
+    Click = 80,
+    Dead = 90,
 }
