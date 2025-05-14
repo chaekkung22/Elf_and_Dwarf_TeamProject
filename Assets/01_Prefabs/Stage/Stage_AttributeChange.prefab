@@ -2336,6 +2336,7 @@ GameObject:
   - component: {fileID: 2873727724133459135}
   - component: {fileID: 3758797691343245422}
   - component: {fileID: 8978412112345953871}
+  - component: {fileID: 6942280074360361846}
   - component: {fileID: 1368141540679733989}
   m_Layer: 7
   m_Name: SwitchObject
@@ -2598,6 +2599,20 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &6942280074360361846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113731415096870422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5e905f875101542afe7b21ac68070b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 0
+  ignoreElementalType: 0
 --- !u!114 &1368141540679733989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8400,6 +8415,7 @@ GameObject:
   - component: {fileID: 363915220367987494}
   - component: {fileID: 8779243577758629201}
   - component: {fileID: 7068387418494629615}
+  - component: {fileID: 8517627028772855557}
   - component: {fileID: 6820854679625539333}
   m_Layer: 7
   m_Name: SwitchObject (1)
@@ -8662,6 +8678,20 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &8517627028772855557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6436942100134472387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5e905f875101542afe7b21ac68070b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: 1
+  ignoreElementalType: 0
 --- !u!114 &6820854679625539333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9744,8 +9774,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00024986267, y: 8.4987, z: 0}
-    m_Extent: {x: 17.99905, y: 26.499401, z: 0}
+    m_Center: {x: 0.00015068054, y: 8.498699, z: 0}
+    m_Extent: {x: 17.99905, y: 26.4996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10505,7 +10535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3642162373025030826, guid: ee677925a77e2fb4ea9a1699943f70b2, type: 3}
       propertyPath: obstacleType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642162373025030826, guid: ee677925a77e2fb4ea9a1699943f70b2, type: 3}
       propertyPath: ignoreElementalType
