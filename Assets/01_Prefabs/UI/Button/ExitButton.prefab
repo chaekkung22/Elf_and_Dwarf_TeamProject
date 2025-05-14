@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitButton
       objectReference: {fileID: 0}
+    - target: {fileID: 7547123415468008900, guid: c603716ad45f75b42870b7a895d17861, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547123415468008900, guid: c603716ad45f75b42870b7a895d17861, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547123415468008900, guid: c603716ad45f75b42870b7a895d17861, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9254902
+      objectReference: {fileID: 0}
     - target: {fileID: 8629213388919380657, guid: c603716ad45f75b42870b7a895d17861, type: 3}
       propertyPath: m_text
       value: "\uAC8C\uC784 \uB098\uAC00\uAE30"
