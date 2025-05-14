@@ -2639,8 +2639,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00084996223, y: -0.60045004, z: 0}
-    m_Extent: {x: 2.59995, y: 3.10055, z: 0}
+    m_Center: {x: 0.00034999847, y: -0.5999501, z: 0}
+    m_Extent: {x: 2.59965, y: 3.10075, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4465,6 +4465,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1300692490}
     m_Modifications:
+    - target: {fileID: 2631514129553388135, guid: 8c1b5bea50c6b684c83483eb50d4680a, type: 3}
+      propertyPath: bgmSlider
+      value: 
+      objectReference: {fileID: 1002017950}
+    - target: {fileID: 2631514129553388135, guid: 8c1b5bea50c6b684c83483eb50d4680a, type: 3}
+      propertyPath: sfxSlider
+      value: 
+      objectReference: {fileID: 1410602101}
+    - target: {fileID: 2631514129553388135, guid: 8c1b5bea50c6b684c83483eb50d4680a, type: 3}
+      propertyPath: bgmMuteToggle
+      value: 
+      objectReference: {fileID: 1854429301}
+    - target: {fileID: 2631514129553388135, guid: 8c1b5bea50c6b684c83483eb50d4680a, type: 3}
+      propertyPath: sfxMuteToggle
+      value: 
+      objectReference: {fileID: 75235938}
     - target: {fileID: 2803901848796569633, guid: 8c1b5bea50c6b684c83483eb50d4680a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
