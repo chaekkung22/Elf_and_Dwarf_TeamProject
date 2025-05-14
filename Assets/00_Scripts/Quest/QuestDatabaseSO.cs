@@ -2,17 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestDatabaseSO : MonoBehaviour
+[CreateAssetMenu(fileName = "QuestDatabase", menuName = "Scriptable Object/Quest/QuestDatabase")]
+public class QuestDatabaseSO : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<QuestSO> questDatabase;
+    private Dictionary<string, QuestSO> questDatabaseDictionary;
+
+    public void Init()
     {
-        
+        questDatabaseDictionary = new Dictionary<string, QuestSO>();
+
+        foreach (var quest in questDatabase)
+        {
+            questDatabaseDictionary.Add(quest.id, quest);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public QuestSO GetQuestFromDatabase(string key)
     {
-        
+        return questDatabaseDictionary[key];
+    }
+
+    public List<QuestSO> GetQuestDatabase()
+    {
+        return questDatabase;
+    }
+
+    public int GetQuestCount()
+    {
+        return questDatabase.Count;
     }
 }

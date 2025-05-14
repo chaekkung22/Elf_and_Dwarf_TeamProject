@@ -1995,6 +1995,7 @@ MonoBehaviour:
   - {fileID: 1017641739}
   bestTimeTxt: {fileID: 604864738}
   gemCountTxt: {fileID: 1028364550}
+  stageDataManager: {fileID: 11400000, guid: 7a24b679de8d0604b96f70747dbc138a, type: 2}
 --- !u!1 &237138304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,8 +3292,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00034999847, y: -0.6006, z: 0}
-    m_Extent: {x: 2.59945, y: 3.1004, z: 0}
+    m_Center: {x: 0.00045001507, y: -0.59959996, z: 0}
+    m_Extent: {x: 2.60015, y: 3.1002998, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

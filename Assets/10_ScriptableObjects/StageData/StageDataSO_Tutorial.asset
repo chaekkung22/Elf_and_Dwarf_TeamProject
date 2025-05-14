@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageLevel: 0
   limitedTime: 100
-  totalGemCount: 0
-  mapPrefab: {fileID: 8549097488303915145, guid: 1f2c489874d3ded458f7e372776d039c, type: 3}
+  totalGemCount: 2
+  mapPrefab: {fileID: 6631337052522991662, guid: f1f6d8daf726eba458578b77e6600a12, type: 3}
   cameraSize: 8
