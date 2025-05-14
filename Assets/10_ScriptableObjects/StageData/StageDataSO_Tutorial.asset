@@ -15,5 +15,5 @@ MonoBehaviour:
   stageLevel: 0
   limitedTime: 100
   totalGemCount: 2
-  mapPrefab: {fileID: 2320585344286356692, guid: 4e27ae00ddffe3c47a1b7d2855632530, type: 3}
+  mapPrefab: {fileID: 6631337052522991662, guid: f1f6d8daf726eba458578b77e6600a12, type: 3}
   cameraSize: 8
