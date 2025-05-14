@@ -633,6 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: -2.5
+  isControlJump: 0
 --- !u!1 &213045264879635071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: 2
+  isControlJump: 0
 --- !u!1 &1660829047796459513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +1988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: 2
+  isControlJump: 0
 --- !u!1 &1670332449753208897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,6 +2769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: -2
+  isControlJump: 1
 --- !u!1 &2995166403085411462
 GameObject:
   m_ObjectHideFlags: 0
@@ -12136,6 +12140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: 2
+  isControlJump: 0
 --- !u!1 &5465839920848826231
 GameObject:
   m_ObjectHideFlags: 0
@@ -12521,6 +12526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: 2
+  isControlJump: 0
 --- !u!1 &5761992267951726440
 GameObject:
   m_ObjectHideFlags: 0
@@ -13953,6 +13959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: 3
+  isControlJump: 0
 --- !u!1 &7327139100112017584
 GameObject:
   m_ObjectHideFlags: 0
@@ -19783,6 +19790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeValue: -2
+  isControlJump: 1
 --- !u!1 &8502876556331057314
 GameObject:
   m_ObjectHideFlags: 0
@@ -22901,8 +22909,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00059986115, y: 8.4988, z: 0}
-    m_Extent: {x: 17.998402, y: 26.4988, z: 0}
+    m_Center: {x: -0.0002002716, y: 8.4984, z: 0}
+    m_Extent: {x: 17.9989, y: 26.4994, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
