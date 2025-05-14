@@ -15,6 +15,4 @@ public class OptionUI : BaseUI
         okButton.onClick.RemoveAllListeners();
         okButton.onClick.AddListener(() => UIManager.Instance.CloseUI());
     }
-
-
 }
