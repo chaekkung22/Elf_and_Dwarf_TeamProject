@@ -11,6 +11,8 @@ public class OnOffButton : InteractPedal
 
     private WindObstacle windObstacle;
 
+    [SerializeField] private bool IsWindOn = false;
+
     protected override void Start()
     {
         base.Start();
@@ -34,7 +36,11 @@ public class OnOffButton : InteractPedal
     public override void EnterEvent(GameObject collider)
     {
         base.EnterEvent(collider);
-        windObstacle.OffWind();
+
+        if (IsWindOn)
+            windObstacle.OnWind();
+        else
+            windObstacle.OffWind();
     }
 
     public override void ExitEvent(GameObject collider)
@@ -45,7 +51,12 @@ public class OnOffButton : InteractPedal
             playerOnPedal = 0;
             OnPedalOff();
             if(playerOnPedal == 0)
-                windObstacle.OnWind();
+            {
+                if (IsWindOn)
+                    windObstacle.OffWind();
+                else
+                    windObstacle.OnWind();
+            }
         }
     }
 
