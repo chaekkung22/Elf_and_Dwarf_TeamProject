@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
 using static UnityEngine.ParticleSystem;
 
 public enum PlayerType
@@ -14,6 +15,8 @@ public class PlayerController : BaseController
 {
     [SerializeField] private PlayerType playerType;
     ParticleSystem particle;
+    Light2D _light;
+
     public PlayerType PlayerType { get { return playerType; } }
 
     private bool isMovable = true;
@@ -21,6 +24,7 @@ public class PlayerController : BaseController
 
     private void Start()
     {
+        _light = GetComponentInChildren<Light2D>();
         particle = GetComponentInChildren<ParticleSystem>();
         particle.textureSheetAnimation.SetSprite(0, DataManager.Instance.GetEquipedItem().image);
         PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
@@ -48,9 +52,27 @@ public class PlayerController : BaseController
     private void ChangeType()
     {
         if (PlayerType == PlayerType.Fire)
+        {
             playerType = PlayerType.Water;
+            _light.color = new Color(150/255f, 150/255f, 1f);
+        }
         else
+        {
             playerType = PlayerType.Fire;
+            _light.color = new Color(1f, 150 / 255f, 150 / 255f);
+        }
+
+        StartCoroutine(EffectColorChange(PlayerType));
+    }
+
+    private IEnumerator EffectColorChange(PlayerType playerType)
+    {
+        yield return new WaitForSeconds(0.5f);
+        ParticleSystem.MainModule main = particle.main;
+        if (playerType == PlayerType.Fire)
+            main.startColor = new Color(1f, 0f, 0f);
+        else
+            main.startColor = new Color(0f, 140/255f, 1f);
     }
 
     private bool isICollision<T>(GameObject gameObject)
