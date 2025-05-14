@@ -26,21 +26,16 @@ public class OnOffButton : InteractPedal
         }
     }
 
-    public override void StayEvent(GameObject collider)
+    public override void EnterEvent(GameObject collider)
     {
-        base.StayEvent(collider);
-
-        if (windObstacle != null)
-        {
-            windObstacle.OffWind();
-        }
+        base.EnterEvent(collider);
+        windObstacle.OffWind();
     }
 
     public override void ExitEvent(GameObject collider)
     {
         base.ExitEvent(collider);
-
-        if (windObstacle != null)
+        if (!isOn)
         {
             windObstacle.OnWind();
         }
