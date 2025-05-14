@@ -27,9 +27,18 @@ public class PlayerController : BaseController
         _light = GetComponentInChildren<Light2D>();
         particle = GetComponentInChildren<ParticleSystem>();
         particle.textureSheetAnimation.SetSprite(0, DataManager.Instance.GetEquipedItem().image);
-        PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
         StageManager.Instance.SetPlayer(playerType, this);
         isMovable = true;
+    }
+
+    private void OnEnable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
+    }
+
+    private void OnDisable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton -= ChangeType;
     }
 
     void OnMove(InputValue inputValue)
