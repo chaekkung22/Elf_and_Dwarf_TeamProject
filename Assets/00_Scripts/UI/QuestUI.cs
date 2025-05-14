@@ -7,10 +7,12 @@ public class QuestUI : BaseUI
 {
     [SerializeField] private Button exitButton;
     [SerializeField] private Transform content;
-    [SerializeField] private GameObject questSlot;
+    [SerializeField] private GameObject questSlotPrefab;
+    private List<QuestSlot> questSlots;
     private List<QuestSO> inProgressQuests;
     private List<QuestSO> rewardAvailableQuests;
     private List<QuestSO> completedQuests;
+    private Quest quest;
 
     protected override UIState UIState { get; } = UIState.Quest;
 
@@ -19,12 +21,22 @@ public class QuestUI : BaseUI
         base.Initialize();
         exitButton.onClick.RemoveAllListeners();
         exitButton.onClick.AddListener(() => UIManager.Instance.CloseUI());
-        Quest quest = DataManager.Instance.GetQuest();
 
+        quest = DataManager.Instance.GetQuest();
+        questSlots = new List<QuestSlot>();
+
+        // 퀘스트 Lists
         inProgressQuests = quest.GetInProgressQuests();
         rewardAvailableQuests = quest.GetRewardAvailableQuests();
         completedQuests = quest.GetCompletedQuests();
-        quest.AddEvent(UpdateQuestSlots);
+
+        // 슬롯 생성
+        int totalQuestCnt = quest.GetAllQuestsCount();
+
+        for (int i = 0; i < totalQuestCnt; i++)
+        {
+            questSlots.Add(Instantiate(questSlotPrefab, content).GetComponent<QuestSlot>());
+        }
     }
 
     public override void SetUIActive(bool isActive)
@@ -35,6 +47,8 @@ public class QuestUI : BaseUI
         }
         base.SetUIActive(isActive);
 
+        quest.AddEvent(UpdateQuestSlots);
+
         UpdateQuestSlots();
 
         this.gameObject.SetActive(isActive);
@@ -42,7 +56,24 @@ public class QuestUI : BaseUI
 
     private void UpdateQuestSlots()
     {
+        quest.CheckInProgressQuestsCleared();
 
+        int idx = 0;
+
+        for (int i = 0; i < rewardAvailableQuests.Count; i++)
+        {
+            questSlots[idx++].SetSlot(rewardAvailableQuests[i], QuestState.RewardAvailable);
+        }
+
+        for (int i = 0; i < inProgressQuests.Count; i++)
+        {
+            questSlots[idx++].SetSlot(inProgressQuests[i], QuestState.InProgress);
+        }
+
+        for (int i = 0; i < completedQuests.Count; i++)
+        {
+            questSlots[idx++].SetSlot(completedQuests[i], QuestState.Completed);
+        }
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "QuestDatabase", menuName = "Scriptable Object/Quest/QuestDatabase")]
 public class QuestDatabaseSO : ScriptableObject
 {
-    private List<QuestSO> questDatabase;
+    [SerializeField] private List<QuestSO> questDatabase;
     private Dictionary<string, QuestSO> questDatabaseDictionary;
 
     public void Init()
@@ -26,5 +26,10 @@ public class QuestDatabaseSO : ScriptableObject
     public List<QuestSO> GetQuestDatabase()
     {
         return questDatabase;
+    }
+
+    public int GetQuestCount()
+    {
+        return questDatabase.Count;
     }
 }

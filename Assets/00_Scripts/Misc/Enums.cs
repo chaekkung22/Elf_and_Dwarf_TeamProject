@@ -20,3 +20,10 @@ public enum QuestType
     TimeAttack,
     EarnGold,
 }
+
+public enum QuestState
+{
+    InProgress,
+    RewardAvailable,
+    Completed
+}

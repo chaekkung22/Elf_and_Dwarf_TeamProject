@@ -12,18 +12,15 @@ public class Quest : MonoBehaviour
     private List<QuestSO> completedQuests;
     private Action onQuest;
 
-
-    private void Awake()
+    public void LoadQuestInfo(string questInfoKey)
     {
         inProgressQuests = new List<QuestSO>();
         rewardAvailableQuests = new List<QuestSO>();
         completedQuests = new List<QuestSO>();
         questDatabase.Init();
-    }
 
-    public void LoadQuestInfo(string questInfoKey)
-    {
         string questInfoJson = PlayerPrefs.GetString(questInfoKey);
+
         if (!string.IsNullOrEmpty(questInfoJson))
         {
             // 저장된 값 있으면
@@ -97,77 +94,47 @@ public class Quest : MonoBehaviour
 
     public void CheckInProgressQuestsCleared()
     {
-        foreach (var quest in inProgressQuests)
+        for (int i = inProgressQuests.Count - 1; i >= 0; i--)
         {
-            CheckQuestCleared(quest);
+            var quest = inProgressQuests[i];
+            if (CheckQuestCleared(quest))
+            {
+                inProgressQuests.RemoveAt(i);
+                rewardAvailableQuests.Add(quest);
+                onQuest?.Invoke();
+            }
         }
-
     }
 
-    public void CheckQuestCleared(QuestSO quest)
+    public bool CheckQuestCleared(QuestSO quest)
     {
         switch (quest.type)
         {
             case QuestType.CollectStar:
-                ClearCollectStarQuest(quest);
-                break;
+                return DataManager.Instance.GetStarCount() > quest.targetAmount;
             case QuestType.ThreeStarStage:
-                ClearThreeStarStageQuest(quest);
-                break;
+                return quest.targetAmount < DataManager.Instance.GetThreeStarStageCount();
             case QuestType.TimeAttack:
-                ClearTimeAttackQuest(quest);
-                break;
+                return DataManager.Instance.CheckTimeAttack(quest.targetStage, quest.targetTime);
             case QuestType.EarnGold:
-                ClearEarnGoldQuest(quest);
-                break;
+                return DataManager.Instance.GetGold() >= quest.targetAmount;
         }
+        return false;
     }
 
-    private void ClearCollectStarQuest(QuestSO quest)
-    {
-        if (quest.targetAmount < DataManager.Instance.GetStarCount())
-        {
-            inProgressQuests.Remove(quest);
-            rewardAvailableQuests.Add(quest);
-            onQuest?.Invoke();
-        }
-    }
-
-    private void ClearThreeStarStageQuest(QuestSO quest)
-    {
-        if (quest.targetAmount < DataManager.Instance.GetThreeStarStageCount())
-        {
-            inProgressQuests.Remove(quest);
-            rewardAvailableQuests.Add(quest);
-            onQuest?.Invoke();
-        }
-    }
-
-    private void ClearTimeAttackQuest(QuestSO quest)
-    {
-        if (DataManager.Instance.CheckTimeAttack(quest.targetStage, quest.targetTime))
-        {
-            inProgressQuests.Remove(quest);
-            rewardAvailableQuests.Add(quest);
-            onQuest?.Invoke();
-        }
-    }
-
-    private void ClearEarnGoldQuest(QuestSO quest)
-    {
-        if (quest.targetAmount >= DataManager.Instance.GetGold())
-        {
-            inProgressQuests.Remove(quest);
-            rewardAvailableQuests.Add(quest);
-            onQuest?.Invoke();
-        }
-    }
-
-    private void GetReward(QuestSO quest)
+    public void GetReward(QuestSO quest)
     {
         DataManager.Instance.EarnGold(quest.reward);
         rewardAvailableQuests.Remove(quest);
         completedQuests.Add(quest);
+        onQuest?.Invoke();
+
+        DataManager.Instance.SaveDatas();
+    }
+
+    public int GetAllQuestsCount()
+    {
+        return questDatabase.GetQuestCount();
     }
 
     public List<QuestSO> GetInProgressQuests()

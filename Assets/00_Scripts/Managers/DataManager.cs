@@ -169,6 +169,7 @@ public class DataManager : Singleton<DataManager>
         {
             playerInfo.gold += _gold;
         }
+        isDataChanged = true;
     }
 
     public bool SpendGold(int _gold)
@@ -181,6 +182,7 @@ public class DataManager : Singleton<DataManager>
         else
         {
             playerInfo.gold -= _gold;
+            isDataChanged = true;
             return true;
         }
     }
@@ -264,7 +266,8 @@ public class DataManager : Singleton<DataManager>
 
     public bool CheckTimeAttack(int targetStage, float targetTime)
     {
-        if (stageInfo.bestClearTimeList[targetStage] <= targetTime)
+
+        if (stageInfo.clearLevel >= targetStage && stageInfo.bestClearTimeList[targetStage] <= targetTime)
         {
             return true;
         }

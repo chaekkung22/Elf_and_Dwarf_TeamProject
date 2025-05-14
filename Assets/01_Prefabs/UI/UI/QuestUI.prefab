@@ -618,6 +618,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStartUI: 0
   exitButton: {fileID: 1716577821627861247}
+  content: {fileID: 3924480054554944884}
+  questSlotPrefab: {fileID: 0}
+  questSlots: []
 --- !u!1 &3905340011079069040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,6 +1492,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8032015906724021827, guid: c2bed63ba2ccf56468d92a1a3129432e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768222707279343712, guid: c2bed63ba2ccf56468d92a1a3129432e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768222707279343712, guid: c2bed63ba2ccf56468d92a1a3129432e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768222707279343712, guid: c2bed63ba2ccf56468d92a1a3129432e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8768222707279343712, guid: c2bed63ba2ccf56468d92a1a3129432e, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
