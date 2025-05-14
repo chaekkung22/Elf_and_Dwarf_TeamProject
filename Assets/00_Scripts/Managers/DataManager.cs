@@ -42,6 +42,7 @@ public class DataManager : Singleton<DataManager>
         ownedItems = new Dictionary<string, ItemSO>();
         ownedItemList = new List<ItemSO>();
         LoadDatas();
+  
     }
 
     public void LoadDatas()

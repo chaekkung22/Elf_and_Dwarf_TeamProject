@@ -7487,8 +7487,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00014972687, y: 8.499201, z: 0}
-    m_Extent: {x: 17.998749, y: 26.4997, z: 0}
+    m_Center: {x: -0.0005493164, y: 8.498701, z: 0}
+    m_Extent: {x: 17.99975, y: 26.4997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -17345,6 +17345,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7567256381105495544}
     m_Modifications:
+    - target: {fileID: 4368350129369981457, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
+      propertyPath: gemType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5399778293707387733, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
       propertyPath: m_Name
       value: Treasure_Water (2)
@@ -17761,6 +17765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7567256381105495544}
     m_Modifications:
+    - target: {fileID: 4368350129369981457, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
+      propertyPath: gemType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5399778293707387733, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
       propertyPath: m_Name
       value: Treasure_Water
@@ -18233,6 +18241,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7567256381105495544}
     m_Modifications:
+    - target: {fileID: 4368350129369981457, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
+      propertyPath: gemType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5399778293707387733, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
       propertyPath: m_Name
       value: Treasure_Water (3)
@@ -19547,6 +19559,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7567256381105495544}
     m_Modifications:
+    - target: {fileID: 4368350129369981457, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
+      propertyPath: gemType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5399778293707387733, guid: 65eea639462885742ba30ebc6431e6e4, type: 3}
       propertyPath: m_Name
       value: Treasure_Water (1)
