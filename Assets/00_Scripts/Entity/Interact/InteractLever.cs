@@ -26,5 +26,9 @@ public class InteractLever : InteractObj, ICollisionEnter
     {
         ChangeOnMode(!isOn);
         ChangeLeverSprite();
+        if(isOn)
+            OnEventOn();
+        else
+            OnEventOff();
     }
 }
