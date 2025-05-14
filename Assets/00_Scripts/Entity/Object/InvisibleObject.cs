@@ -23,6 +23,8 @@ public class InvisibleObject : MonoBehaviour
             rules[i].interactObj.OnEventOn += CheckEvent;
             rules[i].interactObj.OnEventOff += CheckEvent;
         }
+
+        ChangeInvisibleMode(invisibleOnAwake);
     }
 
     private void ChangeInvisibleMode(bool enabled)

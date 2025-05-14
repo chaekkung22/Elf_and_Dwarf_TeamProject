@@ -454,9 +454,9 @@ TextureImporter:
       name: lava
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 32
-        width: 48
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -475,9 +475,9 @@ TextureImporter:
       name: water
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 16
-        width: 48
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -488,6 +488,90 @@ TextureImporter:
       bones: []
       spriteID: 0fe0ba644751e1840aba17a90f9a678a
       internalID: -12928460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9860f5c6198c89940a100ef6ccb4dcd8
+      internalID: -1925209781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a4bc2bab752f440837f9d926e2bc33
+      internalID: 55835125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ec15d9bb92398469ac482f3a4cbc18
+      internalID: -1715338549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425a1af031b07c54e8493c288af2e47e
+      internalID: -1142159205
       vertices: []
       indices: 
       edges: []
@@ -522,6 +606,14 @@ TextureImporter:
       Platform_3: 627665754
       Platform_4: 1710324049
       Platform_5: 1303990960
+      Sheet_0: -1925209781
+      Sheet_1: 55835125
+      Sheet_2: -1715338549
+      Sheet_3: -1142159205
+      Sheet_4: -1643908638
+      Sheet_5: 1996398869
+      Sheet_6: 742349972
+      Sheet_7: -425669642
       WaterFloor_Left: -740987513
       WaterFloor_Middle_0: -740987513
       WaterFloor_Middle_1: 1825968161

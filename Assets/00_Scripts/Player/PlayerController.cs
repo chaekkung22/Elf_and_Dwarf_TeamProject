@@ -22,12 +22,21 @@ public class PlayerController : BaseController
     private bool isMovable = true;
     public bool IsMovable { get { return isMovable; } set { this.isMovable = value; } }
 
+    private void OnEnable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
+    }
+
+    private void OnDisable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton -= ChangeType;
+    }
+
     private void Start()
     {
         _light = GetComponentInChildren<Light2D>();
         particle = GetComponentInChildren<ParticleSystem>();
         particle.textureSheetAnimation.SetSprite(0, DataManager.Instance.GetEquipedItem().image);
-        PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
         StageManager.Instance.SetPlayer(playerType, this);
         isMovable = true;
     }
