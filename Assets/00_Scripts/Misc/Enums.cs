@@ -11,3 +11,19 @@ public enum UIState
     Quest,
     Option,
 }
+
+
+public enum QuestType
+{
+    CollectStar,
+    ThreeStarStage,
+    TimeAttack,
+    EarnGold,
+}
+
+public enum QuestState
+{
+    InProgress,
+    RewardAvailable,
+    Completed
+}

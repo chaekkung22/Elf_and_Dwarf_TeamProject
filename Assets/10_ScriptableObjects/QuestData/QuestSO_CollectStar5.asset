@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6303e44f739f8e24a9949468b5ef2492, type: 3}
-  m_Name: StageDataSO_Portal
+  m_Script: {fileID: 11500000, guid: 0945d17af9361454eada67dd5cfb5b10, type: 3}
+  m_Name: QuestSO_CollectStar5
   m_EditorClassIdentifier: 
-  stageLevel: 1
-  limitedTime: 60
-  totalGemCount: 8
-  mapPrefab: {fileID: 1994285574796237414, guid: 51e11680c8b127042a071e94fec8dae8, type: 3}
-  cameraSize: 10
+  id: Quest_CS3
+  type: 0
+  questName: "\uBCC4 5\uAC1C \uD68D\uB4DD"
+  reward: 2000
+  targetAmount: 5
+  targetTime: 0
+  targetStage: 0

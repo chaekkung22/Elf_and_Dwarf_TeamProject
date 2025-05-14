@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestSO : MonoBehaviour
+[CreateAssetMenu(fileName = "QuestSO_", menuName = "Scriptable Object/Quest/Quest")]
+public class QuestSO : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Common")]
+    public string id;
+    public QuestType type;
+    public string questName;
+    public int reward;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Space(10)]
+    [Header("Amount Quest")]
+    public int targetAmount;
+
+    [Space(10)]
+    [Header("Time Attack Quest")]
+    public float targetTime;
+    public int targetStage;
 }
