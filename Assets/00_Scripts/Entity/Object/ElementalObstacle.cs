@@ -19,6 +19,7 @@ public class ElementalObstacle : MonoBehaviour, ICollisionEnter
                 //player.OnDeath();
                 player.gameObject.SetActive(false);
                 StageManager.Instance.FailStage();
+                SoundManager.Instance.PlaySfx(SfxType.Dead);
                 //Debug.Log("플레이어데스");
             }
         }

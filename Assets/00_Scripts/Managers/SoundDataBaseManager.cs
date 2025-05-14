@@ -73,4 +73,5 @@ public enum SfxType
     Boing = 60,
     Door = 70,
     Click = 80,
+    Dead = 90,
 }

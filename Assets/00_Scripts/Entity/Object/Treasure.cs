@@ -18,6 +18,7 @@ public class Treasure : MonoBehaviour, ICollisionEnter
             if (player.PlayerType == gemType) // 보석획득
             {
                 StageManager.Instance.AddGemCountByType(gemType);
+                SoundManager.Instance.PlaySfx(SfxType.Gem);
                 this.gameObject.SetActive(false);
                 
             }
