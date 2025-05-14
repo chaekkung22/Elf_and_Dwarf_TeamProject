@@ -41,6 +41,16 @@ public class PlayerController : BaseController
         isMovable = true;
     }
 
+    private void OnEnable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton += ChangeType;
+    }
+
+    private void OnDisable()
+    {
+        PlayerTypeChangeBtn.onClickTypeChangeButton -= ChangeType;
+    }
+
     void OnMove(InputValue inputValue)
     {
         if (!isMovable) return;
