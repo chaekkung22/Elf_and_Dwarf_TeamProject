@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxDataArr:
   - sfxType: 30
-    clip: {fileID: 8300000, guid: 2cbf66aa0201b4c4d9f35d29a910a540, type: 3}
+    clip: {fileID: 8300000, guid: e9a716596dbafae4ca4cbe15537981c3, type: 3}
   - sfxType: 20
-    clip: {fileID: 8300000, guid: 7d28e3d8db95f8746a19c3f9f58b17b2, type: 3}
+    clip: {fileID: 8300000, guid: 7681afca2cbb98c43aafaebc1006220b, type: 3}
   - sfxType: 10
-    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+    clip: {fileID: 8300000, guid: 4fd58c9d9bad4df4cb03dddc996d3c90, type: 3}
   - sfxType: 40
-    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+    clip: {fileID: 8300000, guid: c08819146ab853042947d03e0b2d247a, type: 3}
   - sfxType: 50
-    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+    clip: {fileID: 8300000, guid: d1440c2ccf2dc8b41b47a0fda7ea3ee3, type: 3}
   - sfxType: 60
-    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+    clip: {fileID: 8300000, guid: 846f8fcbaa83d7c4c8f8382c5efba8f8, type: 3}
   - sfxType: 70
-    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+    clip: {fileID: 8300000, guid: 38ad516fddea2654781f4688a538f36d, type: 3}
   - sfxType: 80
-    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+    clip: {fileID: 8300000, guid: 8be2d33bd2f39b24883cd44b31099493, type: 3}
   bgmDataArr:
   - bgmType: 10
     clip: {fileID: 8300000, guid: 4bb64a2f10c66ec41beb64406a06920f, type: 3}

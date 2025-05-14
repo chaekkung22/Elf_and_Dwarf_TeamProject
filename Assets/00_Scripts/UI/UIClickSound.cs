@@ -6,9 +6,10 @@ public class UIClickSound : MonoBehaviour
 {
     private void Awake()
     {
-        GetComponent<Button>().onClick.AddListener(() =>
+        Button[] buttons = GetComponentsInChildren<Button>(true);
+        foreach (Button button in buttons)
         {
-            SoundManager.Instance.PlaySfx(SfxType.Click);
-        });
+            button.onClick.AddListener(() => SoundManager.Instance.PlaySfx(SfxType.Click));
+        }
     }
 }

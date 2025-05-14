@@ -43,6 +43,7 @@ public class SoundManager : Singleton<SoundManager>
         // audioMixer에 미리 설정해놓은 parameter 값을 변경하는 코드.
         // Mathf.Log10(BGMSlider.value) * 20 : 데시벨이 비선형적이기 때문에 해당 방식으로 값을 계산.
         audioMixer.SetFloat("BGM", Mathf.Log10(BgmSlider.value) * 20);
+        audioMixer.SetFloat("SFX", Mathf.Log10(SfxSlider.value) * 20);
     }
     public void PlayBgm(BgmType bgmType)
     {
