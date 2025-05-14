@@ -2473,7 +2473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6608507122104538944}
   m_Layer: 0
-  m_Name: AttributeChangeMap
+  m_Name: Stage_AttributeChange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9090,16 +9090,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 10, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -13, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -9186,17 +9176,17 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 63868989a1a872945bd15d654fbc5353, type: 2}
   - m_RefCount: 17
     m_Data: {fileID: 11400000, guid: dc3bc64f45dc3c243a3ae7dc5655e4c9, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 633c8296ea506444d9940ed2c323557a, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 41
     m_Data: {fileID: 21300000, guid: 6c7fb0d0f97d7134d9f347271c9ed4ed, type: 3}
   - m_RefCount: 17
     m_Data: {fileID: 21300000, guid: 7f75e048a3db4ee468b61ea90fe2e20d, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 77b91dae27fc62c429845e10dec16739, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 59
+  - m_RefCount: 58
     m_Data:
       e00: 1
       e01: 0
@@ -9215,7 +9205,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 59
+  - m_RefCount: 58
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
