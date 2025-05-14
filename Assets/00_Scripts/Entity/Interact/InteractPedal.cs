@@ -28,6 +28,7 @@ public class InteractPedal:InteractObj, ICollisionEnter, ICollisionExit
     {
         playerCnt++;
         ChangeOnMode(true);
+        OnEventOn();
     }
 
     public virtual void ExitEvent(GameObject collider)
@@ -37,6 +38,10 @@ public class InteractPedal:InteractObj, ICollisionEnter, ICollisionExit
         {
             playerCnt = 0;
             ChangeOnMode(false);
+        }
+        if(!isOn)
+        {
+            OnEventOff();
         }
     }
 
