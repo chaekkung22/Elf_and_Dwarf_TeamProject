@@ -101,7 +101,6 @@ public class Quest : MonoBehaviour
             {
                 inProgressQuests.RemoveAt(i);
                 rewardAvailableQuests.Add(quest);
-                onQuest?.Invoke();
             }
         }
     }
