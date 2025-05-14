@@ -39,7 +39,7 @@ public class QuestUI : BaseUI
         }
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         quest.RemoveEvent();
     }

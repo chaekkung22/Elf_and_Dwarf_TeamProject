@@ -33,9 +33,10 @@ public class ShopUI : BaseUI
         prevButton.onClick.AddListener(PrevButton);
         nextButton.onClick.AddListener(NextButton);
         exitButton.onClick.AddListener(UIManager.Instance.CloseUI);
+
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         DataManager.Instance.RemoveChangeOwnedItemsEvent();
     }

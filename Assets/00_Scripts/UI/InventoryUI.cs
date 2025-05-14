@@ -31,7 +31,7 @@ public class InventoryUI : BaseUI
         exitButton.onClick.AddListener(UIManager.Instance.CloseUI);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         DataManager.Instance.RemoveChangeEquipedItemEvent();
     }
