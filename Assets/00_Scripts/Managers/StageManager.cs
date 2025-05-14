@@ -50,12 +50,12 @@ public class StageManager : Singleton<StageManager>
 
     private void Update()
     {
-        if(GameManager.Instance.GameStart)
+        if (GameManager.Instance.GameStart)
         {
-            if(isGameDone)
+            if (isGameDone)
                 return;
 
-            if(Time.timeScale != 0)
+            if (Time.timeScale != 0)
             {
                 playTime += Time.deltaTime;
                 OnChangeTime?.Invoke(playTime);
@@ -69,18 +69,18 @@ public class StageManager : Singleton<StageManager>
     {
         if (!IsClear)
         {
-        isClear = true;
-        isGameDone = true;
-        CalcStarCount();
-        DataManager.Instance.SetStageInfo(PlayerPrefs.GetInt(curStageLevelKey),
-                                          playTime,
-                                          gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water],
-                                          starCount);
-        DataManager.Instance.EarnGold(earnGold);
-        OnPauseGame?.Invoke(true); // Pause 버튼 끄기
-        UIManager.Instance.OpenUI(UIState.StageClear);
-        SetPlayerMovable(false);
-        SoundManager.Instance.PlaySfx(SfxType.Door);
+            isClear = true;
+            isGameDone = true;
+            CalcStarCount();
+            DataManager.Instance.SetStageInfo(PlayerPrefs.GetInt(curStageLevelKey),
+                                              playTime,
+                                              gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water],
+                                              starCount);
+            DataManager.Instance.EarnGold(earnGold);
+            OnPauseGame?.Invoke(true); // Pause 버튼 끄기
+            UIManager.Instance.OpenUI(UIState.StageClear);
+            SetPlayerMovable(false);
+            SoundManager.Instance.PlaySfx(SfxType.Door);
         }
     }
 
@@ -89,9 +89,9 @@ public class StageManager : Singleton<StageManager>
         float timePoint = 1f;
         float gemPoint = 1f;
 
-        if(stageDataManager.GetLimitedTime(curLevel) != 0)
+        if (stageDataManager.GetLimitedTime(curLevel) != 0)
             timePoint = 1f - Mathf.Clamp01(playTime / stageDataManager.GetLimitedTime(curLevel));
-        if(stageDataManager.GetTotalGemCount(curLevel) != 0)
+        if (stageDataManager.GetTotalGemCount(curLevel) != 0)
             gemPoint = Mathf.Clamp01(gem[(int)PlayerType.Fire] + gem[(int)PlayerType.Water] / stageDataManager.GetTotalGemCount(curLevel));
 
         // timePoint 최대 1점
@@ -99,7 +99,7 @@ public class StageManager : Singleton<StageManager>
         // 만점 3점 기준
         // 보석을 다 먹고
         // 제한 시간의 절반 안으로 클리어 하면 3점
-        starCount = Mathf.Clamp((int)((timePoint + 0.5f)+ (gemPoint * 2)), 0, 3);
+        starCount = Mathf.Clamp((int)((timePoint + 0.5f) + (gemPoint * 2)), 0, 3);
     }
 
     public void FailStage()
@@ -154,14 +154,14 @@ public class StageManager : Singleton<StageManager>
     public void PauseGame()
     {
         UIManager.Instance.OpenUI(UIState.Pause);
-        Time.timeScale = 0f;
+        GameManager.Instance.GameStart = false;
         OnPauseGame?.Invoke(true);
     }
 
     public void ResumeGame()
     {
         UIManager.Instance.CloseUI();
-        Time.timeScale = 1f;
+        GameManager.Instance.GameStart = true;
         OnPauseGame?.Invoke(false);
     }
 
