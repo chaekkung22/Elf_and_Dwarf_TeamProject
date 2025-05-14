@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     protected override void Initialize()
     {
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += (Scene scene, LoadSceneMode sceneMode) => { if (scene.name == "StageScene") GameStart = true; else GameStart = false; };
     }
 
     public void ExitGame()
@@ -31,7 +33,6 @@ public class GameManager : Singleton<GameManager>
 
     private IEnumerator LoadAndCleanup(string sceneName)
     {
-        GameStart = false;
         do
         {
             Color color = fadeImg.color;
@@ -60,7 +61,6 @@ public class GameManager : Singleton<GameManager>
 
             yield return null;
         } while (fadeImg.color.a > 0);
-        GameStart = true;
     }
 
     private void OnApplicationQuit()
