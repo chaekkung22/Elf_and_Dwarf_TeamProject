@@ -19,6 +19,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7d28e3d8db95f8746a19c3f9f58b17b2, type: 3}
   - sfxType: 10
     clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+  - sfxType: 40
+    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+  - sfxType: 50
+    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+  - sfxType: 60
+    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+  - sfxType: 70
+    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
+  - sfxType: 80
+    clip: {fileID: 8300000, guid: 581e9efcfc3c0eb4191d643760c7ce82, type: 3}
   bgmDataArr:
   - bgmType: 10
     clip: {fileID: 8300000, guid: 4bb64a2f10c66ec41beb64406a06920f, type: 3}
