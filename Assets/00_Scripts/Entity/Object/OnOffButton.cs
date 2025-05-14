@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class OnOffButton : InteractPedal
 {
     [SerializeField] private GameObject obj;
+    private static Action OnPedalOff;
+    private static int playerOnPedal = 0;
 
     private WindObstacle windObstacle;
 
@@ -24,6 +27,8 @@ public class OnOffButton : InteractPedal
         {
             enabled = false;
         }
+
+        OnPedalOff += CheckIsOn;
     }
 
     public override void EnterEvent(GameObject collider)
@@ -37,7 +42,15 @@ public class OnOffButton : InteractPedal
         base.ExitEvent(collider);
         if (!isOn)
         {
-            windObstacle.OnWind();
+            playerOnPedal = 0;
+            OnPedalOff();
+            if(playerOnPedal == 0)
+                windObstacle.OnWind();
         }
+    }
+
+    private void CheckIsOn()
+    {
+        playerOnPedal += playerCnt;
     }
 }
