@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private Image fadeImg;
-    [SerializeField] [Range(0f, 0.1f)] private float fadeSpeed;
-    public bool GameStart { get; private set; }
+    [SerializeField][Range(0f, 0.1f)] private float fadeSpeed;
+    public bool GameStart { get; set; }
 
     protected override void Initialize()
     {
@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
 
         // 새 씬 비동기 로드
         AsyncOperation loadOp = SceneManager.LoadSceneAsync(sceneName);
-        while(!loadOp.isDone)
+        while (!loadOp.isDone)
             yield return null;
 
         // 사용되지 않는 에셋 언로드
@@ -59,7 +59,7 @@ public class GameManager : Singleton<GameManager>
             fadeImg.color = color;
 
             yield return null;
-        } while(fadeImg.color.a > 0);
+        } while (fadeImg.color.a > 0);
         GameStart = true;
     }
 

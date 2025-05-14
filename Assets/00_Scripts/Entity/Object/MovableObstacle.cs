@@ -15,7 +15,7 @@ public class MovableObstacle : ElementalObstacle
     void Start()
     {
         pivotX = transform.localPosition.x;
-        if(startDirIsLeft)
+        if (startDirIsLeft)
             dir = -1;
         else
             dir = 1;
@@ -24,8 +24,11 @@ public class MovableObstacle : ElementalObstacle
     // Update is called once per frame
     void Update()
     {
-        moveTransition += Time.deltaTime * speed;
-        float moveX = (pivotX + (Mathf.PingPong(moveTransition, distance) * dir));
-        transform.localPosition = new Vector3(moveX, transform.localPosition.y, transform.localPosition.z);
+        if (GameManager.Instance.GameStart)
+        {
+            moveTransition += Time.deltaTime * speed;
+            float moveX = (pivotX + (Mathf.PingPong(moveTransition, distance) * dir));
+            transform.localPosition = new Vector3(moveX, transform.localPosition.y, transform.localPosition.z);
+        }
     }
 }

@@ -52,7 +52,7 @@ public class PlayerController : BaseController
 
     void OnJump(InputValue inputValue)
     {
-        if (!isMovable) return;
+        if (!isMovable || !GameManager.Instance.GameStart) return;
 
         // 입력을 통한 플레이어의 점프 구현
         Jump();
@@ -63,7 +63,7 @@ public class PlayerController : BaseController
         if (PlayerType == PlayerType.Fire)
         {
             playerType = PlayerType.Water;
-            _light.color = new Color(150/255f, 150/255f, 1f);
+            _light.color = new Color(150 / 255f, 150 / 255f, 1f);
         }
         else
         {
@@ -81,7 +81,7 @@ public class PlayerController : BaseController
         if (playerType == PlayerType.Fire)
             main.startColor = new Color(1f, 0f, 0f);
         else
-            main.startColor = new Color(0f, 140/255f, 1f);
+            main.startColor = new Color(0f, 140 / 255f, 1f);
     }
 
     private bool isICollision<T>(GameObject gameObject)

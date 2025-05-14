@@ -32,7 +32,7 @@ public class BaseController : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(GameManager.Instance.GameStart)
+        if (GameManager.Instance.GameStart)
         {
             Rotate();
         }
@@ -40,14 +40,14 @@ public class BaseController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        if(GameManager.Instance.GameStart)
+        if (GameManager.Instance.GameStart)
         {
             Move(movementDirection);
 
             Debug.DrawRay(_rigidbody.position, Vector3.down * 0.6f, new Color(0, 1, 0));
             isGround = Physics2D.Raycast(_rigidbody.position, Vector3.down, 0.6f, groundLayer);
 
-            if(wasGround == false && isGround == true)
+            if (wasGround == false && isGround == true)
             {
                 animationHandler.Idle();
             }

@@ -10,7 +10,7 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
     [SerializeField] private Sprite closedSprite;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private PlayerType doorType;
-    public bool IsExitSucess { get; private set; }
+    private bool isExitSucess = false;
 
     public void Start()
     {
@@ -33,8 +33,9 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
             spendTime = 0f;
 
             //IsExitSucess = true;  //UI에서 bool값을 받아 탈출시 나오는 화면 보여줘야할듯..?
-            if (StageManager.Instance.SetPlayerDoorState(playerType, true))
+            if (isExitSucess == false && StageManager.Instance.SetPlayerDoorState(playerType, true))
             {
+                isExitSucess = true;
                 spriteRenderer.sprite = openSprite;
             }
         }
@@ -42,6 +43,9 @@ public class ExitGate : MonoBehaviour, ICollisionStay, ICollisionExit
 
     public void ExitEvent(GameObject collider)
     {
+        if (isExitSucess == true)
+            return;
+
         PlayerType playerType;
 
         if (!CheckPlayerValid(collider, out playerType))

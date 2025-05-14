@@ -111,9 +111,9 @@ public class Quest : MonoBehaviour
         switch (quest.type)
         {
             case QuestType.CollectStar:
-                return DataManager.Instance.GetStarCount() > quest.targetAmount;
+                return DataManager.Instance.GetStarCount() >= quest.targetAmount;
             case QuestType.ThreeStarStage:
-                return quest.targetAmount < DataManager.Instance.GetThreeStarStageCount();
+                return quest.targetAmount <= DataManager.Instance.GetThreeStarStageCount();
             case QuestType.TimeAttack:
                 return DataManager.Instance.CheckTimeAttack(quest.targetStage, quest.targetTime);
             case QuestType.EarnGold:
