@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
-using UnityEditor.SceneManagement;
+
 using UnityEngine;
 using UnityEngine.UI;
 
