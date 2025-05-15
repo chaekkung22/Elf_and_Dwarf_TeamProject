@@ -4,10 +4,13 @@ Unity 입문 챕터 10조의 팀 프로젝트로, [파이어보이 & 워터걸](
 ## 목차
 [🎮 프로젝트 소개](#-프로젝트-소개)  
 [👥 팀원 소개(블로그 링크)](#-팀원-소개블로그-링크)  
+[💻 개발 환경](#-개발-환경)  
+[🗓️ 개발 일정](#%EF%B8%8F-개발-일정)  
 [🧩 주요 기능](#-주요-기능)  
 [📐 와이어 프레임](#-와이어-프레임)  
 [🧠 클래스 다이어그램 초기 구조](#-클래스-다이어그램-초기-구조)  
 [🐞 트러블 슈팅](#-트러블-슈팅)  
+[🎥 시연 영상](#-시연-영상)
 
 ---
 <br><br>
@@ -17,7 +20,7 @@ Unity 입문 챕터 10조의 팀 프로젝트로, [파이어보이 & 워터걸](
 ## 👥 팀원 소개(블로그 링크)
 ![image](https://github.com/user-attachments/assets/fc304062-ab51-4789-b4db-4b0177c33bec)  
 [유채영](https://velog.io/@ycy0109/posts)  
- 상호 작용 오브젝트, 상점 UI, 인벤토리 UI 구현, 스테이지 생성, 이미지 리소스 제작  
+ 상호 작용 오브젝트, 상점 UI, 인벤토리 UI 구현, 스테이지 생성, 이미지 리소스 제작, 빌드 및 배포  
 ![image](https://github.com/user-attachments/assets/652a0f46-b8ea-42f9-87a2-0ae1323ce12c)  
 [한욱진](https://velog.io/@wh180911/posts)   
 UI Manager, Quest 시스템 구현, DataManager 구현  
@@ -30,6 +33,15 @@ UI Manager, Quest 시스템 구현, DataManager 구현
 ![image](https://github.com/user-attachments/assets/106fc741-662b-4de0-b70a-e264413ef958)  
 [김기현](https://fooa.tistory.com/)  
 상호 작용 오브젝트, 배경음악과 사운드 효과, 옵션 UI 기능 구현  
+<br><br>
+
+## 💻 개발 환경
+<br><br>
+![image](https://github.com/user-attachments/assets/104f039a-f9a2-4b0b-b3cb-51a0818e7f9f)
+<br><br>
+## 🗓️ 개발 일정
+<br><br>
+![image](https://github.com/user-attachments/assets/024540eb-cebe-4945-b92c-9ef775f46dc1)
 <br><br>
 ## 🧩 주요 기능
 ![LxcJLajvyq](https://github.com/user-attachments/assets/3b55eaf2-9384-4241-9999-423620706b5f)
@@ -69,3 +81,11 @@ UI Manager, Quest 시스템 구현, DataManager 구현
 <br>
 제어될 오브젝트와 연결되는 상호 작용 오브젝트와 제어 규칙을 담는 구조체를 만들어 리스트로 생성  
 상호 작용 On/Off를 체크할 Action 변수를 상호 작용 오브젝트 최상위 클래스에 만들어준 뒤 CheckEvent 메서드를 등록해주면 온/오프가 될 때마다 모든 조건이 충족 되었는지 체크하여 오브젝트를 제어하는 것으로 문제를 해결  
+
+## 🎥 시연 영상
+<br><br>
+▼ **시연 영상 바로가기**
+[<img width="635" alt="얼불썸네일" src="https://github.com/user-attachments/assets/cd19bc75-9904-4bc0-85b9-422255fcb66a" />](https://youtu.be/yp8Ek9Y3mfo)
+
+<br><br>
+
