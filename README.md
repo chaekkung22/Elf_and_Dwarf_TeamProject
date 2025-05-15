@@ -84,7 +84,7 @@ UI Manager, Quest 시스템 구현, DataManager 구현
 
 ## 🎥 시연 영상
 <br><br>
-▼ **시연 영상 바로가기**
+▼ **시연 영상 바로가기**  
 [<img width="635" alt="얼불썸네일" src="https://github.com/user-attachments/assets/cd19bc75-9904-4bc0-85b9-422255fcb66a" />](https://youtu.be/yp8Ek9Y3mfo)
 
 <br><br>
